@@ -171,11 +171,187 @@ Publication as an Editors' Draft does not imply endorsement by the W3C Membershi
 </section>
 </section>
 
-    <section class='appendix'>
-      <h2>Acknowledgements</h2>
-      <p>
-        Members of the Mobile Accessibility Task Force</p>
-      <p>Chairs of the WCAG WG and the UAAG WG</p>
+<section>
+<h2>Mobile accessibility considerations primarily related to Principle 2: Operable</h2>
+  <section>
+  <h3>Keyboard Control for Touchscreen Devices</h3>
+  <p>Mobile device design has evolved away from built-in physical   keyboards (e.g. fixed, slide-out) towards devices that maximize   touchscreen area and display an on-screen keyboard only when the user   has selected a user interface control that accepts text input (e.g. a   textbox). </p>
+  <p>However, keyboard accessibility remains as important as ever and   most major mobile operating systems do include keyboard interfaces,   allowing mobile devices to be operated by external physical keyboards   (e.g. keyboards connected via Bluetooth, USB On-The-Go) or alternative   on-screen keyboards (e.g. scanning on-screen keyboards). </p>
+  <p>Supporting these keyboard interfaces benefits several groups with disabilities: </p>
+  <ul>
+    <li> People with visual disabilities who can benefit from some   characteristics of physical keyboards over touchscreen keyboards (e.g.   clearly separated keys, key nibs and more predictable key layouts). </li>
+    <li> People with dexterity or mobility disabilities, who can benefit   from keyboards optimized to minimize inadvertent presses (e.g.   differently shaped, spaced and guarded keys) or from specialized input   methods that emulate keyboard input. </li>
+    <li> People who can be confused by the dynamic nature of onscreen   keyboards and who can benefit from the consistency of a physical   keyboard. </li>
+  </ul>
+  <p>Several WCAG 2.0 success criteria are relevant to effective keyboard control: </p>
+  <ul>
+    <li> <strong>2.1.1 Keyboard</strong> (Level A) </li>
+    <li> <strong>2.1.2 No Keyboard Trap</strong> (Level A) </li>
+    <li> <strong>2.4.3 Focus Order</strong> (Level A) </li>
+    <li> <strong>2.4.7 Focus Visible</strong> (Level AA) </li>
+  </ul>
+ </section>
+ 
+ <section>
+ <h3>Touch Target Size and Spacing</h3>
+ <p>The high resolution of mobile devices means that many interactive   elements can be shown together on a small screen. But these elements   must be big enough and have enough distance from each other so that   users can safely target them by touch. </p>
+ <p>Best practices for touch target size include the following: </p>
+ <ul>
+   <li> Ensuring that touch targets are at least 9mm high by 9 mm wide. </li>
+   <li> Ensuring that touch targets close to the minimum size are surrounded by a small amount of inactive space. </li>
+ </ul>
+ <p><em>Note:</em> This size is not dependent on the screen size, device or   resolution. Screen magnification should not need to be used to obtain   this size, because magnifying the screen often introduces the need to   pan horizontally as well as vertically, which can decrease usability. </p>
+ </section>
+ <section>
+ <h3>Touchscreen Gestures</h3>
+ <p>Many mobile devices are designed to be primarily operated via   gestures made on a touchscreen. These gestures can be simple, such as a   tap with one finger, or very complex, involving multiple fingers,   multiple taps and drawn shapes. </p>
+ <p>Some (but not all) mobile operating systems provide work-around   features that let the user simulate complex gestures with simpler ones   using an onscreen menu. </p>
+ <p>Some best practices when deciding on touchscreen gestures include the following: </p>
+ <ul>
+   <li> Gestures in apps should be as easy as possible to carry out. This   is especially important for screen reader interaction modes that replace   direct touch manipulation by a two-step process of focusing and   activating elements. It is also a challenge for users with motor or   dexterity impairments or people who rely on head pointers or a stylus   where multi-touch gestures may be difficult or impossible to perform.   Often, interface designers have different options for how to implement   an action. Widgets requiring complex gestures can be difficult or   impossible to use for screen reader users. Usually, design alternatives   exist to allow changes to settings via simple tap or swipe gestures. </li>
+   <li> Activating elements via the mouseup or touchend event. Using the   mouseup or touchend event to trigger actions helps prevent unintentional   actions during touch and mouse interaction. Mouse users clicking on   actionable elements (links, buttons, submit inputs) should have the   opportunity to move the cursor outside the element to prevent the event   from being triggered. This allows users to change their minds without   being forced to commit to an action. In the same way, elements accessed   via touch interaction should generally trigger an event (e.g.   navigation, submits) only when the touchend event is fired (i.e. when   all of the following are true:  the user has lifted the finger off the   screen, the last position of the finger is inside the actionable   element, and the last position of the finger equals the position at   touchstart). </li>
+ </ul>
+ <p>Another issue with touchscreen gestures is that they might lack   onscreen indicators that remind people how and when to use them. For   example, a swipe in from the left side of the screen gesture to open a   menu is not discoverable without an indicator or advisement of the   gesture.  See @@Touchscreen gesture instructions@@. </p>
+  </section>
+  <section>
+  <h3>Device Manipulation Gestures</h3>
+  <p>In addition to touchscreen gestures, many mobile operating systems   provide developers with control options that are triggered by physically   manipulating the device(e.g. shaking or tilting). While device   manipulation gestures can help developers create innovative user   interfaces, they can also be a challenge for people who have difficulty   holding or are unable to hold a mobile device. </p>
+  <p>Some (but not all) mobile operating systems provide work-around   features that let the user simulate device shakes, tilts, etc. from an   onscreen menu. </p>
+  <p>Therefore, even when device manipulation gestures are provided,   developers should still provide touch and keyboard operable alternative   control options (<strong>2.1.1 Keyboard</strong> (Level A)). </p>
+  <p>Another issue with control via device manipulation gestures is   that they might lack onscreen indicators that remind people how and when   to use them. See @@Touchscreen gesture instructions@@. </p>
+  </section>
+  <section>
+  <h3>Placing buttons where they are easy to access</h3>
+  <p>Mobile sites and applications should position interactive elements   where they can be easily reached when the device is held in different   positions. </p>
+  <p>When designing mobile web content and applications many   developers attempt to optimize use with one hand. This can benefit   people with disabilities who may only have one hand available, however,   developers should also consider that an easy-to-use button placement for   some users might cause difficulties for others (e.g. left- vs.   right-handed use, assumptions about thumb range of motion). Therefore,   flexible use should always be the goal. </p>
+  <p>Some (but not all) mobile operating systems provide work-around   features that let the user temporarily shift the display downwards or   sideways to facilitate one-handed operation. </p>
+  </section>
+</section>
+<section>
+<h2>Mobile accessibility considerations related primarily to Principle 3: Understandable</h2>
+
+   <section>
+   <h3>Changing Screen Orientation (Portrait/Landscape)</h3>
+   <p>Some mobile applications automatically set the screen to a particular   display orientation (landscape or portrait) and expect that users will   respond by rotating the mobile device to match. However, some users have   their mobile devices mounted in a fixed orientation (e.g. on the arm of   a power wheelchair). </p>
+   <p>Therefore, mobile application developers should try to support   both orientations. If it is not possible to support both orientations,   developers should ensure that it is easy for all users to change the   orientation to return to a point at which their device orientation is   supported. </p>
+   <p>Changes in orientation must be programmatically exposed to ensure   detection by assistive technology such as screen readers. For example,   if a screen reader user is unaware that the orientation has changed the   user might perform incorrect navigation commands. </p>
+   </section>
+   <section>
+   <h3>Consistent Layout</h3>
+   <p>Components that are repeated across multiple pages should be   presented in a consistent layout.  In responsive web design, where   components are arranged based on device size and screen orientation, web   pages within a particular view (set size and orientation) should be   consistent in placement of repeated components and navigational   components. Consistency between the different screen sizes and screen   orientations is not a requirement under WCAG 2.0. </p>
+   <p>For example: </p>
+   <ul>
+     <li> A Web site has a logo, a title, a search form and a navigation bar   at the top of each page; these appear in the same relative order on each   page where they are repeated. On one page the search form is missing   but the other items are still in the same order. When the Web site is   viewed on a small screen in portrait mode, the navigation bar is   collapsed into a single icon but entries in the drop-down list that   appears when activating the icon are still in the same relative order. </li>
+     <li> A Web site, when viewed on the different screen sizes and in   different orientations, has some components that are hidden or appear in   a different order. The components that show, however, remain consistent   for any screen size and orientation. </li>
+   </ul>
+   <p>The WCAG 2.0 success criteria that are most related to the issue of consistency are: </p>
+  <ul>
+     <li> <strong>3.2.3 Consistent Navigation</strong> (Level AA) </li>
+     <li> <strong>3.2.4 Consistent Identification</strong> (Level AA) </li>
+   </ul>
+   </section>
+   <section>
+   <h3>Positioning important page elements before the page scroll</h3>
+   <p>The small screen size on many mobile devices limits the amount of content that can be displayed without scrolling. </p>
+   <p>Positioning important page information so it is visible without   requiring scrolling can assist users with low vision and users with   cognitive impairments. </p>
+   <p>If a user with low vision has the screen magnified only a small   portion of the page might be viewable at a given time. Placing important   elements before the page scroll allows those who use screen magnifiers   to locate important information without having to scroll the view to   move the magnified area. Placing important elements before the page   scroll also makes it possible to locate content without performing an   interaction. This assists users that have cognitive impairments such as   short-term memory disabilities. Placing important elements before the   page scroll also helps ensure that elements are placed in a consistent   location. Consistent and predictable location of elements assists people   with cognitive impairments and low vision. </p>
+  </section>
+  <section>
+  <h3>Grouping operable elements that perform the same action</h3>
+  <p>When multiple elements elements perform the same action or go to the   same destination (e.g. link icon with link text), these should be   contained within the same actionable element.  This increases the touch   target size for all users and benefits people with dexterity   impairments. It also reduces the number of redundant focus targets,   which benefits people using screen readers and keyboard/switch control. </p>
+  <p>The WCAG 2.0 success criterion that is most related to grouping of actionable elements is: </p>
+  <ul>
+    <li> 2.4.4 Link Purpose (In Context) (Level A) </li>
+    <li> 2.4.9 Link Purpose (Link Only) (Level AA) </li>
+  </ul>
+  <p>For more information on grouping operable elements, see <a href="http://www.w3.org/WAI/GL/WCAG20-TECHS/H2.html">H2: Combining adjacent image and text links for the same resource</a> technique. </p>
+  </section>
+  <section>
+  <h3>Provide clear indication that elements are actionable</h3>
+  <p>Elements that trigger changes should be sufficiently distinct to be   clearly distinguishable from non-actionable elements (content, status   information, etc).   Providing a clear indication that elements are actionable is relevant   for web and native mobile applications that have actionable elements   like buttons or links, especially in interaction modes where the   affordance of actionable elements is commonly detected visually (touch   and mouse use). Interactive elements must also be detectable by users   who rely on a programmatically determined accessible name (e.g. screen   reader users). </p>
+  <p>Visual users who interact with content using touch or visual   cursors (e.g. mice, touchpads, joysticks) should be able to clearly   distinguish actionable elements such as links or buttons. Existing   interface design conventions are aimed at  indicating that these visual   elements are actionable. The principle of redundant coding ensures that   elements are indicated as actionable by more than one distinguishing   visual feature. Following these conventions benefits all users, but   especially users with vision impairments. </p>
+  <p>Visual features that can set an actionable element apart include   shape, color, style, positioning, text label for an action, and   conventional iconography. </p>
+  <p>Examples of distinguishing features: </p>
+  <ol>
+    <li> Conventional shape: Button shape (rounded corners, drop shadows), checkbox, select rectangle with arrow pointing downwards </li>
+    <li> Iconography: conventional visual icons (question mark, home icon, burger icon for menu, floppy disk for save, back arrow, etc) </li>
+    <li> Color offset: shape with different background color to distinguish the element from the page backgrond, different text color </li>
+    <li> Conventional style: Underlined text for links, color for links </li>
+    <li> Conventional positioning: Commonly used position such as a top left   position for back button (iOS), position of menu items within   left-aligned lists in drop-down menus for navigation </li>
+  </ol>
+  <p>The WCAG 2.0 success criteria do not directly address issue of affordance but are related to: </p>
+  <ul>
+    <li> <strong>3.2.3 Consistent Navigation</strong> (Level AA) </li>
+    <li> <strong>3.2.4 Consistent Identification</strong> (Level AA) </li>
+  </ul>
+  </section>
+  <section>
+  <h3>Provide instructions for custom touchscreen and device manipulation gestures</h3>
+  <p>The ability to provide control via custom touchscreen and device   manipulation gestures provides developers can help developers create   efficient new interfaces. However, for many people, custom gestures can   be a challenge to discover, perform and remember. </p>
+  <p>Therefore, instructions (e.g overlays, tooltips, tutorials, etc.)   should be provided to explain what gestures can be used to control a   given interface and whether there are alternatives. To be effective, the   instructions should, themselves, be easily discoverable and accessible.   The instructions should also be available anytime the user needs them,   not just on first use, though on first use they may be made more   apparent through highlighting or some other mechanism. </p>
+  <p>These WCAG 2.0 success criteria are relevant to providing instructions for gestures: </p>
+  <ul>
+    <li> <strong>3.3.2 Labels or Instructions</strong> (Level A) </li>
+    <li> <strong>3.3.5 Help</strong> (Level AAA) </li>
+  </ul>
+  </section>
+</section>
+
+<section>
+<h2>Mobile accessibility considerations related primarily to Principle 4: Robust</h2>
+  <section>
+   <h3>Set the virtual keyboard to the type of data entry required</h3>
+   <p>On some mobile devices, the standard keyboard can be customized in the   device settings and additional custom keyboards can be installed.  Some   mobile devices also provide different virtual keyboards depending on the   type of data entry. This can be set by the user or can be set to a   specific keyboard.  For example, using the different HTML5 form field   controls (see <a href="http://www.w3.org/TR/ime-api/">Method Editor API</a>)   on a website will show different keyboards automatically when users are   entering in information into that field.  Setting the type of keyboard   helps prevent errors and ensures formats are correct but can be   confusing for people who are using a screen reader when there is subtle   changes in the keyboard. </p>  
+   </section>
+   <section>
+   <h3>Provide easy methods for data entry</h3>
+   <p>Users can enter information on mobile devices in multiple ways such as   on-screen keyboard, Bluetooth keyboard, touch, and speech. Text entry   can be time-consuming and difficult in certain circumstances. Reduce the   amount of text entry needed by providing select menus, radio buttons,   check boxes or by automatically entering known information (e.g. date,   time, location). </p>
+  </section>
+  <section>
+  <h3>Support the characteristic properties of the platform</h3>
+  <p>Mobile devices provide many features to help users with disabilities   interact with content.  These include platform characteristics such as   zoom, larger fonts, and captions.  The features and functions available   differ depending on the device and operating system version. For   example, most platforms have the ability to set large fonts, but not all   applications honor it for all text.  Also, some applications might   increase font size but not wrap text, causing horizontal scrolling. </p>
+  </section>
+
+<section class='appendix'>
+  <h2>WCAG Techniques that apply to mobile</h2>
+  <p>@@still being developed@@</p>
+</section>
+<section>
+<h2>UAAG 2.0 Success Criteria that apply to mobile</h2>
+<p><a href="http://www.w3.org/TR/IMPLEMENTING-UAAG20/mobile.html">UAAG Mobile Accessibility Examples</a></p>
+</section>
+<section>
+  <h2>Acknowledgements</h2>
+  <dl>
+      <dt>Members of the Mobile Accessibility Task Force: </dt>
+      <dd>Kathleen Anderson</dd>
+      <dd>Jonathan Avila</dd>
+      <dd>Tom Babinszki</dd>
+      <dd>Matthew Brough</dd>
+      <dd>Michael Cooper (WCAG WG Staff Contact)</dd>
+      <dd>Gavin Evans</dd>
+      <dd>Detlev Fischer</dd>
+      <dd>Alistair Garrison</dd>
+      <dd>Marc Johlic</dd>
+      <dd>Kiran Kaja</dd>
+      <dd>Andrew LaHart</dd>
+      <dd>Kim Patch (TF Facillitator - UAAG WG)</dd>
+      <dd>Jan Richards</dd>
+      <dd>Mike Shebanek</dd>
+      <dd>Brent Shiver</dd>
+      <dd>Alan Smith</dd>
+      <dd>Jeanne Spellman (UAAG WG Staff Contact)</dd>
+      <dd>Henny Swan</dd>
+      <dd>Peter Thiessen</dd>
+      <dd>Eric Velleman</dd>
+      <dd>Kathleen Wahlbin (TF Facillitator - WCAG WG)</dd>
+</dl>
+<dl>
+      <dt>Chairs of the WCAG WG and the UAAG WG:      </dt>
+      <dd>Jim Allan (UAAG WG), Texas School for the Blind and Visually Impaired</dd>
+      <dd>Andrew Kirkpatrick (WCAG WG), Adobe Systems</dd>
+      <dd>Joshue O'Connor (WCAG WG), NCBI Centre of Inclusive Technology</dd>
+</dl>
   </section>
   </body>
 </html>
