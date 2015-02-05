@@ -159,7 +159,7 @@ Publication as an Editors' Draft does not imply endorsement by the W3C Membershi
   <li> <strong>1.4.3 Contrast (Minimum)</strong> (Level AA) which requires a contrast of at least 4.5:1 (or 3:1 for large-scale text) and </li>
   <li> <strong>1.4.6 Contrast (Enhanced)</strong> (Level AAA) which requires a contrast of at least 7:1 (or 4.5:1 for large-scale text). </li>
 </ul>
-<p>SC 1.4.3. allows for different contrast ratios for large text.    Allowing different contrast ratios for larger text is useful because   larger text with wider character strokes is easier to read at a lower   contrast.  This allows designers more leeway for contrast of larger   text, which is helpful for content such as titles.  The ratio of   18-point text or 14-point bold text described in the SC 1.4.3 was judged   to be large enough to enable a lower contrast ratio for web pages   display on a 15-inch monitor at 1024x768 resolution with a 24-inch   viewing distance.  Mobile device content is viewed on smaller screens   and in different conditions so this allowance for lessened contrast on   large text must be considered carefully for mobile apps. </p>
+<p>SC 1.4.3. allows for different contrast ratios for large text.    Allowing different contrast ratios for larger text is useful because   larger text with wider character strokes is easier to read at a lower   contrast.  This allows designers more leeway for contrast of larger   text, which is helpful for content such as titles.  The ratio of   18-point text or 14-point bold text described in the SC 1.4.3 was judged   to be large enough to enable a lower contrast ratio for web pages   displayed on a 15-inch monitor at 1024x768 resolution with a 24-inch   viewing distance.  Mobile device content is viewed on smaller screens   and in different conditions so this allowance for lessened contrast on   large text must be considered carefully for mobile apps. </p>
 <p>For instance, the default point size for mobile platforms might   be larger than the default point size used on non-mobile devices. When   determining which contrast ratio to follow, developers should strive to   make sure to apply the lessened contrast ratio only when text is roughly   equivalent to 1.2 times bold or 1.5 times (120% bold or 150%) that of   the default platform size.  Note, however, that the use of text that is   1.5 times the default on mobile platforms does not imply that the text   will be readable by a person with low vision. People with low vision   will likely need and use additional platform level accessibility   features and assistive technology such as increased text size and zoom   features to access mobile content. </p>
 </section>
 </section>
@@ -190,7 +190,7 @@ Publication as an Editors' Draft does not imply endorsement by the W3C Membershi
  <p>The high resolution of mobile devices means that many interactive   elements can be shown together on a small screen. But these elements   must be big enough and have enough distance from each other so that   users can safely target them by touch. </p>
  <p>Best practices for touch target size include the following: </p>
  <ul>
-   <li> Ensuring that touch targets are at least 9mm high by 9 mm wide. </li>
+   <li> Ensuring that touch targets are at least 9 mm high by 9 mm wide. </li>
    <li> Ensuring that touch targets close to the minimum size are surrounded by a small amount of inactive space. </li>
  </ul>
  <p><em>Note:</em> This size is not dependent on the screen size, device or   resolution. Screen magnification should not need to be used to obtain   this size, because magnifying the screen often introduces the need to   pan horizontally as well as vertically, which can decrease usability. </p>
@@ -251,7 +251,7 @@ Publication as an Editors' Draft does not imply endorsement by the W3C Membershi
   </section>
   <section>
   <h3>Grouping operable elements that perform the same action</h3>
-  <p>When multiple elements elements perform the same action or go to the   same destination (e.g. link icon with link text), these should be   contained within the same actionable element.  This increases the touch   target size for all users and benefits people with dexterity   impairments. It also reduces the number of redundant focus targets,   which benefits people using screen readers and keyboard/switch control. </p>
+  <p>When multiple elements perform the same action or go to the   same destination (e.g. link icon with link text), these should be   contained within the same actionable element.  This increases the touch   target size for all users and benefits people with dexterity   impairments. It also reduces the number of redundant focus targets,   which benefits people using screen readers and keyboard/switch control. </p>
   <p>The WCAG 2.0 success criterion that is most related to grouping of actionable elements is: </p>
   <ul>
     <li> 2.4.4 Link Purpose (In Context) (Level A) </li>
@@ -280,7 +280,7 @@ Publication as an Editors' Draft does not imply endorsement by the W3C Membershi
   </section>
   <section>
   <h3>Provide instructions for custom touchscreen and device manipulation gestures</h3>
-  <p>The ability to provide control via custom touchscreen and device   manipulation gestures provides developers can help developers create   efficient new interfaces. However, for many people, custom gestures can   be a challenge to discover, perform and remember. </p>
+  <p>The ability to provide control via custom touchscreen and device   manipulation gestures can help developers create   efficient new interfaces. However, for many people, custom gestures can   be a challenge to discover, perform and remember. </p>
   <p>Therefore, instructions (e.g. overlays, tooltips, tutorials, etc.)   should be provided to explain what gestures can be used to control a   given interface and whether there are alternatives. To be effective, the   instructions should, themselves, be easily discoverable and accessible.   The instructions should also be available anytime the user needs them,   not just on first use, though on first use they may be made more   apparent through highlighting or some other mechanism. </p>
   <p>These WCAG 2.0 success criteria are relevant to providing instructions for gestures: </p>
   <ul>
@@ -294,7 +294,7 @@ Publication as an Editors' Draft does not imply endorsement by the W3C Membershi
 <h2>Mobile accessibility considerations related primarily to Principle 4: Robust</h2>
   <section>
    <h3>Set the virtual keyboard to the type of data entry required</h3>
-   <p>On some mobile devices, the standard keyboard can be customized in the   device settings and additional custom keyboards can be installed.  Some   mobile devices also provide different virtual keyboards depending on the   type of data entry. This can be set by the user or can be set to a   specific keyboard.  For example, using the different HTML5 form field   controls (see <a href="http://www.w3.org/TR/ime-api/">Method Editor API</a>)   on a website will show different keyboards automatically when users are   entering in information into that field.  Setting the type of keyboard   helps prevent errors and ensures formats are correct but can be   confusing for people who are using a screen reader when there is subtle   changes in the keyboard. </p>  
+   <p>On some mobile devices, the standard keyboard can be customized in the   device settings and additional custom keyboards can be installed.  Some   mobile devices also provide different virtual keyboards depending on the   type of data entry. This can be set by the user or can be set to a   specific keyboard.  For example, using the different HTML5 form field   controls (see <a href="http://www.w3.org/TR/ime-api/">Method Editor API</a>)   on a website will show different keyboards automatically when users are   entering in information into that field.  Setting the type of keyboard   helps prevent errors and ensures formats are correct but can be   confusing for people who are using a screen reader when there are subtle   changes in the keyboard. </p>  
    </section>
    <section>
    <h3>Provide easy methods for data entry</h3>
