@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mobile Accessibility: How WCAG 2.0 and UAAG 2.0 Apply to Mobile Devices</title>
+    <title>Mobile Accessibility: How WCAG 2.0 and Other W3C-WAI Guidelines Apply to Mobile</title>
     <meta charset='utf-8'>
     <script src='http://www.w3.org/Tools/respec/respec-w3c-common'
             async class='remove'></script>
@@ -204,14 +204,14 @@ Publication as an Editors' Draft does not imply endorsement by the W3C Membershi
    <li> Gestures in apps should be as easy as possible to carry out. This   is especially important for screen reader interaction modes that replace   direct touch manipulation by a two-step process of focusing and   activating elements. It is also a challenge for users with motor or   dexterity impairments or people who rely on head pointers or a stylus   where multi-touch gestures may be difficult or impossible to perform.   Often, interface designers have different options for how to implement   an action. Widgets requiring complex gestures can be difficult or   impossible to use for screen reader users. Usually, design alternatives   exist to allow changes to settings via simple tap or swipe gestures. </li>
    <li> Activating elements via the mouseup or touchend event. Using the   mouseup or touchend event to trigger actions helps prevent unintentional   actions during touch and mouse interaction. Mouse users clicking on   actionable elements (links, buttons, submit inputs) should have the   opportunity to move the cursor outside the element to prevent the event   from being triggered. This allows users to change their minds without   being forced to commit to an action. In the same way, elements accessed   via touch interaction should generally trigger an event (e.g.   navigation, submits) only when the touchend event is fired (i.e. when   all of the following are true:  the user has lifted the finger off the   screen, the last position of the finger is inside the actionable   element, and the last position of the finger equals the position at   touchstart). </li>
  </ul>
- <p>Another issue with touchscreen gestures is that they might lack   onscreen indicators that remind people how and when to use them. For   example, a swipe in from the left side of the screen gesture to open a   menu is not discoverable without an indicator or advisement of the   gesture.  See @@Touchscreen gesture instructions@@. </p>
+ <p>Another issue with touchscreen gestures is that they might lack   onscreen indicators that remind people how and when to use them. For   example, a swipe in from the left side of the screen gesture to open a   menu is not discoverable without an indicator or advisement of the   gesture.  See <a href="#customTouchscreen">Touchscreen gesture instructions</a>. </p>
   </section>
   <section>
   <h3>Device Manipulation Gestures</h3>
   <p>In addition to touchscreen gestures, many mobile operating systems   provide developers with control options that are triggered by physically   manipulating the device(e.g. shaking or tilting). While device   manipulation gestures can help developers create innovative user   interfaces, they can also be a challenge for people who have difficulty   holding or are unable to hold a mobile device. </p>
   <p>Some (but not all) mobile operating systems provide work-around   features that let the user simulate device shakes, tilts, etc. from an   onscreen menu. </p>
   <p>Therefore, even when device manipulation gestures are provided,   developers should still provide touch and keyboard operable alternative   control options (<strong>2.1.1 Keyboard</strong> (Level A)). </p>
-  <p>Another issue with control via device manipulation gestures is   that they might lack onscreen indicators that remind people how and when   to use them. See @@Touchscreen gesture instructions@@. </p>
+  <p>Another issue with control via device manipulation gestures is   that they might lack onscreen indicators that remind people how and when   to use them. See <a href="#customTouchscreen">Touchscreen gesture instructions</a>. </p>
   </section>
   <section>
   <h3>Placing buttons where they are easy to access</h3>
@@ -254,14 +254,14 @@ Publication as an Editors' Draft does not imply endorsement by the W3C Membershi
   <p>When multiple elements perform the same action or go to the   same destination (e.g. link icon with link text), these should be   contained within the same actionable element.  This increases the touch   target size for all users and benefits people with dexterity   impairments. It also reduces the number of redundant focus targets,   which benefits people using screen readers and keyboard/switch control. </p>
   <p>The WCAG 2.0 success criterion that is most related to grouping of actionable elements is: </p>
   <ul>
-    <li> 2.4.4 Link Purpose (In Context) (Level A) </li>
-    <li> 2.4.9 Link Purpose (Link Only) (Level AA) </li>
+    <li> <strong>2.4.4 Link Purpose (In Context) </strong>(Level A) </li>
+    <li> <strong>2.4.9 Link Purpose (Link Only)</strong> (Level AA) </li>
   </ul>
   <p>For more information on grouping operable elements, see <a href="http://www.w3.org/WAI/GL/WCAG20-TECHS/H2.html">H2: Combining adjacent image and text links for the same resource</a> technique. </p>
   </section>
   <section>
   <h3>Provide clear indication that elements are actionable</h3>
-  <p>Elements that trigger changes should be sufficiently distinct to be   clearly distinguishable from non-actionable elements (content, status   information, etc).   Providing a clear indication that elements are actionable is relevant   for web and native mobile applications that have actionable elements   like buttons or links, especially in interaction modes where the   affordance of actionable elements is commonly detected visually (touch   and mouse use). Interactive elements must also be detectable by users   who rely on a programmatically determined accessible name (e.g. screen   reader users). </p>
+  <p>Elements that trigger changes should be sufficiently distinct to be   clearly distinguishable from non-actionable elements (content, status   information, etc).   Providing a clear indication that elements are actionable is relevant   for web and native mobile applications that have actionable elements   like buttons or links, especially in interaction modes where actionable elements are commonly detected visually (touch   and mouse use). Interactive elements must also be detectable by users   who rely on a programmatically determined accessible name (e.g. screen   reader users). </p>
   <p>Visual users who interact with content using touch or visual   cursors (e.g. mice, touchpads, joysticks) should be able to clearly   distinguish actionable elements such as links or buttons. Existing   interface design conventions are aimed at  indicating that these visual   elements are actionable. The principle of redundant coding ensures that   elements are indicated as actionable by more than one distinguishing   visual feature. Following these conventions benefits all users, but   especially users with vision impairments. </p>
   <p>Visual features that can set an actionable element apart include   shape, color, style, positioning, text label for an action, and   conventional iconography. </p>
   <p>Examples of distinguishing features: </p>
@@ -272,14 +272,14 @@ Publication as an Editors' Draft does not imply endorsement by the W3C Membershi
     <li> Conventional style: Underlined text for links, color for links </li>
     <li> Conventional positioning: Commonly used position such as a top left   position for back button (iOS), position of menu items within   left-aligned lists in drop-down menus for navigation </li>
   </ol>
-  <p>The WCAG 2.0 success criteria do not directly address issue of affordance but are related to: </p>
+  <p>The WCAG 2.0 success criteria do not directly address issue of clear visual indication that elements are actionable but are related to the following success criteria: </p>
   <ul>
     <li> <strong>3.2.3 Consistent Navigation</strong> (Level AA) </li>
     <li> <strong>3.2.4 Consistent Identification</strong> (Level AA) </li>
   </ul>
   </section>
   <section>
-  <h3>Provide instructions for custom touchscreen and device manipulation gestures</h3>
+  <h3 id="customTouchscreen">Provide instructions for custom touchscreen and device manipulation gestures</h3>
   <p>The ability to provide control via custom touchscreen and device   manipulation gestures can help developers create   efficient new interfaces. However, for many people, custom gestures can   be a challenge to discover, perform and remember. </p>
   <p>Therefore, instructions (e.g. overlays, tooltips, tutorials, etc.)   should be provided to explain what gestures can be used to control a   given interface and whether there are alternatives. To be effective, the   instructions should, themselves, be easily discoverable and accessible.   The instructions should also be available anytime the user needs them,   not just on first use, though on first use they may be made more   apparent through highlighting or some other mechanism. </p>
   <p>These WCAG 2.0 success criteria are relevant to providing instructions for gestures: </p>
