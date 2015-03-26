@@ -130,9 +130,9 @@ including assistive technologies.</p>
 <ul>
   <li>OS-level features
     <ul>
-      <li> Set default text size (typically controlled from the Display Settings) <em>Note</em>: System text size is often not supported by mobile browsers. </li>
-      <li> Magnify entire screen (typically controlled from the Accessibility Settings). <em>Note</em>: Using this setting requires the user to pan vertically and horizontally. </li>
-      <li> Magnifying lens view under user's finger (typically controlled from the Accessibility Settings) </li>
+      <li> Set default text size (typically controlled from the display settings) <em>Note</em>: System text size is often not supported by mobile browsers. </li>
+      <li> Magnify entire screen (typically controlled from the accessibility settings). <em>Note</em>: Using this setting requires the user to pan vertically and horizontally. </li>
+      <li> Magnifying lens view under user's finger (typically controlled from the accessibility settings) </li>
     </ul>
   </li>
   <li>Browser-level features
@@ -154,10 +154,11 @@ including assistive technologies.</p>
  <div class="successcriteria"> 
   <ul><li><strong>1.4.4 Resize text</strong> (Level AA) </li></ul>
 </div> 
-<p>SC 1.4.4 requires text to be resizable without assistive technology up to 200 percent. To meet this requirement content must not prevent text magnification by the user. </p>
+<p>SC 1.4.4 requires text to be resizable without assistive technology up to at least 200 percent. To meet this requirement content must not prevent text magnification by the user. </p>
 <p>The following methods might be used: </p>
 <ul>
-  <li>Ensure that the browser pinch zoom is not blocked by the page's   viewport meta element so that it can be used to zoom the page to 200%.   Restrictive values for user-scalable and maximum-scale attributes of   this meta element should be avoided. <em>Note:</em> Relying on full   viewport zooming (e.g. not blocking the browser's pinch zoom feature)   requires the user to pan horizontally as well as vertically.  While this   technique meets the success criteria it is less usable than supporting   text resizing features that reflow content to the user's chosen viewport   size.  It is best practice to use techniques that support text resizing   without requiring horizontal panning. </li>
+  <li>Use techniques that support text resizing   without requiring horizontal panning. Relying on full   viewport zooming (e.g. not blocking the browser's pinch zoom feature)   requires the user to pan horizontally as well as vertically.  </li>
+  <li>Ensure that the browser pinch zoom is not blocked by the page's   viewport meta element so that it can be used to zoom the page to at least 200%.   Restrictive values for user-scalable and maximum-scale attributes of   this meta element should be avoided. While this   technique meets the success criteria it is less usable than supporting   text resizing features that reflow content to the user's chosen viewport   size.  </li>
   <li>Support for system fonts that follow platform level user preferences for text size. </li>
   <li>Provide on-page controls to change the text size. </li>
   </ul>
