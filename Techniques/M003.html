@@ -8,11 +8,16 @@
 <h1>Mxx - Short Name</h1>
 <h2>User Problem</h2>
 <p>
+The objective of this technique is to prevent the unintentional triggering of events in touch and mouse interaction. Mouse users clicking on actionable elements (links, buttons, submit inputs) should have the opportunity to move the cursor outside the element to prevent the event from being triggered. This allows users to change their mind without be forced to commit to an action.
 
+In the same way, elements accessed via touch interaction should trigger the event (navigation, submits, etc.) only when the touchend event is fired (i.e., the user has lifted the finger off the screen AND the last position of the finger is inside the actionable element AND equals the position at touchstart). 
 </p>
 
 <h2>Solution & Examples</h2>
 <p>
+
+    A web form for online purchasing includes a "Buy now" submit at the end of the order form. A mouse user clicking on the submit input but releasing the mouse button outside its boundaries will not fire the event and thereby not commit to the action of purchasing.
+    An app presents a "Buy now" button end of the order form. A user using a smartphone touch screen touching the button but lifting the finger outside the button's boundaries will not trigger the action of purchasing.
 
 </p>
 
