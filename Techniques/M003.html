@@ -38,6 +38,28 @@ In the same way, elements accessed via touch interaction should trigger the even
 
 <h2>Tests</h2>
 <p>
+Tests
+
+The test procedures for mouse and mobile interaction modes are similar, but they differ regarding the possible availability of secondary actions on touch devices, for example, to bring up a contextual menu. Secondary actions may be triggered when touching an element and continuing to hold it. The availability of such secondary actions depends on the respective platform convention and the implementation in the app under test.
+Procedure (mouse input mode)
+
+    For all actionable elements, position mouse pointer over the element and press the mouse button down
+    check that no action is triggered (apart from changing the visual state the element)
+    Move mouse pointer putside the element and release the mouse button. Check that no action is triggered (e.g. on mouseleave)
+
+Expected Results
+
+    #2 and 3 are true
+
+Procedure (touch input mode)
+
+    For all actionable elements, touch the element with a finger, leaving the finger on the element
+    Immediately move finger outside the element and lift off finger outside the element boundaries
+    Check that the element's associated action is not triggered
+
+Expected Results
+
+    3 is true
 
 </p>
 <ol>
