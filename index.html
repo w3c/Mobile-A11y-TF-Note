@@ -108,7 +108,7 @@ including assistive technologies.</p>
     <h3>Mobile accessibility considerations primarily related to Principle 1: Perceivable</h3>
   <section>
     <h4>Small Screen Size</h4>
-    <p>One of the most common characteristics of mobile devices is the small size of their screens. This limited size places practical constraints on the amount of information that can be effectively perceived by users at any one time, even when high screen resolution might enable large amounts of information to be rendered.   The amount of information that can be displayed is even further limited when magnification is used, for example by people with low vision (see 2.2 Zoom/Magnification). </p>
+    <p>One of the most common characteristics of mobile devices is the small size of their screens. This limited size places practical constraints on the amount of information that can be effectively perceived by users at any one time, even when high screen resolution might enable large amounts of information to be rendered.   The amount of information that can be displayed is even further limited when magnification is used, for example by people with low vision. See <a href="#zoom">2.2 Zoom/Magnification</a>.</p>
     <p>Some best practices for helping users to make the most of small screens include </p>
     <ul>
     <li>Consider mobile when initially designing the layout and relevancy of content. </li>
@@ -119,13 +119,13 @@ including assistive technologies.</p>
         </ul>
     </li>
     <li>Minimizing the amount of information that is put on each page compared to desktop/laptop versions by providing a dedicated mobile version or a responsive design:    </li>
-    <li>Providing a reasonable default size for content and touch controls (see "B.2 Touch Target Size and Spacing") to minimize the need to zoom in and out for users with low vision. </li>
+    <li>Providing a reasonable default size for content and touch controls. See <href="targetSize"></href>B.2 Touch Target Size and Spacing</a> to minimize the need to zoom in and out for users with low vision. </li>
     <li> Adapting the length of link text to the viewport width. </li>
     <li> Positioning form fields below, rather than beside, their labels (in portrait layout) </li>
     </ul>
    </section>
    <section>   
-<h4>Zoom/Magnification</h4>
+<h4 id="zoom">Zoom/Magnification</h4>
 <p>A variety of methods allow users to control content size on mobile devices with small screens. Some of these features are targeted at all users (e.g. browser “pinch zoom” features), while others tend to be made tend to be available as &quot;accessibility features&quot; targeted at people with visual or cognitive disabilities.</p>
 
 <p><em>Note on reflow</em>: There are important accessibility differences between zoom/magnification features that horizontally reflow content, especially text, and those that do not. When text content is not reflowed, users must pan back and forth as they read each line.</p>
@@ -190,11 +190,11 @@ including assistive technologies.</p>
 </section>
 
 <section>
-<h2>Mobile accessibility considerations primarily related to Principle 2: Operable</h2>
+<h3>Mobile accessibility considerations primarily related to Principle 2: Operable</h3>
   <section>
-  <h3>Keyboard Control for Touchscreen Devices</h3>
+  <h4 id="keyboardControl">Keyboard Control for Touchscreen Devices</h4>
   <p>Mobile device design has evolved away from built-in physical   keyboards (e.g. fixed, slide-out) towards devices that maximize   touchscreen area and display an on-screen keyboard only when the user   has selected a user interface control that accepts text input (e.g. a   textbox). </p>
-  <p>However, keyboard accessibility remains as important as ever and   most major mobile operating systems do include keyboard interfaces,   allowing mobile devices to be operated by external physical keyboards   (e.g. keyboards connected via Bluetooth, USB On-The-Go) or alternative   on-screen keyboards (e.g. scanning on-screen keyboards). </p>
+  <p>However, keyboard accessibility remains as important as ever. WCAG 2.0 requires keyboard control at Level A and keyboard control is supported by most major mobile operating systems via keyboard interfaces, which allow mobile devices to be operated using external physical keyboards (e.g. keyboards connected via Bluetooth, USB On-The-Go) or alternative   on-screen keyboards (e.g. scanning on-screen keyboards). </p>
   <p>Supporting these keyboard interfaces benefits several groups with disabilities: </p>
   <ul>
     <li> People with visual disabilities who can benefit from some   characteristics of physical keyboards over touchscreen keyboards (e.g.   clearly separated keys, key nibs and more predictable key layouts). </li>
@@ -213,8 +213,8 @@ including assistive technologies.</p>
  </section>
  
  <section>
- <h3>Touch Target Size and Spacing</h3>
- <p>The high resolution of mobile devices means that many interactive   elements can be shown together on a small screen. But these elements   must be big enough and have enough distance from each other so that   users can safely target them by touch. </p>
+ <h4 id="targetSize">Touch Target Size and Spacing</h4>
+ <p>The high screen resolution of mobile devices means that many interactive   elements can be shown together on a small screen. But these elements   must be big enough and have enough distance from each other so that   users can safely target them by touch. </p>
  <p>Best practices for touch target size include the following: </p>
  <ul>
    <li> Ensuring that touch targets are at least 9 mm high by 9 mm wide. </li>
@@ -223,7 +223,7 @@ including assistive technologies.</p>
  <p><em>Note:</em> This size is not dependent on the screen size, device or   resolution. Screen magnification should not need to be used to obtain   this size, because magnifying the screen often introduces the need to   pan horizontally as well as vertically, which can decrease usability. </p>
  </section>
  <section>
- <h3>Touchscreen Gestures</h3>
+ <h4>Touchscreen Gestures</h4>
  <p>Many mobile devices are designed to be primarily operated via   gestures made on a touchscreen. These gestures can be simple, such as a   tap with one finger, or very complex, involving multiple fingers,   multiple taps and drawn shapes. </p>
  <p>Some (but not all) mobile operating systems provide work-around   features that let the user simulate complex gestures with simpler ones   using an onscreen menu. </p>
  <p>Some best practices when deciding on touchscreen gestures include the following: </p>
@@ -232,18 +232,20 @@ including assistive technologies.</p>
    <li> Activating elements via the click event. Using the   mouseup or touchend event to trigger actions helps prevent unintentional   actions during touch and mouse interaction. Mouse users clicking on   actionable elements (links, buttons, submit inputs) should have the   opportunity to move the cursor outside the element to prevent the event   from being triggered. This allows users to change their minds without   being forced to commit to an action. In the same way, elements accessed   via touch interaction should generally trigger an event (e.g.   navigation, submits) only when the touchend event is fired (i.e. when   all of the following are true:  the user has lifted the finger off the   screen, the last position of the finger is inside the actionable   element, and the last position of the finger equals the position at   touchstart). <br />
    <code class="techniquelLink"><a href="Techniques/M003.html">Technique M003 - Activating elements via the click event</a></code></li>
  </ul>
- <p>Another issue with touchscreen gestures is that they might lack   onscreen indicators that remind people how and when to use them. For   example, a swipe in from the left side of the screen gesture to open a   menu is not discoverable without an indicator or advisement of the   gesture.  See <a href="#customTouchscreen">Touchscreen gesture instructions</a>. </p>
+ <p>Another issue with touchscreen gestures is that they might lack   onscreen indicators that remind people how and when to use them. For   example, a swipe in from the left side of the screen gesture to open a   menu is not discoverable without an indicator or advisement of the gesture. See <a href="#customTouchscreen">4.6 Provide instructions for custom touchscreen and device manipulation gestures</a>.</p>
+ <p><em>Note:</em> While improving the accessibility of touchscreen gestures is important, keyboard accessibility is still required by some users and to meet WCAG 2.0. See <a href="keyboardControl"></a>3.1 Keyboard Control for Touchscreen Devices</a>.
+ </p>
   </section>
   <section>
-  <h3>Device Manipulation Gestures</h3>
+  <h4>Device Manipulation Gestures</h4>
   <p>In addition to touchscreen gestures, many mobile operating systems   provide developers with control options that are triggered by physically   manipulating the device (e.g. shaking or tilting). While device   manipulation gestures can help developers create innovative user   interfaces, they can also be a challenge for people who have difficulty   holding or are unable to hold a mobile device. </p>
   <p>Some (but not all) mobile operating systems provide work-around   features that let the user simulate device shakes, tilts, etc. from an   onscreen menu. </p>
-  <p>Therefore, even when device manipulation gestures are provided,   developers should still provide touch and keyboard operable alternative   control options. </p>
+  <p>Therefore, even when device manipulation gestures are provided, developers should still provide touch and keyboard operable alternative control options. See <a href="keyboardControl"></a>3.1 Keyboard Control for Touchscreen Devices</a>.</p>
   <div class="successcriteria">
   <ul>
     <li><strong>2.1.1 Keyboard</strong> (Level A)</li></ul>
   </div>
-  <p>Another issue with control via device manipulation gestures is   that they might lack onscreen indicators that remind people how and when   to use them. See <a href="#customTouchscreen">Touchscreen gesture instructions</a>. </p>
+  <p>Another issue with control via device manipulation gestures is   that they might lack onscreen indicators that remind people how and when   to use them. See <a href="#customTouchscreen">Touchscreen gesture instructions</a>. See <a href="#customTouchscreen">4.6 Provide instructions for custom touchscreen and device manipulation gestures</a>.</p>
   </section>
   <section>
   <h3>Placing buttons where they are easy to access</h3>
@@ -253,16 +255,16 @@ including assistive technologies.</p>
   </section>
 </section>
 <section>
-<h2>Mobile accessibility considerations related primarily to Principle 3: Understandable</h2>
+<h3>Mobile accessibility considerations related primarily to Principle 3: Understandable</h3>
 
    <section>
-   <h3>Changing Screen Orientation (Portrait/Landscape)</h3>
+   <h4>Changing Screen Orientation (Portrait/Landscape)</h4>
    <p>Some mobile applications automatically set the screen to a particular   display orientation (landscape or portrait) and expect that users will   respond by rotating the mobile device to match. However, some users have   their mobile devices mounted in a fixed orientation (e.g. on the arm of   a power wheelchair). </p>
    <p>Therefore, mobile application developers should try to support   both orientations. If it is not possible to support both orientations,   developers should ensure that it is easy for all users to change the   orientation to return to a point at which their device orientation is   supported. </p>
    <p>Changes in orientation must be programmatically exposed to ensure   detection by assistive technology such as screen readers. For example,   if a screen reader user is unaware that the orientation has changed the   user might perform incorrect navigation commands. </p>
    </section>
    <section>
-   <h3>Consistent Layout</h3>
+   <h4>Consistent Layout</h4>
    <p>Components that are repeated across multiple pages should be   presented in a consistent layout.  In responsive web design, where   components are arranged based on device size and screen orientation, web   pages within a particular view (set size and orientation) should be   consistent in placement of repeated components and navigational   components. Consistency between the different screen sizes and screen   orientations is not a requirement under WCAG 2.0. </p>
    <p>For example: </p>
    <ul>
@@ -278,13 +280,13 @@ including assistive technologies.</p>
    </div>
    </section>
    <section>
-   <h3>Positioning important page elements before the page scroll</h3>
+   <h4>Positioning important page elements before the page scroll</h4>
    <p>The small screen size on many mobile devices limits the amount of content that can be displayed without scrolling. </p>
    <p>Positioning important page information so it is visible without   requiring scrolling can assist users with low vision and users with   cognitive impairments. </p>
    <p>If a user with low vision has the screen magnified only a small   portion of the page might be viewable at a given time. Placing important   elements before the page scroll allows those who use screen magnifiers   to locate important information without having to scroll the view to   move the magnified area. Placing important elements before the page   scroll also makes it possible to locate content without performing an   interaction. This assists users that have cognitive impairments such as   short-term memory disabilities. Placing important elements before the   page scroll also helps ensure that elements are placed in a consistent   location. Consistent and predictable location of elements assists people   with cognitive impairments and low vision. </p>
   </section>
   <section>
-  <h3>Grouping operable elements that perform the same action</h3>
+  <h4>Grouping operable elements that perform the same action</h4>
   <p>When multiple elements perform the same action or go to the   same destination (e.g. link icon with link text), these should be   contained within the same actionable element.  This increases the touch   target size for all users and benefits people with dexterity   impairments. It also reduces the number of redundant focus targets,   which benefits people using screen readers and keyboard/switch control. </p>
   <p>The WCAG 2.0 success criterion that is most related to grouping of actionable elements is: </p>
   <div class="successcriteria">
@@ -296,14 +298,14 @@ including assistive technologies.</p>
   <p>For more information on grouping operable elements, see <a href="http://www.w3.org/WAI/GL/WCAG20-TECHS/H2.html">H2: Combining adjacent image and text links for the same resource</a> technique. </p>
   </section>
   <section>
-  <h3>Provide clear indication that elements are actionable</h3>
-  <p>Elements that trigger changes should be sufficiently distinct to be   clearly distinguishable from non-actionable elements (content, status   information, etc).   Providing a clear indication that elements are actionable is relevant   for web and native mobile applications that have actionable elements   like buttons or links, especially in interaction modes where actionable elements are commonly detected visually (touch   and mouse use). Interactive elements must also be detectable by users   who rely on a programmatically determined accessible name (e.g. screen   reader users). </p>
+  <h4>Provide clear indication that elements are actionable</h4>
+  <p>Elements that trigger changes should be sufficiently distinct to be   clearly distinguishable from non-actionable elements (content, status   information, etc.).   Providing a clear indication that elements are actionable is relevant   for web and native mobile applications that have actionable elements   like buttons or links, especially in interaction modes where actionable elements are commonly detected visually (touch   and mouse use). Interactive elements must also be detectable by users   who rely on a programmatically determined accessible name (e.g. screen   reader users). </p>
   <p>Visual users who interact with content using touch or visual   cursors (e.g. mice, touchpads, joysticks) should be able to clearly   distinguish actionable elements such as links or buttons. Existing   interface design conventions are aimed at  indicating that these visual   elements are actionable. The principle of redundant coding ensures that   elements are indicated as actionable by more than one distinguishing   visual feature. Following these conventions benefits all users, but   especially users with vision impairments. </p>
   <p>Visual features that can set an actionable element apart include   shape, color, style, positioning, text label for an action, and   conventional iconography. </p>
   <p>Examples of distinguishing features: </p>
   <ol>
     <li> Conventional shape: Button shape (rounded corners, drop shadows), checkbox, select rectangle with arrow pointing downwards </li>
-    <li> Iconography: conventional visual icons (question mark, home icon, burger icon for menu, floppy disk for save, back arrow, etc) </li>
+    <li> Iconography: conventional visual icons (question mark, home icon, burger icon for menu, floppy disk for save, back arrow, etc.) </li>
     <li> Color offset: shape with different background color to distinguish the element from the page background, different text color </li>
     <li> Conventional style: Underlined text for links, color for links </li>
     <li> Conventional positioning: Commonly used position such as a top left   position for back button (iOS), position of menu items within   left-aligned lists in drop-down menus for navigation </li>
@@ -317,7 +319,7 @@ including assistive technologies.</p>
   </div>
   </section>
   <section>
-  <h3 id="customTouchscreen">Provide instructions for custom touchscreen and device manipulation gestures</h3>
+  <h4 id="customTouchscreen">Provide instructions for custom touchscreen and device manipulation gestures</h4>
   <p>The ability to provide control via custom touchscreen and device   manipulation gestures can help developers create   efficient new interfaces. However, for many people, custom gestures can   be a challenge to discover, perform and remember. </p>
   <p>Therefore, instructions (e.g. overlays, tooltips, tutorials, etc.)   should be provided to explain what gestures can be used to control a   given interface and whether there are alternatives. To be effective, the   instructions should, themselves, be easily discoverable and accessible.   The instructions should also be available anytime the user needs them,   not just on first use, though on first use they may be made more   apparent through highlighting or some other mechanism. </p>
   <p>These WCAG 2.0 success criteria are relevant to providing instructions for gestures: </p>
@@ -331,17 +333,17 @@ including assistive technologies.</p>
 </section>
 
 <section>
-<h2>Mobile accessibility considerations related primarily to Principle 4: Robust</h2>
+<h3>Mobile accessibility considerations related primarily to Principle 4: Robust</h3>
   <section>
-   <h3>Set the virtual keyboard to the type of data entry required</h3>
+   <h4>Set the virtual keyboard to the type of data entry required</h4>
    <p>On some mobile devices, the standard keyboard can be customized in the   device settings and additional custom keyboards can be installed.  Some   mobile devices also provide different virtual keyboards depending on the   type of data entry. This can be set by the user or can be set to a   specific keyboard.  For example, using the different HTML5 form field   controls (see <a href="http://www.w3.org/TR/ime-api/">Method Editor API</a>)   on a website will show different keyboards automatically when users are   entering in information into that field.  Setting the type of keyboard   helps prevent errors and ensures formats are correct but can be   confusing for people who are using a screen reader when there are subtle   changes in the keyboard. </p>  
    </section>
    <section>
-   <h3>Provide easy methods for data entry</h3>
+   <h4>Provide easy methods for data entry</h4>
    <p>Users can enter information on mobile devices in multiple ways such as   on-screen keyboard, Bluetooth keyboard, touch, and speech. Text entry   can be time-consuming and difficult in certain circumstances. Reduce the   amount of text entry needed by providing select menus, radio buttons,   check boxes or by automatically entering known information (e.g. date,   time, location). </p>
   </section>
   <section>
-  <h3>Support the characteristic properties of the platform</h3>
+  <h4>Support the characteristic properties of the platform</h4>
   <p>Mobile devices provide many features to help users with disabilities   interact with content.  These include platform characteristics such as   zoom, larger fonts, and captions.  The features and functions available   differ depending on the device and operating system version. For   example, most platforms have the ability to set large fonts, but not all   applications honor it for all text.  Also, some applications might   increase font size but not wrap text, causing horizontal scrolling. </p>
   </section>
 </section>
