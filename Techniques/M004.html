@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>M004 - Providing clear indication that elements are actionable / Design actionable objects to look actionable</title>
+</head>
+<body>
+<h1>M004 - Providing clear indication that elements are actionable / Design actionable objects to look actionable </h1>
+<h2>User Problem </h2>
+<p>The objective of this technique is to ensure that visual users   interacting with content via touch (direct manipulation) or via visual   cursors operated with mice, touchpads, joysticks or similar devices can   detect actionable elements. </p>
+<p>Frequently, links or buttons triggering changes in mobile apps   are not sufficiently distinct to be clearly distinguishable from   non-actionable elements (content, status information, etc).    There are a number of interface design conventions to indicate clearly   those visual elements are actionable. Following these conventions   benefits all users but especially users with vision impairments. </p>
+<p>For different types of elements,a clear indication that elements   are actionable can be achieved by using visual features that set the   actionable element apart in terms of shape, color, style, positioning,   text label for an action, or conventional iconography.</p>
+<h2>Solution & Examples </h2>
+<p>It is advisable to apply the principle of <strong>redundant coding</strong> to ensure that elements are indicated as actionable by more than one distinguishing visual feature.   Typical examples for redundant coding: </p>
+<ul>
+  <li> an element has a text label describing its action AND the element   has a button outline AND the element changes visual appearance when   focused </li>
+  <li> An element uses a conventional icon (e.g., question mark for help)   AND the icon background color has sufficiant contrast vs. the page   background color AND a transient pop-over text hint (custom tool tip)   when the element is focused </li>
+  <li> A navigation element is positioned with a vertical navigation menu   AND the elerment changes its visual state (via inversion, frame,   indicator mark, etc.) when the element is focused </li>
+  <li> a text input has a label immediately left of it AND an outline   clearly demarkating the input area AND changes state when focused (e.g.   color change of frame or input background, blinking cursor) </li>
+</ul>
+<p>State changes during interaction should be used to reinforce the   detection and interpretation of the affordances of actionable elements.   This includes visual pressed states for buttons and clearly visual focus   when focusing elements via a keyboard via tabbing or arrowing, a   pointer device, or swipe gestures when interacting with touch devices in   a "screenreader active" mode. </p>
+<p>Examples for distinguishing features used for an indication that elements are actionable: </p>
+<ul>
+  <li> Conventional shape: Button shape (rounded corners, drop shadows), checkbox, select rectangle with arrow pointing downwards </li>
+  <li> Iconography: conventional visual icons (question mark, home icon, burger icon for menu, floppy disk for save, back arrow, etc) </li>
+  <li> Color offset: shape with different background color to distinguish the element from the page backgrond, different text color </li>
+  <li> Conventional style: Underlined text for links, color for links </li>
+  <li> Conventional positioning: Commonly used position such as a top left   position for back button (iOS), position of menu items within   left-aligned lists in drop-down menus for navigation </li>
+</ul>
+
+<h2>Applicable Operating System or Device</h2>
+<p>
+ANY OPERATING SYSTEM OR DEVICE DEPENDENT INFORMATION GOES HERE.
+</p>
+
+<h2>References</h2>
+<ul>
+  <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20-TECHS/G197.html">G197: Using labels, names, and text alternatives consistently for content that has the same functionality</a></li>
+  <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20-TECHS/G61.html">G61: Presenting repeated components in the same relative order each time they appear</a></li>
+  <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20-TECHS/H33.html">H33: Supplementing link text with the title attribute</a></li>
+  <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20-TECHS/ARIA7.html">ARIA7: Using aria-labelledby for link purpose</a></li>
+<li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">1.3.1 Info and Relationships</a></li>
+    <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#content-structure-separation-understanding">1.3.3 Sensory Characteristics</a></li>
+    <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#visual-audio-contrast-without-color">1.4.1 Use of Color</a></li>
+    <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-visible">2.4.7 Focus Visible </a></li>
+</ul>
+
+<h2>Tests</h2>
+<p>
+DESCRIPTION OF THE TEST
+</p>
+<ol>
+<li>For all actionable elements, check that they can be visually distiguished from non-actionable text </li>
+<li>For all elements that appear actionable according to the styles and   conventions used in the context of the app, check that it triggers an   action </li>
+</ol>
+<h3>Expected Results</h3>
+<p>#1 and #2 are true </p>
+
+
+
+
+
+
+
+</body>
+</html>

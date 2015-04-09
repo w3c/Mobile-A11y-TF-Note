@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>M002 - Providing adequate touch target size / Ensuring that touch targets are large enough to touch accurately without magnification</title>
+</head>
+<body>
+<h1>M002 -  Providing adequate touch target size / Ensuring that touch targets are large enough to touch accurately without magnification </h1>
+<h2>User Problem</h2>
+<p>The objective of this advisory technique is to define an adequate   touch target size for mobile device UI components - ensuring that touch   targets are large enough to touch accurately without magnification. This technique applies to icons, links and buttons used for navigation and activating functions. </p>
+<p>Text content such as but not limited to (dates, time, statuses,   etc.) will receive focus when screen readers are turned on and do   require a touch target but are not included in this technique. [not clear]</p>
+<p>The minimum recommend touch target size is 9mm high by 9 mm wide   and is not dependent on the screen size, device or resolution and not   requiring screen magnification to obtain that size. </p>
+<p>The problem with sizes set by many of the vendor guidelines is that the   guidelines are overlooked when it comes to text content that is read by   touch with screen readers turned on. One such example is the information   strip at the top of the iPhone where we see Signal strength, Carrier   name, Time, Percent loaded, Battery left and other items has a very   small vertical height. With VoiceOver on these are not buttons but text   that gets focus when touched and read to the user. Another example is on   an 8 inch Windows 8 tablet when the user goes to the historic Windows   screen. All of the app status icons (battery, wireless network, signal   strength, speaker status, etc.) on the left side in the Taskbar are well   under the Windows recommended size and are very hard to touch correctly   without a stylus or mouse. </p>
+
+<h2>Solution & Examples </h2>
+<p>Examples of this technique include but are not limited to: </p>
+<ul>
+  <li> Top navigation buttons as seen on iOS devices. </li>
+  <li> Icons along the bottom of the screen as seen on Windows 8 native app. </li>
+  <li> Command links as seed on the bottom of Android devices. </li>
+</ul>
+<p><br>
+  This technique is discussed in the design documents listed below from various vendors of mobile devices. </p>
+<ul>
+  <li> iOS Human Interface Guidelines: Adaptivity and Layout recommends minimum target sizes of 44 pixels wide 44 pixels tall. </li>
+  <li> Interactions and usability with Windows Phone: Touch Targets has   recommendations for a touch target size of 34px with a minimum touch   target size of 26px. </li>
+  <li> Android Developers: Metrics and Grids recommends targets be at   least 48dp high and wide so that they will never be smaller than a   minimum recommended target size of 7mm. </li>
+</ul>
+
+<h2>Applicable Operating System or Device</h2>
+<p>
+ANY OPERATING SYSTEM OR DEVICE DEPENDENT INFORMATION GOES HERE.
+</p>
+
+<h2>References</h2>
+<ul>
+<li>text-equiv-all: <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#text-equiv-all">SC 1.1.1 Non-text Content</a> (sufficient) </li>
+<li> <a rel="nofollow" href="http://www.smashingmagazine.com/2012/02/21/finger-friendly-design-ideal-mobile-touchscreen-target-sizes/">SmashingMagazine: Finger-Friendly Design: Ideal Mobile Touchscreen Target Sizes</a></li>
+  <li> <a rel="nofollow" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/LayoutandAppearance.html#//apple_ref/doc/uid/TP40006556-CH54-SW1">iOS Human Interface Guidelines: Adaptivity and Layout</a></li>
+  <li> <a rel="nofollow" href="http://msdn.microsoft.com/en-US/library/windows/apps/hh202889%28v=vs.105%29.aspx">Interactions and usability with Windows Phone: Touch Targets</a></li>
+    <li> <a rel="nofollow" href="http://developer.android.com/design/style/metrics-grids.html">Android Developers: Metrics and Grids</a></li>
+  <li> <a rel="nofollow" href="http://www.lukew.com/ff/entry.asp?1085">LukeW:Touch Target Sizes</a></li>
+</ul>
+<h2>Tests</h2>
+<p>Testing is done by measuring the touch target size on the device when focus borders are displayed. </p>
+<ol>
+<li>Turn on native device screen reader or a 3rd party screen reader if applicable. </li>
+<li>Confirm focus borders are being displayed </li>
+<li> Validate that the touchable target as shown by the focus border is a minimum of 9mm high and 9 mm wide. </li>
+</ol>
+<h3>Expected Results</h3>
+<p>#3 is true </p>
+
+
+
+
+
+
+
+</body>
+</html>
