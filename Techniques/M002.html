@@ -6,50 +6,105 @@
 </head>
 <body>
 <h1>M002 -  Providing adequate touch target size / Ensuring that touch targets are large enough to touch accurately without magnification </h1>
-<h2>User Problem</h2>
-<p>The objective of this advisory technique is to define an adequate   touch target size for mobile device UI components - ensuring that touch   targets are large enough to touch accurately without magnification. This technique applies to icons, links and buttons used for navigation and activating functions. </p>
-<p>Text content such as but not limited to (dates, time, statuses,   etc.) will receive focus when screen readers are turned on and do   require a touch target but are not included in this technique. [not clear]</p>
-<p>The minimum recommend touch target size is 9mm high by 9 mm wide   and is not dependent on the screen size, device or resolution and not   requiring screen magnification to obtain that size. </p>
-<p>The problem with sizes set by many of the vendor guidelines is that the   guidelines are overlooked when it comes to text content that is read by   touch with screen readers turned on. One such example is the information   strip at the top of the iPhone where we see Signal strength, Carrier   name, Time, Percent loaded, Battery left and other items has a very   small vertical height. With VoiceOver on these are not buttons but text   that gets focus when touched and read to the user. Another example is on   an 8 inch Windows 8 tablet when the user goes to the historic Windows   screen. All of the app status icons (battery, wireless network, signal   strength, speaker status, etc.) on the left side in the Taskbar are well   under the Windows recommended size and are very hard to touch correctly   without a stylus or mouse. </p>
-
-<h2>Solution & Examples </h2>
-<p>Examples of this technique include but are not limited to: </p>
-<ul>
-  <li> Top navigation buttons as seen on iOS devices. </li>
-  <li> Icons along the bottom of the screen as seen on Windows 8 native app. </li>
-  <li> Command links as seed on the bottom of Android devices. </li>
-</ul>
-<p><br>
-  This technique is discussed in the design documents listed below from various vendors of mobile devices. </p>
-<ul>
-  <li> iOS Human Interface Guidelines: Adaptivity and Layout recommends minimum target sizes of 44 pixels wide 44 pixels tall. </li>
-  <li> Interactions and usability with Windows Phone: Touch Targets has   recommendations for a touch target size of 34px with a minimum touch   target size of 26px. </li>
-  <li> Android Developers: Metrics and Grids recommends targets be at   least 48dp high and wide so that they will never be smaller than a   minimum recommended target size of 7mm. </li>
-</ul>
-
-<h2>Applicable Operating System or Device</h2>
-<p>
-ANY OPERATING SYSTEM OR DEVICE DEPENDENT INFORMATION GOES HERE.
-</p>
-
-<h2>References</h2>
-<ul>
-<li>text-equiv-all: <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#text-equiv-all">SC 1.1.1 Non-text Content</a> (sufficient) </li>
-<li> <a rel="nofollow" href="http://www.smashingmagazine.com/2012/02/21/finger-friendly-design-ideal-mobile-touchscreen-target-sizes/">SmashingMagazine: Finger-Friendly Design: Ideal Mobile Touchscreen Target Sizes</a></li>
-  <li> <a rel="nofollow" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/LayoutandAppearance.html#//apple_ref/doc/uid/TP40006556-CH54-SW1">iOS Human Interface Guidelines: Adaptivity and Layout</a></li>
-  <li> <a rel="nofollow" href="http://msdn.microsoft.com/en-US/library/windows/apps/hh202889%28v=vs.105%29.aspx">Interactions and usability with Windows Phone: Touch Targets</a></li>
-    <li> <a rel="nofollow" href="http://developer.android.com/design/style/metrics-grids.html">Android Developers: Metrics and Grids</a></li>
-  <li> <a rel="nofollow" href="http://www.lukew.com/ff/entry.asp?1085">LukeW:Touch Target Sizes</a></li>
-</ul>
-<h2>Tests</h2>
-<p>Testing is done by measuring the touch target size on the device when focus borders are displayed. </p>
-<ol>
-<li>Turn on native device screen reader or a 3rd party screen reader if applicable. </li>
-<li>Confirm focus borders are being displayed </li>
-<li> Validate that the touchable target as shown by the focus border is a minimum of 9mm high and 9 mm wide. </li>
-</ol>
-<h3>Expected Results</h3>
-<p>#3 is true </p>
+<div id="mw-page-base"></div>
+<div id="mw-head-base"></div>
+<div id="content" role="main"> <a id="top"></a>
+  <h1 id="firstHeading" lang="en"><span dir="auto">M2</span></h1>
+  <div id="bodyContent">
+    <div id="contentSub"></div>
+    <div id="jump-to-nav"> Jump to: <a href="http://www.w3.org/WAI/GL/mobile-a11y-tf/wiki/M2#mw-navigation">navigation</a>, <a href="http://www.w3.org/WAI/GL/mobile-a11y-tf/wiki/M2#p-search">search</a></div>
+    <div id="mw-content-text" dir="ltr" lang="en">
+      <p>Providing adequate touch target size / Ensuring that touch targets are large enough to touch accurately without magnification </p>
+      <blockquote>This is a template for   writing mobile techniques. Be sure to login, select Edit tab, then copy   the code on this page to a new page, using the Assignments list for the   page name. Select the Edit tab on the new page and paste the code from   this page.   Delete any highlighted instructions (including this   paragraph), and fill in any information in braces { } -- removing the   braces themselves. </blockquote>
+      <div id="toc">
+        <div id="toctitle">
+          <h2>Contents</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content" role="main">
+  <div id="bodyContent">
+    <div id="mw-content-text" dir="ltr" lang="en">
+      <h2><span id="Technique_Category">Technique Category</span></h2>
+      <p>Category:Mobile Techniques </p>
+      <h2><span id="Technique_Status_Category">Technique Status Category</span></h2>
+      <p>Category:Techniques Proposed </p>
+      <h2><span id="Status">Status</span></h2>
+      <blockquote>Include links to   discussions, previous drafts, surveys, meeting minutes, or production   status as appropriate. Add status updates to the bullet list to help   with an at-a-glance audit trail.</blockquote>
+      <ul>
+        <li> New advisory technique written by Alan Smith </li>
+        <li> @@ Link to survey when surveyed by group </li>
+      </ul>
+      <h2><span id="Applicability">Applicability</span></h2>
+      <p>This technique is to be used when developing touchable targets on mobile devices for icons, links and buttons upon touch. </p>
+      <p>Text content such as but not limited to (dates, time, statuses,   etc.) will receive focus when screen readers are turned on and do   require a touch target but are not included in this technique. </p>
+      <h2><span id="WCAG_references">WCAG references</span></h2>
+      <blockquote>Include a list of success   criteria, conformance requirements or guidelines to which this technique   relates. For each one, provide:</blockquote>
+      <ul>
+        <li> the anchor for that item. Copy the anchor from the success criterion URI address; </li>
+        <li> the number of the item; </li>
+        <li> the short name for the item; </li>
+        <li> whether the technique is sufficient, advisory, or a failure of the item. </li>
+      </ul>
+      <blockquote>It is not necessary to   provide a live link to the guidelines, but if you do, double-check that   the link points to the correct place. It is also not necessary to   provide redundant links to the Understanding and How to Meet documents;   those are done automatically by the generator later in the process. The   suggested format for these references is in the sample item below.</blockquote>
+      <ul>
+        <li> text-equiv-all: <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#text-equiv-all">SC 1.1.1 Non-text Content</a> (sufficient) </li>
+      </ul>
+      <h2><span id="User_Agent_and_Assistive_Technology_Support_Notes">User Agent and Assistive Technology Support Notes</span></h2>
+      <p>The problem with sizes set by many of the vendor guidelines is that   the guidelines are overlooked when it comes to text content that is read   by touch with screen readers turned on. One such example is the   information strip at the top of the iPhone where we see Signal strength,   Carrier name, Time, Percent loaded, Battery left and other items has a   very small vertical height. With VoiceOver on these are not buttons but   text that gets focus when touched and read to the user. Another example   is on an 8 inch Windows 8 tablet when the user goes to the historic   Windows screen. All of the app status icons (battery, wireless network,   signal strength, speaker status, etc.) on the left side in the Taskbar   are well under the Windows recommended size and are very hard to touch   correctly without a stylus or mouse. </p>
+      <h2><span id="Description">Description</span></h2>
+      <p>The objective of this advisory technique is to define an adequate   touch target size for mobile device UI components - ensuring that touch   targets are large enough to touch accurately without magnification. </p>
+      <p>This technique applies to icons, links and buttons used for navigation and activating functions. </p>
+      <p>The minimum recommend touch target size is 9mm high by 9 mm wide   and is not dependent on the screen size, device or resolution and not   requiring screen magnification to obtain that size. </p>
+      <h2><span id="Examples">Examples</span></h2>
+      <p>Examples of this technique include but are not limited to: </p>
+      <ul>
+        <li> Top navigation buttons as seen on iOS devices. </li>
+        <li> Icons along the bottom of the screen as seen on Windows 8 native app. </li>
+        <li> Command links as seed on the bottom of Android devices. </li>
+      </ul>
+      <p><br>
+        This technique is discussed in the design documents listed below from various vendors of mobile devices. </p>
+      <ul>
+        <li> iOS Human Interface Guidelines: Adaptivity and Layout recommends minimum target sizes of 44 pixels wide 44 pixels tall. </li>
+        <li> Interactions and usability with Windows Phone: Touch Targets has   recommendations for a touch target size of 34px with a minimum touch   target size of 26px. </li>
+        <li> Android Developers: Metrics and Grids recommends targets be at   least 48dp high and wide so that they will never be smaller than a   minimum recommended target size of 7mm. </li>
+      </ul>
+      <h2><span id="Resources">Resources</span></h2>
+      <blockquote>Provide a list of links to external resources, if any.</blockquote>
+      <ul>
+        <li> <a rel="nofollow" href="http://www.w3.org/WAI/GL/">WCAG Working Group</a></li>
+        <li> <a rel="nofollow" href="http://www.smashingmagazine.com/2012/02/21/finger-friendly-design-ideal-mobile-touchscreen-target-sizes/">SmashingMagazine: Finger-Friendly Design: Ideal Mobile Touchscreen Target Sizes</a></li>
+        <li> <a rel="nofollow" href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/LayoutandAppearance.html#//apple_ref/doc/uid/TP40006556-CH54-SW1">iOS Human Interface Guidelines: Adaptivity and Layout</a></li>
+        <li> <a rel="nofollow" href="http://msdn.microsoft.com/en-US/library/windows/apps/hh202889%28v=vs.105%29.aspx">Interactions and usability with Windows Phone: Touch Targets</a></li>
+        <li> <a rel="nofollow" href="http://developer.android.com/design/style/metrics-grids.html">Android Developers: Metrics and Grids</a></li>
+        <li> <a rel="nofollow" href="http://www.lukew.com/ff/entry.asp?1085">LukeW:Touch Target Sizes</a></li>
+      </ul>
+      <h3><span id="Related_Techniques">Related Techniques</span></h3>
+      <ul>
+        <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#operable">Principle 2: Operable - User interface components and navigation must be operable.</a></li>
+      </ul>
+      <h2><span id="Tests">Tests</span></h2>
+      <p>Testing is done by measuring the touch target size on the device when focus borders are displayed. </p>
+      <h3><span id="Procedure">Procedure</span></h3>
+      <ol>
+        <li> step 1 - Turn on native device screen reader or a 3rd party screen reader if applicable. </li>
+        <li> step 2 - Confirm focus borders are being displayed </li>
+        <li> step 3 - Validate that the touchable target as shown by the focus border is a minimum of 9mm high and 9 mm wide. </li>
+      </ol>
+      <h3><span id="Expected_Results">Expected Results</span></h3>
+      <ul>
+        <li> #3 is true </li>
+      </ul>
+      <h2><span id="Test_Files">Test Files</span></h2>
+      <blockquote>Provide test files here.   Currently, techniques do not reference test files, but we may do   something with them in the future. Note that working examples (including   source code) do not go here, they should be referenced in the examples   section.</blockquote>
+    </div>
+    <div></div>
+  </div>
+</div>
+<h2>&nbsp;</h2>
 
 
 
