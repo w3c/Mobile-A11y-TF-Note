@@ -6,65 +6,70 @@
 </head>
 <body>
 <h1>M003 - Activating elements via the mouseup or touchend event</h1>
-<h2>User Problem</h2>
-<p>
-The objective of this technique is to prevent the unintentional triggering of events in touch and mouse interaction. Mouse users clicking on actionable elements (links, buttons, submit inputs) should have the opportunity to move the cursor outside the element to prevent the event from being triggered. This allows users to change their mind without be forced to commit to an action.
-
-In the same way, elements accessed via touch interaction should trigger the event (navigation, submits, etc.) only when the touchend event is fired (i.e., the user has lifted the finger off the screen AND the last position of the finger is inside the actionable element AND equals the position at touchstart). 
-</p>
-
-<h2>Solution & Examples</h2>
-<p>
-
-    A web form for online purchasing includes a "Buy now" submit at the end of the order form. A mouse user clicking on the submit input but releasing the mouse button outside its boundaries will not fire the event and thereby not commit to the action of purchasing.
-    An app presents a "Buy now" button end of the order form. A user using a smartphone touch screen touching the button but lifting the finger outside the button's boundaries will not trigger the action of purchasing.
-
-</p>
-
-<h2>Applicable Operating System or Device</h2>
-<p>
-
-</p>
-
-<h2>References</h2>
+<h2><span id="Technique_Category">Technique Category</span></h2>
+<ul>
+  <li> Mobile Techniques </li>
+  <li> General Techniques? </li>
+</ul>
+<p>This applies in a very similar way to both mouse interaction and   touch interaction, so it is not really a mobile-specific technique. </p>
+<h2><span id="Technique_Status_Category">Technique Status Category</span></h2>
+<h2><span id="Status">Status</span></h2>
+<p>This technique is based on the <a rel="nofollow" href="http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/focus/touch-events"><em>Touch Events</em> guideline</a> in the BBC Mobile Accessibility Guidelines. </p>
+<ul>
+  <li> Written by Detlev Fischer </li>
+  <li> @@ Link to survey when surveyed by group </li>
+  <li> @@ Notes on work still needed before the technique is ready to publish, such as user agent support notes, etc. </li>
+</ul>
+<h2><span id="Applicability">Applicability</span></h2>
+<p>Mouse and touch input modes. </p>
+<h2><span id="WCAG_references">WCAG references</span></h2>
+<p>Relevant Guidelines </p>
 <ul>
   <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#operable">Principle 2: Operable</a></li>
   <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#consistent-behavior">Guideline 3.2 Predictable</a></li>
-<li><a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#consistent-behavior-receive-focus">3.2.1 On Focus</a>
-
-</li>
-<li><em>Note:</em> No fitting success criteria under guideline "Operable" (due to its exclusive keyboard focus) 
-
-</li>
-<li><a rel="nofollow" href="http://www.w3.org/TR/WCAG20-TECHS/G107">G107: Using "activate" rather than "focus" as a trigger for changes of context</a></li>
 </ul>
-
-<h2>Tests</h2>
-<p>
-  The test procedures for mouse and mobile interaction modes are similar, but they differ regarding the possible availability of secondary actions on touch devices, for example, to bring up a contextual menu. Secondary actions may be triggered when touching an element and continuing to hold it. The availability of such secondary actions depends on the respective platform convention and the implementation in the app under test.
+<p>Relevant WCAG 2.0 Success criteria: </p>
+<ul>
+  <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#consistent-behavior-receive-focus">3.2.1 On Focus</a></li>
+</ul>
+<p><em>Note:</em> No fitting success criteria under guideline "Operable" (due to its exclusive keyboard focus) </p>
+<h2><span id="User_Agent_and_Assistive_Technology_Support_Notes">User Agent and Assistive Technology Support Notes</span></h2>
+<h2><span id="Description">Description</span></h2>
+<p>The objective of this technique is to prevent the unintentional   triggering of events in touch and mouse interaction. Mouse users   clicking on actionable elements (links, buttons, submit inputs) should   have the opportunity to move the cursor outside the element to prevent   the event from being triggered. This allows users to change their mind   without be forced to commit to an action. </p>
+<p>In the same way, elements accessed via touch interaction should   trigger the event (navigation, submits, etc.) only when the touchend   event is fired (i.e., the user has lifted the finger off the screen AND   the last position of the finger is inside the actionable element AND   equals the position at touchstart). </p>
+<h2><span id="Examples">Examples</span></h2>
+<ul>
+  <li> A web form for online purchasing includes a "Buy now" submit at the   end of the order form. A mouse user clicking on the submit input but   releasing the mouse button outside its boundaries will not fire the   event and thereby not commit to the action of purchasing. </li>
+  <li> An app presents a "Buy now" button end of the order form. A user   using a smartphone touch screen  touching the button but lifting the   finger outside the button's boundaries will not trigger the action of   purchasing. </li>
+</ul>
+<p><br>
 </p>
-<h3>Procedure (mouse input mode)    </h3>
+<h3><span id="Related_Techniques">Related Techniques</span></h3>
+<ul>
+  <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20-TECHS/G107">G107: Using "activate" rather than "focus" as a trigger for changes of context</a></li>
+</ul>
+<h2><span id="Tests">Tests</span></h2>
+<p>The test procedures for mouse and mobile interaction modes are   similar, but they differ regarding the possible availability of   secondary actions on touch devices, for example, to bring up a   contextual menu. Secondary actions may be triggered when touching an   element and continuing to hold it. The availability of such secondary   actions depends on the respective platform convention and the   implementation in the app under test. </p>
+<h3><span id="Procedure_.28mouse_input_mode.29">Procedure (mouse input mode)</span></h3>
 <ol>
-  <li>For all actionable elements, position mouse pointer over the element and press the mouse button down  </li>
-  <li>Check that no action is triggered (apart from changing the visual state the element)  </li>
-  <li>Move mouse pointer putside the element and release the mouse button. Check that no action is triggered (e.g. on mouseleave)  
-</li>
+  <li> For all actionable elements,  position mouse pointer over the element and press the mouse button down </li>
+  <li> check that no action is triggered (apart from changing the visual state the element) </li>
+  <li> Move mouse pointer putside the element and release the mouse button. Check that no action is triggered (e.g. on mouseleave) </li>
 </ol>
-<h3>Expected Results</h3>
-<p>#2 and 3 are true</p>
-    
-<h3>Procedure (touch input mode)</h3>
-<ol>   
-    <li>For all actionable elements, touch the element with a finger, leaving the finger on the element</li>
-    <li>Immediately move finger outside the element and lift off finger outside the element boundaries</li>
-    <li>Check that the element's associated action is not triggered</li>
-</ol>    
-<h3>Expected Results</h3>
-<p>3 is true</p> 
-
-
-
-
-
+<h4><span id="Expected_Results">Expected Results</span></h4>
+<ul>
+  <li> #2 and 3 are true </li>
+</ul>
+<h3><span id="Procedure_.28touch_input_mode.29">Procedure (touch input mode)</span></h3>
+<ol>
+  <li> For all actionable elements, touch the element with a finger, leaving the finger on the element </li>
+  <li> Immediately move finger outside the element and lift off finger outside the element boundaries </li>
+  <li> Check that the element's associated action is not triggered </li>
+</ol>
+<h4><span id="Expected_Results_2">Expected Results</span></h4>
+<ul>
+  <li> 3 is true </li>
+</ul>
+<h2><span id="Test_Files">Test Files</span></h2>
 </body>
 </html>
