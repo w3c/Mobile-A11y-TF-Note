@@ -2,19 +2,24 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Mxxx - TEMPLATE FOR MOBILE TECHNIQUES</title>
+<title>Providing vertical navigation mechanisms that work without horizontal scrolling on narrow width screens </title>
 </head>
 <body>
-<h1>Mxxx - SHORT NAME</h1>
-<h2>User Problem </h2>
+<h1>M016: Vertical navigation mechanisms for narrow width screens</h1>
+<h2>User Problem</h2>
 <p>
-DESCRIPTION OF USER PROBLEM AND WHAT THE TECHNIQUE ADDRESSES
+many websites are designed for a desktop viewing experience. Seen on the narrow display of a mobile device, this means that the browser's viewport shows just a part of the content. The width of content elements like horizontal menus often exceeds the width of display. On sites that are not responsive, this necessitates horizontal panning in order to activate menu items that are not within the current viewport.
 </p>
 
 <h2>Solution & Examples </h2>
-<p>
-THE TECHNIQUE AND HOW IT SHOULD WORK. EXAMPLES AND CODE SAMPLES GO HERE. 
-</p>
+<p>Responsive Web Design (RWD) can alleviate this problem by offering a navigation menu in different formats depending on the  actual width of the device screen (technically, the width of the browser viewport(). A menu that is shown as horizontal band in a desktop browser can be shown as vertical list onto the narrow screen of a mobile device.</p>
+
+<p>The RWD approach uses so-called break points (CSS 3 @media selectors) that define different content renderings for specific ranges of viewport widths. Designers often use breakpoints to define different site layouts for the desktop, for tablets, and for smartphones.</p>
+
+<p>A very common RWD pattern is to render the main navigation menu as single menu button on narrow viewports. Activating this menu button then expands the maim menu as a vertical list of options.</p>
+
+<h3>Example 1</h3>
+
 
 <h2>Applicable Operating System or Device</h2>
 <p>
