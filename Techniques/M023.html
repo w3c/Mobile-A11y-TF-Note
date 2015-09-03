@@ -1,48 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>M005 - Providing instructions for custom functions and gestures</title>
+  <meta charset="utf-8">
+  <title>M023 - Set the HTML virtual keyboard to the type of data entry required.</title>
 </head>
 <body>
-<h1>M005 - Providing instructions for custom functions and gestures </h1>
+<h1>M023 - Set the HTML virtual keyboard to the type of data entry required. </h1>
 <h2>Technique Category</h2>
 [[Category:Mobile Techniques]]
+[[Category:Advisory Techniques]]
+
 <h2>Technique Status Category</h2>
 [[Category:Techniques Proposed]]
+
 <h2>Status </h2>
 <ul>
 <li>
-NEW TECHNIQUE WRITTEN BY YOUR  NAME
+NEW TECHNIQUE WRITTEN BY Jonathan Avila
 </li>
 <li>
 LINK TO SURVEY WHEN SURVEYED BY GROUP
 </li>
 </ul>
+
 <h2>Applicability</h2>
-<p>INFORMATION ON WHEN IT IS TECHNICALLY APPROPRIATE TO USE THE TECHNIQUE, E.G. TABLE WITH CELL HEADERS; SMARTPHONE WITH ZOOM FEATURES; FORM FIELDS WITH LARGE BLOCKS OF TEXT. </p>
+<p>This technique applies to HTML input fields where the user can enter input such as input fields used for character input such as alphanumeric etry, e.g. phone number, email address, etc. </p>
 
 <h2>WCAG References</h2>
-<p>THE LIST OF SUCCESS CRITERIA, GUIDELINE, OR CONFORMANCE REQUIREMENT RELATED TO THIS TECHNIQUE <STRONG>IN THE FOLLOWING FORMAT</STRONG>: </p>
 <ul>
-  <li> the anchor for that item. Copy the anchor from the success criterion URI address; </li>
-
-  <li> the number of the item; </li>
-
-  <li> the short name for the item; </li>
-</ul>
-<p>EXAMPLE: </p>
-<ul>
-  <li> text-equiv-all: <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#text-equiv-all">SC 1.1.1 Non-text Content</a></li>
+  <li> minimize-error-cues <a rel="nofollow" href="http://www.w3.org/WAI/GL/UNDERSTANDING-WCAG20/minimize-error-cues.html">SC 3.3.2 Labels or Instructions</a></li>
 </ul>
 <h2>User Agent and Assistive Technology Support Notes</h2>
-<p>ANY NOTES REGARDING KNOWN LACK OF SUPPORT FOR THIS TECHNIQUE WITH USER AGENTS OR ASSISTIVE TECHNOLOGY.</p>
+<p>Some user agents may not support specific keyboard layouts and some custom virtual keyboards may not support specific virtual keyboard layouts.  Some users such as users of screen readers may be confused by different keyboard layouts or keyboards that might appear.</p>
+
 <h2>Description</h2>
-<p>MAIN TEXT OF THE TECHNIQUE. TECHNIQUES BEGIN WITH "The objective of this   technique is to..." , DESCRIBES WHAT THE USER SHOULD ACCOMPLISH, THEN HOW TO ACCOMPLISH IT.  </p>
+<p>The objective of this technique is to assist the user by displaying relevant virtual keyboard or keyboard layout based on input type.    </p>
 
 <h2>Solution</h2>
 <p>
-THE TECHNIQUE AND HOW IT SHOULD WORK GOES HERE. 
+This technique uses the HTML5 type attribute attribute for text input to provide more speicific information. 
 </p>
 
 <h2>Examples </h2>
@@ -67,19 +63,19 @@ DESCRIPTION OF THE TEST
 <h3>Procedure</h3>
 <ol>
 <li>
-STEP 1
+Check that there is a text input field on the page.
 </li>
 <li>
-STEP 2
+Focus the field
 </li>
 <li>
-CHECK THAT…
+Check that a virtual keyboard appears that is specific to that type of input.
 </li>
 </ol>
 <h3>Expected Results</h3>
 <ul>
 <li>
-#3 IS TRUE
+Check that #4 is true.
 </li>
 </ul>
 
