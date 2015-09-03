@@ -30,6 +30,7 @@ LINK TO SURVEY WHEN SURVEYED BY GROUP
 <ul>
   <li> minimize-error-cues <a rel="nofollow" href="http://www.w3.org/WAI/GL/UNDERSTANDING-WCAG20/minimize-error-cues.html">SC 3.3.2 Labels or Instructions</a></li>
 </ul>
+
 <h2>User Agent and Assistive Technology Support Notes</h2>
 <p>Some user agents may not support specific keyboard layouts and some custom virtual keyboards may not support specific virtual keyboard layouts.  Some users such as users of screen readers may be confused by different keyboard layouts or keyboards that might appear.</p>
 
@@ -39,6 +40,16 @@ LINK TO SURVEY WHEN SURVEYED BY GROUP
 <h2>Solution</h2>
 <p>
 This technique uses the HTML5 type attribute attribute for text input to provide more speicific information. 
+type=date: may display a date picker
+type=datetime: 
+type=email:
+type=month:
+type=number:
+type=range:
+type=tel:
+type=time:
+type=url:
+type=week:
 </p>
 
 <h2>Examples </h2>
@@ -62,26 +73,26 @@ DESCRIPTION OF THE TEST
 </p>
 <h3>Procedure</h3>
 <ol>
+  <li>
+    Check that there is a text input field on the page.
+  </li>
 <li>
-Check that there is a text input field on the page.
+  Focus the field
 </li>
 <li>
-Focus the field
-</li>
-<li>
-Check that a virtual keyboard appears that is specific to that type of input.
+  Check that a virtual keyboard appears that is specific to that type of input.
 </li>
 </ol>
 <h3>Expected Results</h3>
 <ul>
-<li>
-Check that #4 is true.
-</li>
+  <li>
+    Check that #4 is true.
+  </li>
 </ul>
 
-<h2>TEST FILES</h2>
+<h2>Test Files</h2>
 <p>
-ANY TEST FILES GO HERE (NOTE WORKING EXAMPLES INCLUDING SOURCE CODE SHOULD BE REFERENCED IN THE EXAMPLES SECTION). 
+  ANY TEST FILES GO HERE (NOTE WORKING EXAMPLES INCLUDING SOURCE CODE SHOULD BE REFERENCED IN THE EXAMPLES SECTION). 
 </p>
 </body>
 </html>
