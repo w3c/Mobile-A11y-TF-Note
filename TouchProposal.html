@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
+<head><meta property="dc:language" content="en" lang="">
+    <title>Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile</title>
+    <meta charset="utf-8">
+    
+    
+  <style type="text/css">
+  div.successcriteria {
+border:solid #CCCCCC 1px;
+background:#DCDCDC;
+padding:.75em;
+margin-top:1em;
+color: black;
+}
+  div.newsuccesscriteria {
+border:solid #CCCCCC 1px;
+background:#C7F1C2;
+padding:.75em;
+margin-top:1em;
+color: black;
+}
+div.advisorysuccesscriteria {
+border:solid #CCCCCC 1px;
+background:#F4DBF2;
+padding:.75em;
+margin-top:1em;
+color: black;
+}
+div.comment {
+border:solid #B9F3BE 1px;
+background:#F7F9A8;
+padding:.75em;
+margin-top:1em;
+color: black;
+}
+div.technique {
+border:solid #B9F3BE 1px;
+background:#E4E2F1;
+padding:.75em;
+margin-top:1em;
+color: black;
+}
+
+</style>
+  <style>/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* --- INLINES --- */
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+cite .bibref {
+    font-style: normal;
+}
+
+code {
+    color:  #C83500;
+}
+
+/* --- TOC --- */
+.toc a, .tof a {
+    text-decoration:    none;
+}
+
+a .secno, a .figno {
+    color:  #000;
+}
+
+ul.tof, ol.tof {
+    list-style: none outside none;
+}
+
+.caption {
+    margin-top: 0.5em;
+    font-style:   italic;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+
+@media print {
+    .removeOnSave {
+        display: none;
+    }
+}
+/* custom styles for WCAG 2.0 guidelines */
+
+body {
+   max-width: 75em;
+    }
+
+code { 
+    font-family: monospace;
+    }
+
+div.constraint, div.issue, div.note, div.notice, div.example { 
+    margin-left: 1em; 
+    margin-bottom: 0.5em; 
+    margin-top: 0; 
+    padding-top:0;
+    }
+    
+dl div.note, dl div.example {
+    margin-top: 0.25em;
+    margin-left: 0.5em;
+    }
+
+ol.enumar { 
+    list-style-type: decimal; 
+    margin-top: 0; 
+    margin-bottom: .25em;
+    }
+    
+ol.enumla { 
+    list-style-type: lower-alpha; 
+    }
+    
+ol.enumlr { 
+    list-style-type: lower-roman; 
+    }
+
+ol.enumua { 
+    list-style-type: upper-alpha;
+    }
+
+ol.enumur { 
+    list-style-type: upper-roman;
+    }
+
+div.div2 dl, dl.keyterms {
+    margin-left: 1.5em;
+    }
+
+p, td {
+    line-height: 1.4; 
+    margin-left: .5em; 
+    color: #000; 
+    background: inherit; 
+    font-weight: normal;
+    }
+    
+li {
+    margin-top: 0; 
+    margin-bottom: 0.25em; 
+    padding-top: 0; 
+    padding-bottom: 0;
+    }
+
+li p, dd p {
+    margin-top: 0; 
+    margin-bottom: 0; 
+    padding-top: 0; 
+    padding-bottom: 0
+    }
+
+p.sctxt {
+    margin: 0.5em 0 0 0.5em;
+    padding: 0;
+    }
+
+strong.sc-handle {
+     font-size: 1em;
+     }
+
+dd.prefix p {
+    margin-bottom: 0;
+    }
+
+div.head dt {
+    margin-top: 0.25em;
+    }
+    
+dt.label {
+    padding-top: .5em;
+    }
+    
+dd p {
+    margin-left: 0;
+    }
+
+div.sc ul, div.sc ol, div.sc div.note, div.div3 ul, div.div3 ol {
+           display: block;
+	margin-top: 0;   
+	margin-bottom: 0;   
+}
+
+.principle { 	
+	padding: .5em; 	
+	border: solid #666666 1px;	
+	background-color: #FFFFFF; 	
+	color: #000000; 	
+	}
+	
+ /* If you place a comment immediately after a selector in a style sheet, IE 5 and earlier on Windows will ignore that selector.  */
+ 
+div.guideline/* */ {
+        border: solid #666666 1px;	
+        background-color: #CFE8EF ! important; 	
+     padding:.75em;
+margin-top:1em;
+        color: #000000;   
+        position: relative; 
+      }
+div.sc/* */ {
+        border: solid #666666 1px;	
+        background-color: #C7C7C7 ! important; 	
+        padding: 0 .5em .5em .5em; 	
+        margin: 1em 0 0 0; 	
+        color: #000000;   
+        position: relative; 
+      }
+ 
+ div.guideline h3/* */ {
+     background-color: #CFE8EF ! important; 	
+     color: #000000;   
+     margin-right: 14.5em; 
+     margin-bottom: 0.5em;
+ }
+ 
+ p.und-gl-link/* */ {
+    position: absolute; 
+    right: 0.5em; 
+    top: 0.5em;
+    width: 15em;
+    display: inline;
+    padding: 0;
+    font-size: 0.8125em;
+    }
+      
+div.sc li, div.sc li p  {
+    padding: 0;
+    margin: 0;
+    } 
+		 
+div.sc {
+	 margin-left: 0;
+	 margin-bottom: 1.5em !important;}
+  
+.termref {
+          text-decoration:none;
+          color:#000000;
+          border-bottom:dotted #585858 1px; /* de-emphasize glossary links */
+          background-color: #fff;
+          }
+      
+a.termref:link {
+        color:#000000;
+        background : inherit;
+        }
+        
+ a.termref:hover, .termref:active, a.termref:focus {
+          color:#0000CC;
+          background : inherit;
+      }
+.sorethumb {
+    color: red; background: inherit;
+    }
+
+a.HTMlink, a.HTMlink:visited, a.HTMlink:hover, a.HTMlink:focus { 
+    font-size: 0.8125em;
+    padding: 0;
+    font-weight: normal;
+    }
+    
+h3.guideline a.HTMlink, h3.guideline a.HTMlink:visited, h3.guideline a.HTMlink:hover, h3.guideline a.HTMlink:focus { 
+    margin: 0px 0px 2px 15px;
+    }
+        
+p.prefix {
+    margin: 0.25em 0 0.5em 0;
+    padding:0;
+    }
+ 
+ .req, .bp, .additional {   
+     display: block; 
+     border-bottom: solid #666666 1px;
+     margin-left: 1em;
+     margin-right: 0.25em;
+     padding-bottom: .25em;
+     padding-top: 0.5em;
+     } 
+ 
+ div.sc/* */ {
+     position: relative; 
+     margin-right: 11em; 
+     top: 0; 
+     left: 0;
+ }
+ 
+div.sc div.note p.prefix {
+    margin-bottom: 0;
+}
+div.scinner {
+    margin: 1em 0 0 0;
+    padding-right: 1em;
+    
+    }
+div.doclinks/* */ {
+    position: absolute; 
+    right: 1.5em; /* Fix IE5.5 (so that doclinks line up correctly) */
+    top: 0em;
+    width: 9em;
+    }
+ div.sc>div.doclinks/* */ {
+         right: -9em; 
+ }
+.doclinks p {
+    margin: 0 0 0 0 !important; 
+    padding: 2px 8px 2px 0 !important; 
+    line-height: 1.3
+    }
+    
+.doclinks p a {
+    margin: 0 !important; 
+    padding: 0 !important
+    }
+    
+ p.supportlinks {
+    margin: 0 5px 0 5px;  /* top, right, bottom, left */
+    padding: 0.25em;
+    text-align: right;
+    border: solid #006 1px;
+    border-right: solid #006 3px;
+    background: #f4f4ff; 
+    color: #000;
+    
+    }
+    
+p.supportlinks a {
+        margin: 0.25em;
+        text-decoration: underline;
+        }
+    
+div {
+        clear: both;
+    }
+
+span.screenreader {position: absolute; left: -10000px}
+
+body {
+    background: white none no-repeat fixed left top;
+    color: black;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 2em 1em 2em 70px;
+}
+:link {
+    background: transparent none repeat scroll 0 0;
+    color: #00c;
+}
+:visited {
+    background: transparent none repeat scroll 0 0;
+    color: #609;
+}
+a:active {
+    background: transparent none repeat scroll 0 0;
+    color: #c00;
+}
+a:link img, a:visited img {
+    border-style: none;
+}
+a img {
+    color: white;
+}
+@media all {
+a img {
+    color: inherit;
+}
+}
+th, td {
+    font-family: sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-align: left;
+}
+h1, h2, h3 {
+    background: white none repeat scroll 0 0;
+    color: #005a9c;
+}
+h1 {
+    font: 170% sans-serif;
+}
+h2 {
+    font: 140% sans-serif;
+}
+h3 {
+    font: 120% sans-serif;
+}
+h4 {
+    font: bold 100% sans-serif;
+}
+h5 {
+    font: italic 100% sans-serif;
+}
+h6 {
+    font: small-caps 100% sans-serif;
+}
+.hide {
+    display: none;
+}
+div.head {
+    margin-bottom: 1em;
+}
+div.head h1 {
+    clear: both;
+    margin-top: 2em;
+}
+div.head table {
+    margin-left: 2em;
+    margin-top: 2em;
+}
+p.copyright {
+    font-size: small;
+}
+p.copyright small {
+    font-size: small;
+}
+@media screen {
+a[href]:hover {
+    background: #ffa none repeat scroll 0 0;
+}
+}
+pre {
+    margin-left: 2em;
+}
+dt, dd {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+dt {
+    font-weight: bold;
+}
+ul.toc, ol.toc {
+    list-style: outside none none;
+}
+@media speech {
+h1, h2, h3 {
+}
+.hide {
+}
+p.copyright {
+}
+dt {
+}
+}
+
+
+</style><!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]--></head>
+<body id="respecDocument" role="document" class="h-entry"><div id="respecHeader" role="contentinfo" class="head">
+  <h1 class="title p-name" id="title" property="dcterms:title">Mobile Accessibility Proposal</h1>
+  
+<h2 id="w3c-editor-s-draft-12-february-2015"><abbr title="World Wide Web Consortium">Note: this is an internal rough proposal to the mobile task force, not for re-use outside of the Mobile TF</abbr></h2>
+  <p>Proposed discussion and reorganization of <a href="http://www.w3.org/TR/mobile-accessibility-mapping/">Mobile Accessibility: How WCAG 2.0 and Other <abbr title="World Wide Web Consortium">W3C</abbr>/WAI Guidelines Apply to Mobile</a>. The original wording is kept intact wherever possible, with small adjustments for grammar on proposed new Success Criteria. The new SCs are only slightly tweaked and will need more work. The purpose of this is reorganization is to:</p>
+  <ol>
+    <li> Tease out the advice that can be turned into WCAG Guidelines,  Success Criteria, and Techniques</li>
+    <li> Document which advice cannot become Success Criteria or suffient techniques in the current wording </li>
+    <li>Begin  discussion about whether we can adapt this non SC advisory recommendations into Success Criteria format,  or leave them as advisory (or best practices), or Sufficient Techniques for an existing Success Criteria. <em><strong>We understanding that almost no one follows advisory or best practice advice.</strong></em><strong></strong></li>
+    <li>Recommend moving all prose that is not a Success Criteria, Guideline or Technique to the Understanding Doc for these new Success Criteria, Guidelines, etc.</li>
+    <li>Turn the information into a form digestible as an Normative Extension Spec. for WCAG 2</li>
+</ol>
+<p>The two core prerequisites that allow advice to become a Success Criteria for WCAG 2 are:</p>
+<ol>
+    <li>The Success Criteria is testable. That means that it is objectively measurable either by automation or expert opinion where most knowledgeable people in the field could determine from the language of the SC whether a particular piece of content fails or passes the SC.</li>
+    <li>The Success Criteria is applicable in all circumstances. There are no mobile web sites or applications to which it could not apply.</li>
+</ol>
+<h2>Summary and conclusions</h2>
+<ul>
+  <li>The big take away is the introduction of a new Guideline 2.5 under which about 5 new Success Criterion where Touch advice would fall. </li>
+  <li>There are 11 new Success Criteria. (Some could be demoted to techniques)</li>
+  <li>There are 17 New Advisory techniques (some may be reworked to SCs, or allocated to sufficient techniques)</li>
+  <li>There are 10 new techniques</li>
+  <li>Some of the advice in the document is not testable, or does not apply in all circumstances, which turns them into best practices or advisory under current WCAG formulation. </li>
+</ul>
+  <dl>
+    
+    <dt>Original  (published) version:</dt>
+      <dd><a href="http://www.w3.org/TR/2015/WD-mobile-accessibility-mapping-20150226/">http://www.w3.org/TR/2015/WD-mobile-accessibility-mapping-20150226/</a></dd>
+      <dt>Latest published version:</dt>
+      <dd><a href="http://www.w3.org/TR/mobile-accessibility-mapping/">http://www.w3.org/TR/mobile-accessibility-mapping/</a></dd>
+    
+    
+      <dt>Latest editor's draft:</dt>
+      <dd><a href="http://w3c.github.io/Mobile-A11y-TF-Note/">http://w3c.github.io/Mobile-A11y-TF-Note/</a></dd>
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    <dt>Editors:</dt>
+    <dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0"><span property="rdf:first" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Kim Patch</span>, Redstart Systems</span>
+<span property="rdf:rest" resource="_:editor1"></span>
+</dd>
+<dd class="p-author h-card vcard" resource="_:editor1"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Jeanne Spellman">
+  Jeanne Spellman, <abbr title="World Wide Web Consortium">W3C</abbr></span>
+<span property="rdf:rest" resource="_:editor2"></span>
+</dd>
+<dd class="p-author h-card vcard" resource="_:editor2"><span property="rdf:first" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Kathy Wahlbin</span>, Interactive Accessibility</span>
+<span property="rdf:rest" resource="rdf:nil"></span><a href="http://www.davidmacd.com/"></a></dd>
+</dl>
+<section id="toc"><h2 resource="#h-toc" id="h-toc" class="introductory"><span property="xhv:role" resource="xhv:heading">Table of Contents</span></h2><ul id="respecContents" role="directory" class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><span class="secno">1. </span>Introduction</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#wcag-2.0-and-mobile-content-applications"><span class="secno">1.1 </span>WCAG 2.0 and Mobile Content/Applications</a></li><li class="tocline"><a class="tocxref" href="#other-w3c-wai-guidelines-related-to-mobile"><span class="secno">1.2 </span>Other <abbr title="World Wide Web Consortium">W3C</abbr>-WAI Guidelines Related to Mobile</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#uaag-2.0-and-accessible-mobile-browsers"><span class="secno">1.2.1 </span>UAAG 2.0 and Accessible Mobile Browsers</a></li><li class="tocline"><a class="tocxref" href="#atag-2.0-and-accessible-mobile-authoring-tools"><span class="secno">1.2.2 </span>ATAG 2.0 and Accessible Mobile Authoring Tools</a></li></ul></li></ul></li><li class="tocline"><a class="tocxref" href="#mobile-accessibility-considerations-primarily-related-to-principle-1-perceivable"><span class="secno">2. </span>Mobile accessibility considerations primarily related to Principle 1: Perceivable</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#small-screen-size"><span class="secno">2.1 </span>Small Screen Size</a></li><li class="tocline"><a class="tocxref" href="#zoom-magnification"><span class="secno">2.2 </span>Zoom/Magnification</a></li><li class="tocline"><a class="tocxref" href="#contrast"><span class="secno">2.3 </span>Contrast</a></li></ul></li><li class="tocline"><a class="tocxref" href="#mobile-accessibility-considerations-primarily-related-to-principle-2-operable"><span class="secno">3. </span>Mobile accessibility considerations primarily related to Principle 2: Operable</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#keyboard-control-for-touchscreen-devices"><span class="secno">3.1 </span>Keyboard Control for Touchscreen Devices</a></li><li class="tocline"><a class="tocxref" href="#touch-target-size-and-spacing"><span class="secno">3.2 </span>Touch Target Size and Spacing</a></li><li class="tocline"><a class="tocxref" href="#touchscreen-gestures"><span class="secno">3.3 </span>Touchscreen Gestures</a></li><li class="tocline"><a class="tocxref" href="#device-manipulation-gestures"><span class="secno">3.4 </span>Device Manipulation Gestures</a></li><li class="tocline"><a class="tocxref" href="#placing-buttons-where-they-are-easy-to-access"><span class="secno">3.5 </span>Placing buttons where they are easy to access</a></li></ul></li><li class="tocline"><a class="tocxref" href="#mobile-accessibility-considerations-related-primarily-to-principle-3-understandable"><span class="secno">4. </span>Mobile accessibility considerations related primarily to Principle 3: Understandable</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#changing-screen-orientation-portrait-landscape"><span class="secno">4.1 </span>Changing Screen Orientation (Portrait/Landscape)</a></li><li class="tocline"><a class="tocxref" href="#consistent-layout"><span class="secno">4.2 </span>Consistent Layout</a></li><li class="tocline"><a class="tocxref" href="#positioning-important-page-elements-before-the-page-scroll"><span class="secno">4.3 </span>Positioning important page elements before the page scroll</a></li><li class="tocline"><a class="tocxref" href="#grouping-operable-elements-that-perform-the-same-action"><span class="secno">4.4 </span>Grouping operable elements that perform the same action</a></li><li class="tocline"><a class="tocxref" href="#provide-clear-indication-that-elements-are-actionable"><span class="secno">4.5 </span>Provide clear indication that elements are actionable</a></li><li class="tocline"><a class="tocxref" href="#provide-instructions-for-custom-touchscreen-and-device-manipulation-gestures"><span class="secno">4.6 </span>Provide instructions for custom touchscreen and device manipulation gestures</a></li></ul></li><li class="tocline"><a class="tocxref" href="#mobile-accessibility-considerations-related-primarily-to-principle-4-robust"><span class="secno">5. </span>Mobile accessibility considerations related primarily to Principle 4: Robust</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#set-the-virtual-keyboard-to-the-type-of-data-entry-required"><span class="secno">5.1 </span>Set the virtual keyboard to the type of data entry required</a></li><li class="tocline"><a class="tocxref" href="#provide-easy-methods-for-data-entry"><span class="secno">5.2 </span>Provide easy methods for data entry</a></li><li class="tocline"><a class="tocxref" href="#support-the-characteristic-properties-of-the-platform"><span class="secno">5.3 </span>Support the characteristic properties of the platform</a></li></ul></li><li class="tocline"><a class="tocxref" href="#wcag-techniques-that-apply-to-mobile"><span class="secno">A. </span>WCAG Techniques that apply to mobile</a></li><li class="tocline"><a class="tocxref" href="#uaag-2.0-success-criteria-that-apply-to-mobile"><span class="secno">B. </span>UAAG 2.0 Success Criteria that apply to mobile</a></li><li class="tocline"><a class="tocxref" href="#acknowledgments"><span class="secno">C. </span>Acknowledgments</a></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">D. </span>References</a><ul class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">D.1 </span>Informative references</a></li></ul></li></ul></section>
+    
+    
+    
+<section property="bibo:hasPart" resource="#introduction" typeof="bibo:Chapter" id="introduction" class="informative">
+      <!--OddPage-->
+      <h2 resource="#intro" id="intro"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction</span> </h2>
+      <div class="comment">        (David's comment: This prose would move to the Understanding Doc)
+      </div>
+      <p><em>This section is non-normative.</em></p>
+      <p>This document provides informative guidance (but does not set   requirements) with regard to interpreting and applying Web Content   Accessibility Guidelines (WCAG) 2.0 [WCAG20] to web and non-web mobile   content and applications. </p>
+      <p>While the World Wide Web Consortium (<abbr title="World Wide Web Consortium">W3C</abbr>)'s <abbr title="World Wide Web Consortium">W3C</abbr> Web Accessibility   Initiative (WAI) is primarily concerned with web technologies, guidance   for web-based technologies is also often relevant to non-web   technologies. The <abbr title="World Wide Web Consortium">W3C</abbr>-WAI has published the Note <a href="http://www.w3.org/TR/wcag2ict/">Guidance on Applying WCAG 2.0 to Non-Web Information and Communications Technologies (WCAG2ICT)</a> to provide authoritative guidance on how to apply WCAG to non-web   technologies such as mobile native applications. The current document is   a mobile-specific extension of this effort. </p>
+      <p><abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/Mobile/">Mobile Web Initiative</a> Recommendations and Notes pertaining to mobile technologies also include the <a href="http://www.w3.org/TR/mobile-bp/">Mobile Web Best Practices</a> and the <a href="http://www.w3.org/TR/mwabp/">Mobile Web Application Best Practices</a>.   These offer general guidance to developers on how to create content and   applications that work well on mobile devices. The current document is   focused on the accessibility of mobile web and applications to people   with disabilities and is not intended to supplant any other <abbr title="World Wide Web Consortium">W3C</abbr> work. </p>
+
+<section property="bibo:hasPart" resource="#wcag-2.0-and-mobile-content-applications" typeof="bibo:Chapter" id="wcag-2.0-and-mobile-content-applications">
+      <h3 resource="#h-wcag-2.0-and-mobile-content-applications" id="h-wcag-2.0-and-mobile-content-applications"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>WCAG 2.0 and Mobile Content/Applications<br>
+    </h3> <div class="comment">        (David's comment: This prose would move to the Understanding Doc)
+      </div>
+      <p><em>"Mobile"</em> is a generic term for a broad range of wireless   devices and applications that are easy to carry and use in a wide   variety of settings, including outdoors. Mobile devices range from small   handheld devices (e.g. feature phones, smartphones) to somewhat larger   tablet devices. The term also applies to <em>"wearables"</em> such as   "smart"-glasses, "smart"-watches and fitness bands, and is relevant to   other small computing devices such as those embedded into car   dashboards, airplane seatbacks, and household appliances. </p>
+      <p>While mobile is viewed by some as separate from <em>"desktop/laptop"</em>,   and thus perhaps requiring new and different accessibility guidance, in   reality there is no absolute divide between the categories. For   example: </p>
+      <ul>
+        <li>many desktop/laptop devices now include touchscreen gesture control, </li>
+        <li>many mobile devices can be connected to an external keyboard and mouse, </li>
+        <li>web pages utilizing responsive design can transition into a "mobile" screen size even on a desktop/laptop, and </li>
+        <li>mobile operating systems have been used for laptop devices. </li>
+      </ul>
+      <p>Furthermore, the vast majority of user interface patterns from   desktop/laptop systems (e.g. text, hyperlinks, tables, buttons, pop-up   menus, etc.) are equally applicable to mobile. Therefore, it's not   surprising that a large number of existing WCAG 2.0 techniques can be   applied to mobile content and applications (see Appendix A). Overall, <strong>WCAG 2.0 is highly relevant to both web and non-web mobile content and applications</strong>. </p>
+      <p>That said, mobile devices do present a mix of accessibility   issues that are different from the typical desktop/laptop. The   "Discussion of Mobile-Related Issues" section, below, explains how these   issues can be addressed in the context of WCAG 2.0 as it exists or with   additional best practices. All the advice in this document can be   applied to mobile web sites, mobile web applications, and hybrid   web-native applications. Most of the advice also applies to native   applications (also known as "mobile apps"). </p>
+      <p><em>Note:</em> WCAG 2.0 does not provide testable success criteria   for some of the mobile-related issues. The work of the Mobile   Accessibility Task Force has been to develop techniques and best   practices in these areas. When the techniques or best practices don't   map to specific WCAG success criteria, they aren't given a sufficient,   advisory or failure designation. This doesn't mean that they are   optional for creating accessible web content on a mobile platform, but   rather that they cannot currently be assigned a designation. The Task   Force anticipates that some of these techniques will be included as   sufficient or advisory in a potential future iteration of WCAG. </p>
+      <p>The current document references existing WCAG 2.0 Techniques that   apply to mobile platform (see Appendix A) and provides new best   practices, which may in the future become WCAG 2.0 Techniques that   directly address emerging mobile accessibility challenges such as small   screens, touch and gesture interface, and changing screen orientation. </p>
+</section>
+<section property="bibo:hasPart" resource="#other-w3c-wai-guidelines-related-to-mobile" typeof="bibo:Chapter" id="other-w3c-wai-guidelines-related-to-mobile">
+      <h3 resource="#h-other-w3c-wai-guidelines-related-to-mobile" id="h-other-w3c-wai-guidelines-related-to-mobile"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>Other <abbr title="World Wide Web Consortium">W3C</abbr>-WAI Guidelines Related to Mobile</span><br>
+     </h3> <div class="comment">(David's comment: This prose would move to the Understanding Doc) </div>
+<section property="bibo:hasPart" resource="#uaag-2.0-and-accessible-mobile-browsers" typeof="bibo:Chapter" id="uaag-2.0-and-accessible-mobile-browsers">
+      <h4 resource="#h-uaag-2.0-and-accessible-mobile-browsers" id="h-uaag-2.0-and-accessible-mobile-browsers"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2.1 </span>UAAG 2.0 and Accessible Mobile Browsers</span><br>
+      </h4>
+      <p>The User Agent Accessibility Guidelines (UAAG) 2.0 [<a href="http://www.w3.org/TR/UAAG20/">UAAG2</a>]   is meant for the developers of user agents (e.g. web browsers and media   players), whether for desktop/laptop or mobile operating systems. A user agent that follows UAAG 2.0 will improve accessibility through its
+own user interface, through options it provides for rendering and
+interacting with
+​content, and through its ability to communicate with other technologies,
+including assistive technologies.</p>
+      <p>To assist developers of mobile browsers, the <a href="http://www.w3.org/TR/UAAG20-Reference/">UAAG 2.0 Reference</a> support document contains numerous mobile examples. These examples are also available in a separate list of <a href="http://www.w3.org/TR/IMPLEMENTING-UAAG20/mobile">mobile-related examples</a>, maintained by the <a href="http://www.w3.org/WAI/UA/">User Agent Accessibility Guidelines Working Group (UAWG)</a>. </p>
+</section>
+<section property="bibo:hasPart" resource="#atag-2.0-and-accessible-mobile-authoring-tools" typeof="bibo:Chapter" id="atag-2.0-and-accessible-mobile-authoring-tools">
+      <h4 resource="#h-atag-2.0-and-accessible-mobile-authoring-tools" id="h-atag-2.0-and-accessible-mobile-authoring-tools"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2.2 </span>ATAG 2.0 and Accessible Mobile Authoring Tools</span><br>
+      </h4>
+      <p>The Authoring Tool Accessibility Guidelines (ATAG) 2.0 [<a href="http://www.w3.org/TR/ATAG20/">ATAG2</a>]   provides guidelines for the developers of authoring tools, whether for   desktop/laptop or mobile operating systems. An authoring tool that   follows ATAG 2.0 will be both more accessible to authors with   disabilities (Part A) and designed to enable, support, and promote the   production of more accessible web content by all authors (Part B). </p>
+      <p>To assist developers of mobile authoring tools, the <a href="http://www.w3.org/TR/IMPLEMENTING-ATAG20/">Implementing ATAG 2.0</a> support document contains numerous mobile authoring tool examples. </p>
+    </section>
+  </section>
+</section>
+<div></div>
+ 
+  <hr>
+
+    
+
+    <h2 id="discussion-of-mobile-related-issues">Discussion of Mobile-Related Issues</h2>
+<section property="bibo:hasPart" resource="#mobile-accessibility-considerations-primarily-related-to-principle-1-perceivable" typeof="bibo:Chapter" id="mobile-accessibility-considerations-primarily-related-to-principle-1-perceivable">
+    <!--OddPage--><h2 resource="#h-mobile-accessibility-considerations-primarily-related-to-principle-1-perceivable" id="h-mobile-accessibility-considerations-primarily-related-to-principle-1-perceivable"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Mobile accessibility considerations primarily related to Principle 1: Perceivable</span></h2>
+  <section property="bibo:hasPart" resource="#small-screen-size" typeof="bibo:Chapter" id="small-screen-size">
+    <h3 resource="#h-small-screen-size" id="h-small-screen-size"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1 </span>Small Screen Size<br>
+    </span></h3><div class="comment">(David Comment: Move prose to Understanding Doc). I don't think I agree with this 2nd paragraph. Many WCAG Success Criteria rely on assistive technology to work. i.e., programmatically associated labels don't do anything without assistive technology. I think we can strike this paragraph)</strong></em></div>
+    <p>Small screen size is one of the most common characteristics of mobile devices. While the exceptional resolution of these screens theoretically enables large amounts of information to be rendered, the small size of the screen places practical limits on how much information people can actually view at one time, especially when magnification is used by people with low vision.  </p>
+    <p>Accessibility features geared toward specific populations of people with   disabilities fall under the definition of assistive technology adopted   by WCAG and thus cannot be relied upon to meet the success criteria.    For example, a platform-level zoom feature that magnifies all platform   content and has features to specifically support people with low vision   is likely considered an assistive technology. </p>
+  </section>
+   <section property="bibo:hasPart" resource="#zoom-magnification" typeof="bibo:Chapter" id="zoom-magnification">   
+   </section>
+   <section property="bibo:hasPart" resource="#zoom-magnification" typeof="bibo:Chapter" id="zoom-magnification">
+     <h3 resource="#h-zoom-magnification" id="h-zoom-magnification">Advisory techniques:</h3>
+<div class="advisorysuccesscriteria">Minimizing the amount of information that is put on each page compared to desktop/laptop versions by providing a dedicated mobile version or a responsive design<br>
+  <br>
+  <strong><em>(Rational for not being a sufficient technique yet:        the word &quot;minimizing&quot; is not testable, can we quantify it somehow?)</em></strong><em></em></div>
+  <div class="advisorysuccesscriteria">Providing a reasonable default size for content <br>
+  <strong><em><br>
+    (Rational for not being a sufficient technique yet:        the word &quot;reasonable&quot; is not testable, can we quantify it somehow?)</em></strong><em></em></div>
+<div class="advisorysuccesscriteria">A       dedicated mobile version contains content tailored for mobile use. For       example, the content may contain fewer content modules,       fewer images, or focus on important mobile usage scenarios <br>
+  <strong><em><br>
+    (Rational for not being a sufficient technique yet:        the words &quot;fewer&quot; and &quot;important&quot; are not testable can we quantify it somehow?)</em></strong></div>
+<div class="advisorysuccesscriteria">A responsive design contains content that stays the same, but CSS       stylesheets are used to render it differently depending on the viewport       width. For example, on narrow screens the navigation menus may be hidden       until the user taps a menu button. <br>
+  <strong><em><br>
+    (Rational for not being a sufficient technique yet:        it may not apply in ALL circumstances)</em></strong><em></em></div>
+<div class="advisorysuccesscriteria">Adapting       the length of link text to the viewport width. <br>
+  <br>
+  (<strong><em>Rational for not being a sufficient technique yet: </em></strong><em><strong>Can we provide specific link lengths to specific viewport sizes, probably not?)</strong></em></div>
+<div class="advisorysuccesscriteria">Positioning       form fields below, rather than beside, their labels (in portrait layout) <br>
+  <br>
+  (<strong><em>Rational for not being a sufficient technique yet: </em></strong><em><strong>It's not applicable in all instances, is it?)</strong></em>  </div>
+  </section>
+   <section property="bibo:hasPart" resource="#contrast" typeof="bibo:Chapter" id="contrast">
+     <h3><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2 </span>Zoom/Magnification</span><br>
+     </h3><div class="comment">(David Comment: Move prose to Understanding Doc)</div>
+     <p>A variety of methods allow the user to control content size on mobile devices with small screens. At the browser level these methods are generally available to assist a wide audience of users. At the platform level these methods are available as accessibility features to serve people with visual impairments or cognitive disabilities.</p>
+     <p>The methods include the following: </p>
+     <ul>
+       <li>OS-level features
+         <ul>
+           <li> Set default text size (typically controlled from the Display Settings) <em>Note</em>: System text size is often not supported by mobile browsers. </li>
+           <li> Magnify entire screen (typically controlled from the Accessibility Settings). <em>Note</em>: Using this setting requires the user to pan vertically and horizontally. </li>
+           <li> Magnifying lens view under user's finger (typically controlled from the Accessibility Settings) </li>
+         </ul>
+       </li>
+       <li>Browser-level features
+         <ul>
+           <li> Set default text size of text rendered in the browser's viewport
+             <ul>
+               <li> Reading mode that renders main content at a user-specified text size </li>
+             </ul>
+           </li>
+           <li> Magnify browser's viewport (typically "pinch-zoom"). <em>Note</em>: Using this setting requires the user to pan vertically and horizontally.
+             <ul>
+               <li><em>Note</em>: Some browsers have features that might modify this type   of magnification (e.g. re-flowing the content at the new magnification   level, overriding author attempts to prevent pinch-zoom). </li>
+             </ul>
+           </li>
+         </ul>
+       </li>
+     </ul>
+     <p>The WCAG 2.0 success criterion that is most related to zoom/magnification is </p>
+     <div class="successcriteria"> <strong>1.4.4 Resize text</strong> (Level AA) </div>
+     <p>SC 1.4.4 requires text to be resizable without assistive technology up to 200 percent. To meet this requirement content must not prevent text magnification by the user.</p>
+     <h3><strong>New proposed Success Criteria</strong> for zoom under the new 2.5 Touch Guideline</h3>
+     <div class="newsuccesscriteria"><strong>2.5.5 Pinch Zoom: </strong>Ensure       that the browser pinch zoom is not blocked by the page's viewport meta       element so that it can be used to zoom the page to 200%. Restrictive       values for user-scalable and maximum-scale attributes of this meta element       should be avoided. </div>
+     <p><em>Note:</em> Relying on full viewport zooming (e.g. not blocking the browser's pinch       zoom feature) requires the user to pan horizontally as well as vertically.       While this technique meets the success criteria it is less usable than       supporting text resizing features that reflow content to the user's chosen       viewport size. It is best practice to use techniques that support text       resizing without requiring horizontal panning. </p>
+     <h4>Advisory techniques:</h4>
+     <div class="advisorysuccesscriteria">Support       for system fonts that follow platform level user preferences for text       size. <br>
+       <br>
+       (<strong><em>Rational for not being sufficient technique: </em></strong>can this be done?)</div>
+     <div class="advisorysuccesscriteria">Provide       on-page controls to change the text size. <br>
+       <br>
+       (<strong><em>Rational for not being sufficient technique: </em></strong>best practice but usually not  big enough, redundant with other zooming, extra work)</div>
+     <h3 resource="#h-contrast" id="h-contrast"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3 </span>Contrast</span><br>
+     </h3><div class="comment">(David Comment: Move prose to Understanding Doc)</div>
+     <p>Mobile devices are more likely than desktop/laptop devices to be used in   varied environments including outdoors, where glare from the sun or   other strong lighting sources is more likely.  This scenario heightens   the importance of use of good contrast for all users and may compound   the challenges that users with low vision have accessing content with   poor contrast on mobile devices. </p>
+     <p>The WCAG 2.0 success criteria related to the issue of contrast are: </p>
+     <div class="successcriteria">
+       <ul>
+         <li> <strong>1.4.3 Contrast (Minimum)</strong> (Level AA) which requires a contrast of at least 4.5:1 (or 3:1 for large-scale text) and </li>
+         <li> <strong>1.4.6 Contrast (Enhanced)</strong> (Level AAA) which requires a contrast of at least 7:1 (or 4.5:1 for large-scale text). </li>
+       </ul>
+     </div>
+     <p>SC 1.4.3. allows for different contrast ratios for large text.    Allowing different contrast ratios for larger text is useful because   larger text with wider character strokes is easier to read at a lower   contrast.  This allows designers more leeway for contrast of larger   text, which is helpful for content such as titles.  The ratio of   18-point text or 14-point bold text described in the SC 1.4.3 was judged   to be large enough to enable a lower contrast ratio for web pages   displayed on a 15-inch monitor at 1024x768 resolution with a 24-inch   viewing distance.  Mobile device content is viewed on smaller screens   and in different conditions so this allowance for lessened contrast on   large text must be considered carefully for mobile apps.</p>
+   </section>
+</section>
+<h3>Advisory technique, which could perhaps be morphed into a Success Criteria</h3>
+<div class="advisorysuccesscriteria">The default point size for mobile platforms  might be larger than the default point size used on non-mobile devices. When  determining which contrast ratio to follow, developers should strive to make  sure to apply the lessened contrast ratio only when text is roughly equivalent  to 1.2 times bold or 1.5 times (120% bold or 150%) that of the default platform  size. <br>
+  <br>
+(<strong><em>Rational for not being SC: </em></strong>&quot;roughly equivalent&quot; is not testable. Can we settle on something determinable and testable?</div>
+<p><em>Note</em>: The use of text that is 1.5 times the default on  mobile platforms does not imply that the text will be readable by a person with  low vision. People with low vision will likely need and use additional platform  level accessibility features and assistive technology such as increased text  size and zoom features to access mobile content. </p>
+<!--OddPage--><h2 resource="#h-mobile-accessibility-considerations-primarily-related-to-principle-2-operable" id="h-mobile-accessibility-considerations-primarily-related-to-principle-2-operable"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Mobile accessibility considerations primarily related to Principle 2: Operable</span></h2>
+  <section property="bibo:hasPart" resource="#keyboard-control-for-touchscreen-devices" typeof="bibo:Chapter" id="keyboard-control-for-touchscreen-devices">
+  <h3 resource="#h-keyboard-control-for-touchscreen-devices" id="h-keyboard-control-for-touchscreen-devices"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>Keyboard Control for Touchscreen Devices</span><br>
+    </h3><div class="comment">(David Comment: Move prose to Understanding Doc)</div>
+  <p>Mobile device design has evolved away from built-in physical   keyboards (e.g. fixed, slide-out) towards devices that maximize   touchscreen area and display an on-screen keyboard only when the user   has selected a user interface control that accepts text input (e.g. a   textbox). </p>
+  <p>However, keyboard accessibility remains as important as ever and   most major mobile operating systems do include keyboard interfaces,   allowing mobile devices to be operated by external physical keyboards   (e.g. keyboards connected via Bluetooth, USB On-The-Go) or alternative   on-screen keyboards (e.g. scanning on-screen keyboards).  </p>
+  <p>Supporting these keyboard interfaces benefits several groups with disabilities: </p>
+  <ul>
+    <li> People with visual disabilities who can benefit from some   characteristics of physical keyboards over touchscreen keyboards (e.g.   clearly separated keys, key nibs and more predictable key layouts). </li>
+    <li> People with dexterity or mobility disabilities, who can benefit   from keyboards optimized to minimize inadvertent presses (e.g.   differently shaped, spaced and guarded keys) or from specialized input   methods that emulate keyboard input. </li>
+    <li> People who can be confused by the dynamic nature of onscreen   keyboards and who can benefit from the consistency of a physical   keyboard. </li>
+  </ul>
+  <p>Several WCAG 2.0 success criteria are relevant to effective keyboard control: </p>
+  <div class="successcriteria">
+  <ul>
+    <li> <strong>2.1.1 Keyboard</strong> (Level A) </li>
+    <li> <strong>2.1.2 No Keyboard Trap</strong> (Level A) </li>
+    <li> <strong>2.4.3 Focus Order</strong> (Level A) </li>
+    <li> <strong>2.4.7 Focus Visible</strong> (Level AA) </li>
+  </ul>
+  </div>
+ </section>
+ 
+ <section property="bibo:hasPart" resource="#touch-target-size-and-spacing" typeof="bibo:Chapter" id="touch-target-size-and-spacing">
+<h3 resource="#h-touch-target-size-and-spacing" id="h-touch-target-size-and-spacing"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>Touch Target Size and Spacing</span><br>
+</h3><div class="comment">(David Comment: Move prose to Understanding Doc)</div>
+ <p>The high resolution of mobile devices means that many interactive   elements can be shown together on a small screen. But these elements   must be big enough and have enough distance from each other so that   users can safely target them by touch. </p>
+ <h3>New proposed Guideline</h3>
+ <p><strong>Note:</strong> All proposed new guidelines and Success Criteria are numbered as to where they are proposed in WCAG 2 (that's why their numbers don't have 3.x as per this section)</p>
+<div class="guideline">Guideline 2.5 Touch Accessible: Make all functionality  available via touch.</div>
+<h3>New Proposed <strong>Success Criteria</strong> under this proposed Guideline</h3>
+<div class="newsuccesscriteria"><strong>2.5.1 Touch:</strong> </strong>All functionality of the content is operable through touch  gestures. (Level A)</div>
+ <div class="prefix">Note: There has been much discussion about whether this can be required. We must address all objections if this is to proceed.</div>
+<div class="newsuccesscriteria">
+   <strong>2.5.2 Touch Target Size:</strong> </strong>One dimension of any touch target measures at least 9       mm except when the user has reduced the default scale of content. (Level       AA)<br>
+   
+</div>
+
+<div class="newsuccesscriteria"> 
+  <strong>2.5.4 Modified Touch:</strong></strong> When touch input behavior is modified by built-in  assistive technology, all functionality of the content is still operable  through touch gestures. (Level A)</div>
+<div class="newsuccesscriteria"><strong>2.5.5 Touch Target Clearance: </strong>The center of each touch target has a distance of  at least 9 mm from the center of any other touch target, except when the user  has reduced the default scale of content. (Level AA)<br>
+    <br>
+  <strong><em>Note</em></strong><em>: Isn't this the same as 2.5.2 </em>above (9 mm distance)</div>
+  
+ 
+<div class="newsuccesscriteria"><strong>
+2.5.6 No Swipe Trap: </strong>When touch input behavior is modified by built-in assistive technology so that touch focus can be moved to a component of the page using swipe gestures, then focus can be moved away from that component using swipe gestures or the user is advised of the method for moving focus away. (Level A)</div>
+
+<h4>Advisory Technique</h4>
+   <div class="advisorysuccesscriteria"> 
+   Ensuring that touch targets close to the minimum size are surrounded by a small amount of inactive space. 
+     <br>
+     <br>
+     <strong>Rational for not being a Success Criteria: </strong>Cannot measure &quot;Small amount&quot;. Can we quantify it?
+   </div>
+
+<p><em>Note:</em> This size is not dependent on the screen size, device or   resolution. Screen magnification should not need to be used to obtain   this size, because magnifying the screen often introduces the need to   pan horizontally as well as vertically, which can decrease usability. </p>
+
+ <section property="bibo:hasPart" resource="#touchscreen-gestures" typeof="bibo:Chapter" id="touchscreen-gestures">
+ <h3 resource="#h-touchscreen-gestures" id="h-touchscreen-gestures"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3 </span>Touchscreen Gestures</span><br>
+</h3><div class="comment">(David Comment: Move prose to Understanding Doc)</div>
+<p>Many mobile devices are designed to be primarily operated via   gestures made on a touchscreen. These gestures can be simple, such as a   tap with one finger, or very complex, involving multiple fingers,   multiple taps and drawn shapes.</p>
+<p><span class="advisorysuccesscriteria">Gestures in apps should be as easy as possible to carry out. This   is especially important for screen reader interaction modes that replace   direct touch manipulation by a two-step process of focusing and   activating elements. It is also a challenge for users with motor or   dexterity impairments or people who rely on head pointers or a stylus   where multi-touch gestures may be difficult or impossible to perform.   Often, interface designers have different options for how to implement   an action. Widgets requiring complex gestures can be difficult or   impossible to use for screen reader users. </span></p>
+ <h4>Advisory Techniques</h4>
+ <div class="advisorysuccesscriteria">Gestures in apps should be as easy as possible to carry out. <br>
+   <br>
+   <strong>Rational for not being a Success Criteria: </strong>Cannot measure &quot;easy as possible&quot;. Can we do rework it?
+   </p>
+ </div>
+ <div class="advisorysuccesscriteria"> 
+   Some (but not all) mobile operating systems provide work-around   features that let the user simulate complex gestures with simpler ones   using an onscreen menu. <br>
+   <br>
+   <strong>Rational for not being a Success Criteria: </strong>Cannot measure this or apply it in all circumstances. Can we do rework it?
+   </p>
+ </div>
+ <div class="advisorysuccesscriteria"> Usually, design alternatives   exist to allow changes to settings via simple tap or swipe gestures. <br>
+     <br>
+     <strong>Rational for not being a Success Criteria: </strong>Cannot measure this or apply it in all circumstances. Can we do rework it?</p>
+ </div>
+   
+     <h3>New Proposed Success Criteria</h3>
+     <p><strong>Note:</strong> The proposed new Success Criteria are numbered as to where they are proposed in WCAG 2 (that's why their numbers don't have 3.x as per this section)</p>
+  
+<div class="newsuccesscriteria"> <strong>2.5.3 Single Taps and Long Presses Revocable:</strong> Interface elements that require a  single tap or a long press as input will only trigger the corresponding event  when the finger is lifted inside that element. (Level A)</div>
+<div class="comment">(David Comment: Move prose to Understanding Doc)</div>
+    <p>Activating elements via the mouseup or touchend event. Using the   mouseup or touchend event to trigger actions helps prevent unintentional   actions during touch and mouse interaction. Mouse users clicking on   actionable elements (links, buttons, submit inputs) should have the   opportunity to move the cursor outside the element to prevent the event   from being triggered. This allows users to change their minds without   being forced to commit to an action. In the same way, elements accessed   via touch interaction should generally trigger an event (e.g.   navigation, submits) only when the touchend event is fired (i.e. when   all of the following are true:  the user has lifted the finger off the   screen, the last position of the finger is inside the actionable   element, and the last position of the finger equals the position at   touchstart). </p>
+ <section property="bibo:hasPart" resource="#device-manipulation-gestures" typeof="bibo:Chapter" id="device-manipulation-gestures">
+  <h3 resource="#h-device-manipulation-gestures" id="h-device-manipulation-gestures"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.4 </span>Device Manipulation Gestures</span><br>
+   </h3><div class="comment">(David Comment: Move prose to Understanding Doc)</div>
+  <p>In addition to touchscreen gestures, many mobile operating systems   provide developers with control options that are triggered by physically   manipulating the device (e.g. shaking or tilting). While device   manipulation gestures can help developers create innovative user   interfaces, they can also be a challenge for people who have difficulty   holding or are unable to hold a mobile device. </p>
+  <h4>Advisory technique</h4>
+  <div class="advisorysuccesscriteria">Some (but not all) mobile operating systems provide work-around   features that let the user simulate device shakes, tilts, etc. from an   onscreen menu. <br>
+    <br>
+   <strong>Rational for it not being a Success Criteria:</strong> It doesn't apply to all situations. Can we quantify it?  </div>
+  <p>Therefore, even when device manipulation gestures are provided,   developers should still provide touch and keyboard operable alternative   control options. </p>
+  <h4>New Success Criteria<span class="guideline"> under the new 2.5 touch Success Criteria</span></h4>
+  <div class="newsuccesscriteria"><strong>2.5.8 <span class="guideline">Device manipulation: </span></strong>When device manipulation gestures are provided,   touch and keyboard operable alternative   control options are available. </div>
+  
+ <p>WCAG 2 Success Criteria which apply:</p>
+   <div class="successcriteria"> <strong>2.1.1 Keyboard</strong> (Level A)
+  </div>
+  <p>Another issue with control via device manipulation gestures is   that they might lack onscreen indicators that remind people how and when   to use them. See <a href="#customTouchscreen">Touchscreen gesture instructions</a>. </p>
+</section>
+<section property="bibo:hasPart" resource="#placing-buttons-where-they-are-easy-to-access" typeof="bibo:Chapter" id="placing-buttons-where-they-are-easy-to-access">
+  <h3 resource="#h-placing-buttons-where-they-are-easy-to-access" id="h-placing-buttons-where-they-are-easy-to-access"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.5 </span>Placing buttons where they are easy to access </h3>
+  <div class="comment">(David Comment: Move prose to Understanding Doc)</div>
+  
+  <p>Mobile sites and applications should position interactive elements   where they can be easily reached when the device is held in different   positions. </p>
+  <p>When designing mobile web content and applications many   developers attempt to optimize use with one hand. This can benefit   people with disabilities who may only have one hand available</p>
+  <h4>Advisory technique</h4> 
+  <div class="advisorysuccesscriteria">  Developers should also consider that an easy-to-use button placement for   some users might cause difficulties for others (e.g. left- vs.   right-handed use, assumptions about thumb range of motion). Therefore,   flexible use should always be the goal.<br><br><strong>Rational for it not being a Success Criteria:</strong> It doesn't apply to all situations. Can we quantify it?<br> </div>
+  <p>Some (but not all) mobile operating systems provide work-around   features that let the user temporarily shift the display downwards or   sideways to facilitate one-handed operation.</p>
+</section>
+<section property="bibo:hasPart" resource="#mobile-accessibility-considerations-related-primarily-to-principle-3-understandable" typeof="bibo:Chapter" id="mobile-accessibility-considerations-related-primarily-to-principle-3-understandable">
+  <!--OddPage--><h2 resource="#h-mobile-accessibility-considerations-related-primarily-to-principle-3-understandable" id="h-mobile-accessibility-considerations-related-primarily-to-principle-3-understandable"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>Mobile accessibility considerations related primarily to Principle 3: Understandable</span></h2>
+
+  <section property="bibo:hasPart" resource="#changing-screen-orientation-portrait-landscape" typeof="bibo:Chapter" id="changing-screen-orientation-portrait-landscape">
+   <h3 resource="#h-changing-screen-orientation-portrait-landscape" id="h-changing-screen-orientation-portrait-landscape"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>Changing Screen Orientation (Portrait/Landscape)</span><br>
+  </h3><div class="comment">(David Comment: Move prose to Understanding Doc)</div>
+   <p>Some mobile applications automatically set the screen to a particular   display orientation (landscape or portrait) and expect that users will   respond by rotating the mobile device to match. However, some users have   their mobile devices mounted in a fixed orientation (e.g. on the arm of   a power wheelchair). </p>
+   <p><span class="successcriteria">Also,   if a screen reader user is unaware that the orientation has changed the   user might perform incorrect navigation commands. </span>Therefore, mobile application developers should try to support   both orientations. If it is not possible to support both orientations,   developers should ensure that it is easy for all users to change the   orientation to return to a point at which their device orientation is   supported.</p>
+   <h4>Proposed new Guideline</h4>
+   <p><strong>Note:</strong> The proposed new Success Criteria are numbered as to where they are proposed in WCAG 2 (that's why their numbers don't have 4.x as per this section)</p>
+   <div class="guideline"><strong>3.4 Flexible Orientation:</strong></strong> Ensure users can use the content in the orientation that suits their circumstances</div>
+   <h4>New Success Criteria   </h4>
+   <div class="newsuccesscriteria"><strong>3.4.1 Expose Orientation: </strong>Changes in orientation are  programmatically exposed to ensure   detection by assistive technology such as screen readers. <br>
+   </div>
+  </section>
+   <section property="bibo:hasPart" resource="#consistent-layout" typeof="bibo:Chapter" id="consistent-layout">
+   <h3 resource="#h-consistent-layout" id="h-consistent-layout"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>Consistent Layout</span><br>
+     </h3><div class="comment">(David Comment: Move prose to Understanding Doc)</div>
+   <p>Components that are repeated across multiple pages should be   presented in a consistent layout.  In responsive web design, where   components are arranged based on device size and screen orientation, web   pages within a particular view (set size and orientation) should be   consistent in placement of repeated components and navigational   components. Consistency between the different screen sizes and screen   orientations is not a requirement under WCAG 2.0. </p>
+   <p>For example: </p>
+   <ul>
+     <li> A Web site has a logo, a title, a search form and a navigation bar   at the top of each page; these appear in the same relative order on each   page where they are repeated. On one page the search form is missing   but the other items are still in the same order. When the Web site is   viewed on a small screen in portrait mode,</li></ul>
+    
+       <h4>Possible technique for Success Criteria 3.2.3</h4>
+ 
+     <div class="technique"> If the navigation bar is   collapsed into a single icon, the entries in the drop-down list that   appear when activating the icon are still in the same relative order as the full navigation menu. </div>
+     <div class="technique"> A Web site, when viewed on the different screen sizes and in   different orientations, has some components that are hidden or appear in   a different order. The components that show, however, remain consistent   for any screen size and orientation. </div>
+  
+   <p>The WCAG 2.0 success criteria that are most related to the issue of consistency are: </p>
+   <div class="successcriteria">
+  <ul>
+     <li> <strong>3.2.3 Consistent Navigation</strong> (Level AA) </li>
+     <li> <strong>3.2.4 Consistent Identification</strong> (Level AA) </li>
+   </ul>
+   </div>
+   </section>
+  <section property="bibo:hasPart" resource="#positioning-important-page-elements-before-the-page-scroll" typeof="bibo:Chapter" id="positioning-important-page-elements-before-the-page-scroll">
+   <h3 resource="#h-positioning-important-page-elements-before-the-page-scroll" id="h-positioning-important-page-elements-before-the-page-scroll"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3 </span>Positioning important page elements before the page scroll</span></h3>
+   <p>The small screen size on many mobile devices limits the amount of content that can be displayed without scrolling. </p>
+   <h4>Advisory technique</h4>
+   <div class="advisorysuccesscriteria">Positioning important page information so it is visible without   requiring scrolling can assist users with low vision and users with   cognitive impairments. <br>
+     <br>
+    <strong>Rational for it not being a Success Criteria:</strong> It doesn't apply to all situations. Can we quantify it?   </div>
+   <h4>Understanding the technique</h4>
+   <p>If a user with low vision has the screen magnified only a small   portion of the page might be viewable at a given time. Placing important   elements before the page scroll allows those who use screen magnifiers   to locate important information without having to scroll the view to   move the magnified area. Placing important elements before the page   scroll also makes it possible to locate content without performing an   interaction. This assists users that have cognitive impairments such as   short-term memory disabilities. Placing important elements before the   page scroll also helps ensure that elements are placed in a consistent   location. Consistent and predictable location of elements assists people   with cognitive impairments and low vision. </p>
+  </section>
+  <section property="bibo:hasPart" resource="#grouping-operable-elements-that-perform-the-same-action" typeof="bibo:Chapter" id="grouping-operable-elements-that-perform-the-same-action">
+  <h3 resource="#h-grouping-operable-elements-that-perform-the-same-action" id="h-grouping-operable-elements-that-perform-the-same-action"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4 </span>Grouping operable elements that perform the same action</span></h3>
+  <h4>Sufficient technique for 2.4.4 link destination. It could be included in <a href="http://www.w3.org/TR/WCAG20-TECHS/H2.html">H2</a>.</h4>
+  <p>For more information on grouping operable elements, see <a href="http://www.w3.org/WAI/GL/WCAG20-TECHS/H2.html">H2: Combining adjacent image and text links for the same resource</a> technique. </p>
+  <div class="technique">When multiple elements perform the same action or go to the   same destination (e.g. link icon with link text), these should be   contained within the same actionable element.  This increases the touch   target size for all users and benefits people with dexterity   impairments. It also reduces the number of redundant focus targets,   which benefits people using screen readers and keyboard/switch control. </div>
+  <p>The WCAG 2.0 success criterion that is most related to grouping of actionable elements is: </p>
+  <div class="successcriteria">
+  <ul>
+    <li> <strong>2.4.4 Link Purpose (In Context) </strong>(Level A) </li>
+    <li> <strong>2.4.9 Link Purpose (Link Only)</strong> (Level AA) </li>
+  </ul>
+  </div>
+  </section>
+  <section property="bibo:hasPart" resource="#provide-clear-indication-that-elements-are-actionable" typeof="bibo:Chapter" id="provide-clear-indication-that-elements-are-actionable">
+    <h3 resource="#h-provide-clear-indication-that-elements-are-actionable" id="h-provide-clear-indication-that-elements-are-actionable"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.5 </span>Provide clear indication that elements are actionable</span>    </h3>
+    <div class="comment">(David comments: we may want to coordinate with low vision and cognitive group on this)</div>
+    <h4>New Guideline</h4>
+    <div class="guideline">1.6 Make interactive elements distinguishable</div>
+     <h4>New Success Criteria</h4><div class="newsuccesscriteria"><strong>1.6.1 Triggers Distinguishable:</strong> Elements that trigger changes should be sufficiently distinct to be   clearly distinguishable from non-actionable elements (content, status   information, etc).  </div>
+<div class="comment">David Comments: Move prose to Understanding Doc</div>
+    <p>Providing a clear indication that elements are actionable is relevant   for web and native mobile applications that have actionable elements   like buttons or links, especially in interaction modes where actionable elements are commonly detected visually (touch   and mouse use). Interactive elements must also be detectable by users   who rely on a programmatically determined accessible name (e.g. screen   reader users). </p>
+    <p>Visual users who interact with content using touch or visual   cursors (e.g. mice, touchpads, joysticks) should be able to clearly   distinguish actionable elements such as links or buttons. Existing   interface design conventions are aimed at  indicating that these visual   elements are actionable. The principle of redundant coding ensures that   elements are indicated as actionable by more than one distinguishing   visual feature. Following these conventions benefits all users, but   especially users with vision impairments. </p>
+    <p>Visual features that can set an actionable element apart include   shape, color, style, positioning, text label for an action, and   conventional iconography. </p>
+    <h4>New Sufficient Techniques for 1.6.1 </h4>
+  <div class="technique"> <strong>Conventional shape:</strong> Button shape (rounded corners, drop shadows), checkbox, select rectangle with arrow pointing downwards </div>
+     <div class="technique"> <strong>Iconography:</strong> conventional visual icons (question mark, home icon, burger icon for menu, floppy disk for save, back arrow, etc) </div>
+    <div class="technique"> <strong>Color offset:</strong> shape with different background color to distinguish the element from the page background, different text color </div>
+     <div class="technique"> <strong>Conventional style: </strong>Underlined text for links, color for links </div>
+     <div class="technique"> <strong>Conventional positioning:</strong> Commonly used position such as a top left   position for back button (iOS), position of menu items within   left-aligned lists in drop-down menus for navigation </div>
+   
+    <p>The WCAG 2.0 success criteria do not directly address issue of clear visual indication that elements are actionable but are related to the following success criteria: </p>
+    <div class="successcriteria">
+      <ul>
+        <li> <strong>3.2.3 Consistent Navigation</strong> (Level AA) </li>
+        <li> <strong>3.2.4 Consistent Identification</strong> (Level AA) </li>
+      </ul>
+    </div>
+  </section>
+  <section property="bibo:hasPart" resource="#provide-instructions-for-custom-touchscreen-and-device-manipulation-gestures" typeof="bibo:Chapter" id="provide-instructions-for-custom-touchscreen-and-device-manipulation-gestures">
+    <h3 resource="#customTouchscreen" id="customTouchscreen"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.6 </span>Provide instructions for custom touchscreen and device manipulation gestures</span></h3>
+    <h4>New Techniques for 3.3.2 Labels or Instructions</h4>
+    <div class="technique">Therefore, instructions (e.g. overlays, tooltips, tutorials, etc.)   should be provided to explain what gestures can be used to control a   given interface and whether there are alternatives. </div>
+   <div class="comment">David Comments: Move prose to Understanding Doc</div>
+    <p>The ability to provide control via custom touchscreen and device   manipulation gestures can help developers create   efficient new interfaces. However, for many people, custom gestures can   be a challenge to discover, perform and remember.</p>
+    <p> To be effective, the   instructions should, themselves, be easily discoverable and accessible.   The instructions should also be available anytime the user needs them,   not just on first use, though on first use they may be made more   apparent through highlighting or some other mechanism. </p>
+    <p>These WCAG 2.0 success criteria are relevant to providing instructions for gestures: </p>
+    <div class="successcriteria">
+      <ul>
+        <li> <strong>3.3.2 Labels or Instructions</strong> (Level A) </li>
+        <li> <strong>3.3.5 Help</strong> (Level AAA) </li>
+      </ul>
+    </div>
+  </section>
+</section>
+
+<section property="bibo:hasPart" resource="#mobile-accessibility-considerations-related-primarily-to-principle-4-robust" typeof="bibo:Chapter" id="mobile-accessibility-considerations-related-primarily-to-principle-4-robust">
+<!--OddPage--><h2 resource="#h-mobile-accessibility-considerations-related-primarily-to-principle-4-robust" id="h-mobile-accessibility-considerations-related-primarily-to-principle-4-robust"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>Mobile accessibility considerations related primarily to Principle 4: Robust</span></h2>
+  <section property="bibo:hasPart" resource="#set-the-virtual-keyboard-to-the-type-of-data-entry-required" typeof="bibo:Chapter" id="set-the-virtual-keyboard-to-the-type-of-data-entry-required">
+   <h3 resource="#h-set-the-virtual-keyboard-to-the-type-of-data-entry-required" id="h-set-the-virtual-keyboard-to-the-type-of-data-entry-required"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1 </span>Set the virtual keyboard to the type of data entry required</span></h3>
+   <h4 resource="#h-set-the-virtual-keyboard-to-the-type-of-data-entry-required">New technique under 1.3.1 Info and Relationships</h4>
+   <div class="technique">Set the virtual keyboard to the type of data entry required</div>
+   <div class="comment">David Comment: Move prose to Understanding doc</div>
+   <p>On some mobile devices, the standard keyboard can be customized in the   device settings and additional custom keyboards can be installed.  Some   mobile devices also provide different virtual keyboards depending on the   type of data entry. This can be set by the user or can be set to a   specific keyboard.  For example, using the different HTML5 form field   controls (see <a href="http://www.w3.org/TR/ime-api/">Method Editor API</a>)   on a website will show different keyboards automatically when users are   entering in information into that field.  Setting the type of keyboard   helps prevent errors and ensures formats are correct but can be   confusing for people who are using a screen reader when there are subtle   changes in the keyboard. </p>  
+  </section>
+   <section property="bibo:hasPart" resource="#provide-easy-methods-for-data-entry" typeof="bibo:Chapter" id="provide-easy-methods-for-data-entry">
+   <h3 resource="#h-provide-easy-methods-for-data-entry" id="h-provide-easy-methods-for-data-entry"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2 </span>Provide easy methods for data entry</span></h3>
+   <h4>Advisory technique</h4>
+   <div class="comment">David comment: Move prose to understanding</div>
+   <p><span class="advisorysuccesscriteria">Users can enter information on mobile devices in multiple ways such as   on-screen keyboard, Bluetooth keyboard, touch, and speech. Text entry   can be time-consuming and difficult in certain circumstances. </span></p>
+   <div class="advisorysuccesscriteria">Reduce the   amount of text entry needed by providing select menus, radio buttons,   check boxes or by automatically entering known information (e.g. date,   time, location). <br>
+     <br>
+     <strong>Rational for it not being a Success Criteria:</strong> It doesn't apply to all situations. Can we quantify it?</div>
+  </section>
+  <section property="bibo:hasPart" resource="#support-the-characteristic-properties-of-the-platform" typeof="bibo:Chapter" id="support-the-characteristic-properties-of-the-platform">
+  <h3 resource="#h-support-the-characteristic-properties-of-the-platform" id="h-support-the-characteristic-properties-of-the-platform"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.3 </span>Support the characteristic properties of the platform</span></h3>
+  <p>Mobile devices provide many features to help users with disabilities   interact with content.  These include platform characteristics such as   zoom, larger fonts, and captions.  The features and functions available   differ depending on the device and operating system version. For   example, most platforms have the ability to set large fonts, but not all   applications honor it for all text.  Also, some applications might   increase font size but not wrap text, causing horizontal scrolling. </p>
+  <h4>New Success Criteria under 4.1</h4>
+  <div class="newsuccesscriteria"><strong>4.1.4 Non-interference of AT: </strong>Content does not interfere with default functionality of platform level assistive technology</div>
+  </section>
+</section>
+
+<section property="bibo:hasPart" resource="#wcag-techniques-that-apply-to-mobile" typeof="bibo:Chapter" id="wcag-techniques-that-apply-to-mobile" class="appendix">
+  <!--OddPage--><h2 resource="#h-wcag-techniques-that-apply-to-mobile" id="h-wcag-techniques-that-apply-to-mobile"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>WCAG Techniques that apply to mobile</span></h2>
+  <p><a href="http://www.w3.org/WAI/GL/mobile-a11y-tf/MobileTechniques/">WCAG 2.0 Techniques that Apply to Mobile</a></p>
+</section>
+<section property="bibo:hasPart" resource="#uaag-2.0-success-criteria-that-apply-to-mobile" typeof="bibo:Chapter" id="uaag-2.0-success-criteria-that-apply-to-mobile">
+<!--OddPage--><h2 resource="#h-uaag-2.0-success-criteria-that-apply-to-mobile" id="h-uaag-2.0-success-criteria-that-apply-to-mobile"><span property="xhv:role" resource="xhv:heading"><span class="secno">B. </span>UAAG 2.0 Success Criteria that apply to mobile</span></h2>
+<p><a href="http://www.w3.org/TR/IMPLEMENTING-UAAG20/mobile.html">UAAG Mobile Accessibility Examples</a></p>
+</section>
+<section property="bibo:hasPart" resource="#acknowledgments" typeof="bibo:Chapter" id="acknowledgments">
+  <!--OddPage--><h2 resource="#h-acknowledgments" id="h-acknowledgments"><span property="xhv:role" resource="xhv:heading"><span class="secno">C. </span>Acknowledgments</span></h2>
+  <dl>
+      <dt>Participants in the Mobile Accessibility Task Force: </dt>
+      <dd>Kathleen Anderson</dd>
+      <dd>Jonathan Avila</dd>
+      <dd>Tom Babinszki</dd>
+      <dd>Matthew Brough</dd>
+      <dd>Michael Cooper (WCAG WG Staff Contact)</dd>
+      <dd>Gavin Evans</dd>
+      <dd>Detlev Fischer</dd>
+      <dd>Alistair Garrison</dd>
+      <dd>Marc Johlic</dd>
+      <dd>David MacDonald</dd>
+      <dd>Kim Patch (TF Facilitator - UAAG WG)</dd>
+      <dd>Jan Richards</dd>
+      <dd>Mike Shebanek</dd>
+      <dd>Brent Shiver</dd>
+      <dd>Alan Smith</dd>
+      <dd>Jeanne Spellman (UAAG WG Staff Contact)</dd>
+      <dd>Henny Swan</dd>
+      <dd>Peter Thiessen</dd>
+      <dd>&nbsp;</dd>
+      <dd>Kathleen Wahlbin (TF Facilitator - WCAG WG)</dd>
+</dl>
+<dl>
+    <dt>Chairs of the WCAG WG and the UAAG WG:      </dt>
+      <dd>Jim Allan (UAAG WG), Texas School for the Blind and Visually Impaired</dd>
+      <dd>Andrew Kirkpatrick (WCAG WG), Adobe Systems</dd>
+      <dd>Joshue O Connor (WCAG WG), National Council for the Blind of Ireland (NCBI)</dd>
+</dl>
+<p>This publication has been funded in part with Federal funds from the   U.S.  Department of Education, National Institute on Disability, Independent     Living, and Rehabilitation Research (NIDILRR) under contract number   ED-OSE-10-C-0067. The content of this  publication does not necessarily reflect the views or policies of the   U.S.  Department of Education, nor does mention of trade names, commercial  products, or organizations imply endorsement by the U.S. Government. </p>
+<hr>
+<p> </p>
+</section>
+  
+
+<section property="bibo:hasPart" resource="#references" typeof="bibo:Chapter" id="references" class="appendix"><!--OddPage--><h2 resource="#h-references" id="h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">D. </span>References</span></h2><section property="bibo:hasPart" resource="#informative-references" typeof="bibo:Chapter" id="informative-references"><h3 resource="#h-informative-references" id="h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">D.1 </span>Informative references</span></h3><dl resource="" class="bibliography"><dt id="bib-UAAG20">[UAAG20]</dt><dd>James Allan; Kelly Ford; Kimberly Patch; Jeanne F Spellman. <a property="dc:references" href="http://www.w3.org/TR/UAAG20/"><cite>User Agent Accessibility Guidelines (UAAG) 2.0</cite></a>. 25 September 2014. W3C Working Draft. URL: <a property="dc:references" href="http://www.w3.org/TR/UAAG20/">http://www.w3.org/TR/UAAG20/</a>
+</dd><dt id="bib-WCAG20">[WCAG20]</dt><dd>Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. <a property="dc:references" href="http://www.w3.org/TR/WCAG20/"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. 11 December 2008. W3C Recommendation. URL: <a property="dc:references" href="http://www.w3.org/TR/WCAG20/">http://www.w3.org/TR/WCAG20/</a>
+</dd></dl></section></section>
+<hr>
+</body>
+</html>
