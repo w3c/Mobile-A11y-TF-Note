@@ -8,7 +8,7 @@
 <h1>M016: Vertical navigation mechanisms for narrow width screens</h1>
 <h2>User Problem</h2>
 <p>
-many websites are designed for a desktop viewing experience. Seen on the narrow display of a mobile device, this means that the browser's viewport shows just a part of the content. The width of content elements like horizontal menus often exceeds the width of display. On sites that are not responsive, this necessitates horizontal panning in order to activate menu items that are not within the current viewport.
+Many websites are designed for a desktop viewing experience. Seen on the narrow display of a mobile device, this means that the browser's viewport shows just a part of the content. The width of content elements like horizontal menus often exceeds the width of display. On sites that are not responsive, this necessitates horizontal panning in order to activate menu items that are not within the current viewport.
 </p>
 
 <h2>Solution and Examples </h2>
@@ -16,20 +16,20 @@ many websites are designed for a desktop viewing experience. Seen on the narrow 
 
 <p>The RWD approach uses so-called break points (CSS 3 @media selectors) that define different content renderings for specific ranges of viewport widths. Designers often use breakpoints to define different site layouts for the desktop, for tablets, and for smartphones.</p> 
 
-<p>A very common RWD pattern is to render the main navigation menu as single  menu toggle button on narrow viewports. The aim is to ensure that main content stays visible even on small screens. Toggling this menu button then expands the maim menu as a vertical list of options and pushes main page content further down.</p>
+<p>A very common RWD pattern is to render the main navigation menu as single  menu toggle button on narrow viewports. The aim is to ensure that main content stays visible even on small screens. Toggling this menu button then expands the main menu as a vertical list of options and pushes main page content further down.</p>
 
 <h3>Requirements for implementations</h3>
-<p><strong>Note: The following list of requirements is probably incomplete and possibly inaccurate n places. It needs vetting by web designers and testing with different input scenarios lile mobile screen readers and mobile with connected keyboards.</strong></p>
+<p><strong>Note: The following list of requirements is probably incomplete and possibly inaccurate in places. It needs vetting by web designers and testing with different input scenarios, like mobile screen readers and mobile with connected keyboards.</strong></p>
 <ul>
-<li>Ensure that the toggle button receives focus in keyboard operating modes as well as for keyboard and touch interaction with screenreader turned on.</li>
-<li>Ensure thhat the menu toggle button has a meaningful accessible name</li>
-<li>Ensure that the accessible name of the toggle button reflects the current state of the menu (collapsed/expanded) using aria-expanded attribute on the button</li>
-<li>Ensure a focus order where the menu items in the expanded navigation menu immeadiately follow the toggle button(either by implementing this order in the dom or by dynamically setting the focus to the menu when it is expanded (note that this may not work well in all contexts)</li>
-<li>Ensure that menu items can be focused and activated</li>
+<li>Ensure that the menu toggle button receives focus when the mobile site is used with an external keyboard.</li>
+<li>Ensure that the menu toggle button has a meaningful accessible name (preferably visible as text). While the so-called hamburger button without label is getting quite common, user resarch shows that a button with the visible name "menu" is better understood. Another option is to use the hamburger icon but to provide a text legend like "open menu" after it (changing to "close menu" once the menu is expanded).</li>
+<li>Ensure that the menu toggle button reflects the current state of the menu (collapsed/expanded) either using the aria-expanded attribute on the button or changing the accessible name to reflect the state</li>
+<li>Ensure a focus order where the menu items in the expanded navigation menu immediately follow the toggle button(either by implementing this order in the DOM or by dynamically setting the focus to the menu when it is expanded (note that this may not work well in all contexts)</li>
+<li>Ensure that menu items can be focused and activated via pointer, touch and keyboard</li>
 </ul>
 <h3>Example 1</h3>
 <p>http://examples.anysurfer.be/dropdown/</p>
-<p>(I have asked Bart Simons (anysurfer) who agrees code example here. The example has the menu visible by default, to be toggled by a "hamburger" button. Wwe might modify the example to bring it in line with the much more common use with the collapsed state as default - but there are probably accessibility issues with this - so we need to be certain not propagete badly accessible design here...)</p>
+<p>(I have asked Bart Simons (anysurfer) who agrees code example here. The example has the menu visible by default, to be toggled by a "hamburger" button. We might modify the example to include a visible label like "open menu"  next to the toggle button</p>
 
 <h2>Applicable Operating System or Device</h2>
 <p>The vertical navigation menu is used by many responsive websites to optimise the display in mobile browsers in different mobile OSs (iOS, Android, Windows Phone, Blackberry).</p>
@@ -49,7 +49,7 @@ OR OUTSIDE REFERENCE
 <h3>Procedure</h3>
 <ol>
 <li>Check that the menu button has a descriptive accessible name that dynamically reflects the toggle state of the menu (e.g. using a DOM inspect tool)</li>
-<li>Check that the toggle button can be activated in different interaction modes (keyboard, touch, tocuh with activated built-in screen reader)</li>
+<li>Check that the toggle button can be activated in different interaction modes (keyboard, pointer, touch, touch with activated built-in screen reader)</li>
 <li>Check that menu items directly follow the toggle button in terms of focus order</li>
 <ol>
 
