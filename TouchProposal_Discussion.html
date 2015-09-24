@@ -6,7 +6,14 @@
     
     
   <style type="text/css">
-  div.successcriteria {
+   div.guideline {
+border:solid #CFE8EF 1px;
+background:#DCDCDC;
+padding:.75em;
+margin-top:1em;
+color: black;
+}
+ div.successcriteria {
 border:solid #CCCCCC 1px;
 background:#DCDCDC;
 padding:.75em;
@@ -164,23 +171,31 @@ table.simple {
 	
 			details, summary {display: block;}
 			details {padding: 0.5em;}
-			summary {padding: 0.25em;background: #fff url(/details-summary/rightArrow.png) no-repeat 0.5em center; padding: 0.25em 0.25em 0.25em 2em;}
+			summary {padding: 0.25em;background: #fff url(http://davidmacd.com/blog/details-summary/rightArrow.png) no-repeat 0.5em center; padding: 0.25em 0.25em 0.25em 2em;}
 			summary::-webkit-details-marker {display: none;}
-			.open summary, details[open] summary {background-color: #f5f5f5; background-image: url(/details-summary/downArrow.png);}
+			.open summary, details[open] summary {background-color: #f5f5f5; background-image: url(http://davidmacd.com/blog/details-summary/downArrow.png);}
 			summary .el-context {display: inline;}
 			summary:hover, summary:focus, details[open] summary:hover, details[open] summary:focus {background-color: #eee;}
 		</style>
         <link href="https://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet">
  
 		<!-- load jquery first. latest versions of either v1 or v2 seem to work fine-->
-		<script src="details-summary/jquery-2.1.1.min.js"></script>
+		<script src="http://davidmacd.com/blog/details-summary/jquery-2.1.1.min.js"></script>
+
+
+
+
+
+
 		<!--then call the minified jquery.details polyfill -->
-		<script src="details-summary/jquery.details.min.js"></script>
+		<script src="http://davidmacd.com/blog/details-summary/jquery.details.min.js"></script>
         
-        <!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]--></head>
+      <!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--></head>
 <body id="respecDocument" role="document" class="h-entry">
 <div id="respecHeader" role="contentinfo" class="head">
-<h1 class="title p-name" id="title" property="dcterms:title">Touch Accessibility Proposal &amp; Discussion</h1>
+<h1 class="title p-name" id="title" property="dcterms:title">Touc h Accessibility Proposal &amp; Discussion</h1>
   
 <h2 id="w3c-editor-s-draft-12-february-2015"><abbr title="World Wide Web Consortium">Note: this is an internal rough proposal to the mobile task force, not for re-use outside of the Mobile TF</abbr></h2>
   <p>This is the supplement to David MacDonald's <a href="http://davidmacd.com/blog/mobile-tf-proposal.html">proposed discussion</a> and reorganization of <a href="http://www.w3.org/TR/mobile-accessibility-mapping/">Mobile Accessibility: How WCAG 2.0 and Other <abbr title="World Wide Web Consortium">W3C</abbr>/WAI Guidelines Apply to Mobile</a> The purpose of this is reorganization is to:</p>
@@ -191,11 +206,13 @@ table.simple {
     <li>Turn the information into a form digestible as an Normative Extension Spec. for WCAG 2</li>
     <li>After the possible Guidelines, Success Criteria and Techniques, the entire Editor's Draft Sept 3rd is inserted which could become the understanding document for mobile, or taken appart as understanding for each of the Success Criteria, Guidelines and Technques.</li>
   </ol>
-  <h3>New proposed Guideline</h3>
+ <img src="http://davidmacd.com/images/wcag-extention.png" width="800px"  alt="Diagram of how WCAG extensions could relate to the current WCAG 2 Integration. Description follows."/> 
+ <p>Diagram of how WCAG extensions could relate to the current WCAG 2 Integration. The task forces, Mobile, Cognitive, and Low Vision would develop guidelines, success criteria and techniques separately, and then integrate them to resolve conflicts and overlaps and then integrate them into the singular WCAg extension. The techniques would be collected in a non normative document as techniques for the extension, and some of them can be referenced from WCAG 2 where the techniques might apply to an existing Success criteria.</p>
+  <h3>New Guideline accepted by consensus of the Mobile Task Force at the <a href="http://www.w3.org/2015/09/10-mobile-a11y-minutes.html">meeting Sept. 10, 2015</a></h3>
     <p><strong>Note:</strong> All proposed new guidelines and Success Criteria are numbered as to where they are proposed in WCAG 2 (that's why their numbers don't have 3.x as per this section)</p>
-  <div class="guideline"><strong>Guideline 2.5 Touch and Pointer Accessible: </strong>Make it easier for users to operate touch and pointer functionality.</div>
+  <div class="guideline"><strong>Guideline 2.5 Touch and Pointer Accessible:</strong> Make it easier for users to operate touch and pointer functionality. </div>
   <details><summary>Expand to view comments  </summary>
-<h4>Lively discussion on list. Here's it is after redundancies etc. removed</h4>
+<h4>The above guideline takes into account the discussion below and attempts to address it with an overarching Guideline where detailed Success Criteria can go.</h4>
      <p  class="blue"> <strong>Patrick Lauke: </strong>"touch" is not strictly a "mobile" issue. There are already many devices   (2-in-1 tablet/laptops, desktop machines with external touch-capable   monitors, etc) beyond the mobile space which include touch interaction.   So, a fundamental question for me would be: would these extensions be   signposted/labelled as being "mobile-specific", or will they be added to   WCAG 2 core in a more general, device-agnostic manner? Further, though I welcome the addition of SCs relating to touch target   size and clearance, I'm wondering why we would not also have the   equivalent for mouse or stylus interfaces...again, in short, why make it   touch-specific, when in general the SCs should apply to all "pointers"   ("mouse cursor, pen, touch (including multi-touch), or other pointing   input device", to borrow some wording from the Pointer Events spec <a href="http://www.w3.org/TR/pointerevents/" rel="noreferrer" target="_blank">http://www.w3.org/TR/pointerevents/</a>)? </p>
   <p class="blue"> <strong>Detlev: </strong>Hi Patrick, I didn't intend this first draft to be restricted to
         touch ony devices - just capturing that input mode‎. It's certainly
@@ -250,7 +267,7 @@ Of course it might be more elegant to just make Guideline 2.1 input mode   agnos
 </ul>
 <p class="blue"><strong>Jonathan: </strong>While   I agree the term [Keyboard Interface] is misleading, In desktop terms testing with a   physical keyboard is one good way to make sure the keyboard interface is   working. Even   on mobile devices, support a physical keyboard through the keyboard   interface is something that helps people with disabilities and is an   important test. <em><strong> It just doesn&rsquo;t   go far enough.</strong></em></p>
 <p class="blue"><strong>David MacDonald:</strong> +1 to &quot;it doesn't go far enough.&quot;</p>
-</details>
+
 <div class="comment">
 <strong>David MacDonald Summary Comment: </strong>I think this discussion demonstrates that requiring <strong>ALL</strong> functionality to work with touch will be difficult. I don't think that we should require that &quot;all functionality&quot; be available via touch because:
 <ol>
@@ -259,25 +276,13 @@ Of course it might be more elegant to just make Guideline 2.1 input mode   agnos
   <li>I think we have to assume that normal usabililty practices will ensure that mobile apps will be primarily touch functioning.</li>
 </ol>
 <p>However, the accessibility gap is that deveopers don't ensure that someone running assistive technology can ALSO operate the system with touch. This is 2.5.4 below.</p> </div>
-<p class="blue"><strong>David: </strong>How about this for a Guideline under which all the other touch events can be placed?</p></details>
-<div class="guideline"><strong>Guideline 2.5 Touch Accessible:</strong> Make it easier for users to operate touch functionality (Understanding)</div>
-<details><summary>Expand to view comments</summary><p class="blue"><strong>David: </strong>This provides a nice wide guideline under which we can place our Success Criteria and Techniques and it echos the language of the existing Guidelines. (i.e., Guideline 1.4)</p>
+
+
 <p class="blue"><strong>Patrick: </strong>Sure, but this SC would be relegated into the "touch/mobile" extension   to WCAG, which somebody designing a desktop/mouse site may look into   (again, going back to the fundamental problem of WCAG extension, but I   digress).</p>
 <p class="blue"><strong>David:</strong> WCAG 2 is a stable document, entrenched in many jurisdictional laws,   which is a good thing. So far, unless something drastically changes in   consensus or in the charter approval, the extension model is what we are   looking at. However,   we may want to explore the idea of incorporating all these   recommendations into failure techniques or sufficient techniques for   *existing* Success Criteria in WCAG core, which would ensure they get   first class treatment in WCAG proper. This would ensure that they are   not left out of jurisdictions that didn't add the extension. But some of   the placement in existing Success Criteria could be pretty contrived.   Most would probably end up in 1.3.1 (like everything else).</p>
 <div class="comment"><strong>David Summary:</strong>I   think it is worth weighing hard the pros and cons of rolling these into   WCAG core vs. adding Success Criteria and Guidelines in this extension.
 </div></details>
-<h3>New Proposed <strong>Success Criteria</strong> under this proposed Guideline    </h3>
-    <div class="newsuccesscriteria"><strong>2.5.1 Touch:</strong> All functionality of the content is operable through touch  gestures. (Level A)</div>
-    <div class="prefix">
-      <blockquote>
-        <details><summary>Expand to view comments</summary><p class="blue"><strong>David: </strong>Is this applicable on all mobile site? See comment above.</p>
-        <p class="blue"><strong>Jonathan:</strong> But   we still need an exception like we have for keyboard access for things   like drawing and signatures, etc.  So we need to take into timing and   paths, etc.  Except when the   touch interactions requires specific timing or path...Perhaps pulling out similar language that is related to the keyboard success criteria about timing and paths. </p></details>
-        <div class="newsuccesscriteria"><strong>2.5.1 Touch: </strong>All <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html#functiondef" target="_blank">functionality</a> of   the content is operable through a <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html#keybrd-interfacedef" target="_blank">touch   interface</a> without requiring specific timings for individual   touch gestures, except where the underlying function requires   input that depends on the path of the user's movement and not just the   endpoints. (Level A)</div>
-        <details><summary>Expand to view comments</summary><p class="blue"> <strong>David:</strong>I think we are overreaching by requiring EVERYTHING to work with touch. I think we want to stick with requiring that anything that DOES operate via touch, can be used by a variety of users, including those with touch based screen readers.
-      I think we can drop this and be more granular as with the other Success Criteria below. </p>       
-        <p class="blue"><strong>Gregg:</strong>         Not posible or practical: an Apple watch – all the physical controls on the side have to also be operable from the screen?    Or do you mean that a web page designer needs to  provide their own keyboard in their content for any keyboard input on their page? I’m not sure this makes sense.   If you are relying on the keyboard interface for input of text – then it is not all via touch – some is via the keyboard interface.         And some mobile devices don’t have an onscreen keyboard (they have a physical one)  – so all by touch means you AGAIN WOULD have to provide all the input with a keyboard built into each web page or you would fail this SC</p></details>
-      </blockquote>
-    </div>
+
     <div class="newsuccesscriteria"> <strong>2.5.2 Touch Target Size:</strong> One dimension of any touch target measures at least 9       mm except when the user has reduced the default scale of content. (Level       AA)</div>
     <blockquote>
       <details><summary>Expand to view comments</summary><p class="blue"><strong>Gregg: </strong>What good is one dimension??  If you have any physical disability you need to specify both dimensions. 
@@ -301,11 +306,11 @@ Of course it might be more elegant to just make Guideline 2.1 input mode   agnos
         </p></details>
       </blockquote>
 
-    <div class="newsuccesscriteria"> <strong>2.5.4 Modified Touch:</strong> When touch input behavior is modified by built-in  assistive technology, all functionality of the content is still operable  through touch gestures. (Level A)</div>
+    <div class="newsuccesscriteria"> <strong>2.5.4  Modified Touch (1st draft):</strong> When touch input behavior is modified by built-in  assistive technology, all functionality of the content is still operable  through touch gestures. (Level A</div>
 <blockquote>
   <details><summary>Expand to view comments</summary><p class="blue"><strong>Gregg: </strong> You have no control of how it is changed – so how can you be expected to have anything still work? </p></details>
   <p class="blue"><strong>David MacDonald:</strong> How about this: 
-  <div class="newsuccesscriteria"><strong>2.5.4 Touch:</strong> For pages and applications that support touch, all functionality of the content is operable through touch gestures with and without system assistive technology activated. (Level A)</div>
+  <div class="newsuccesscriteria"><strong>2.5.4 Modified Touch (2nd draft):</strong> For pages and applications that support touch, all functionality of the content is operable through touch gestures with and without system assistive technology activated. (Level A)</div>
   
      <details><summary>Expand to view comments</summary><p class="blue"><strong>David:</strong> In the understanding document for this SC we would explain that touch   gestures with VO on could be and probably would be the VO equivalent to   the standard gestures used with VO off.</p>
      <p class="blue"><strong>Patrick:</strong> As it's not possible to recognise gestures when VoiceOver is enabled, as VO intercepts gestures for its own purposes
@@ -350,7 +355,7 @@ Of course it might be more elegant to just make Guideline 2.1 input mode   agnos
   <p class="blue"><strong>David: </strong> We never envisioned in the years 2000-2008 when we were tying up WCAG    people who are blind using a flat screen to operate a mobile device.    I think it was a huge leap forward for our industry, and we need to   foster their relationship to their devices, and run with it. Keyboard   requirements are in place, they are not going away. <em><strong>Our job now is to   look at the gaps, and see if there is anything we can do to ensure these   users can continue to use their flat screens which has levelled the   playing field for the blind, and to foster authoring that doesn't screw   that up. </strong></em></p></details>
       
   <p class="blue">Here's a rewrite with addressing the concerns.    
-  <div class="newsuccesscriteria"><strong>2.5.4 Touch:</strong> For pages and applications that support touch, all functionality of the content is operable through touch   gestures with and without system assistive technology activated, without relying on pass through gestures on the system (Level   A) </div>
+  <div class="newsuccesscriteria"><strong>2.5.4 Modified Touch (3rd draft):</strong> For pages and applications that support touch, all functionality of the content is operable through touch   gestures with and without system assistive technology activated, without relying on pass through gestures on the system (Level   A) </div>
   
   <div>
 </div>
@@ -371,9 +376,12 @@ This can be clarified in the prose for the SC, but perhaps a better way   would 
   <p class="blue">is this about gestures? In that case, it's definitely technically   impossible to satisfy this SC at all currently (see above), so I'd be   strongly opposed to it.</p>
   <p class="blue"><strong>Detlev:</strong> Maybe it's better to separate the discussion of terminology from the discussion of reworking the mobile TF Doc.<br>
 I personally don't get why someone would choose to call swiping or   pinching a gesture, but refuse to apply this term to tapping. What about   double and triple taps? Taps with two fingers? Long presses? Split   taps? To me, it makes sense to call *all* finger actions applied to a touch   screen a gesture. I simply don't get why tapping would not count. Where   do you draw the line, and why? A related issue is the distinction between touch gestures and button   presses. With virtual (non-tactile, but fixed position capacitive)   buttons, you already get into a grey area. The drafted Guideline 2.5   "Touch Accessible: All functionality available via touch" probably needs   to be expanded to include account for devices with physical (both   tactile or capacitive) device buttons. Which would mean something like </p></details>
-  <div class="newsuccesscriteria"><strong>Guideline 2.5 OR SC 2.5.4: </strong>On devices that support touch input, all functions are available vie   touch or button presses also after AT is turned on (i.e. without the use   of external keyboards).  </div>
+  <div class="newsuccesscriteria"><strong>Guideline 2.5 OR SC 2.5.4 (4th draft): </strong>On devices that support touch input, all functions are available via   touch or button presses also after AT is turned on (i.e. without the use   of external keyboards).  </div>
   <details><summary>Expand to view comments</summary><p class="blue"><strong>Detlev</strong>: <span class="newsuccesscriteria">Not well put, but you get the idea.</span></p>
   <p class="blue"><strong>David:</strong>  I think when we say Touch, we mean all touch activities such as swipes, taps, gestures etc... anything you do to operate the page by <strong><em>touching</em></strong> it. Regarding gestures, all   gestures are intercepted by VoiceOver. But all standard gestures are replaced by VoiceOver, unless   the author does something dumb to break that. I think we need to, at a   minimum, ensure that standard replacement gestures are not messed up. For   instance: I recently tested a high profile app for a major sports   event. It had a continuous load feature like twitter that kept   populating as you scroll down with one finger. Turn on the VoiceOver and   try the 3 finger equivalent of a one finger swipe to do a standard scroll and nothing happens to populate   the page. The blind user has hit a brick wall. I think we have to ensure   this type of thing doesn't happen on WCAG conforming things.  </p></details>
+  <div class="newsuccesscriteria"><strong>2.5.4 Modified Touch  (5th draft): </strong> All functions available by touch (or button presses) are still available by touch (or button presses) after system assistive technology is turned on.  </div>
+  <details><summary>Expand to view comments</summary>
+  <p class="blue"><strong>no comments:</strong>   </p></details>
   <hr>
 <div class="newsuccesscriteria"><strong>2.5.5 Touch Target Clearance: </strong>The center of each touch target has a distance of  at least 9 mm from the center of any other touch target, except when the user  has reduced the default scale of content. (Level AA)<br>
       <br>
@@ -478,6 +486,7 @@ Make it an ADVISORY TECHNIQUE ??? </p></details>
       <!--OddPage-->
       <h3>Advisory techniques: Contrast
       (2.3)</h3>
+
 <div class="advisorysuccesscriteria">The default point size for mobile platforms  might be larger than the default point size used on non-mobile devices. When  determining which contrast ratio to follow, developers should strive to make  sure to apply the lessened contrast ratio only when text is roughly equivalent  to 1.2 times bold or 1.5 times (120% bold or 150%) that of the default platform  size. <br>
         <br>
   (<strong><em>Rational for not being SC: </em></strong>&quot;roughly equivalent&quot; is not testable. Can we settle on something determinable and testable?<br>
@@ -545,6 +554,8 @@ Most IOT does have a remote interface –so that can be accessible. </p></detail
         <li>iOS (or Macbook) should have  separate sound outputs. So the screen reader user can play a movie connecting to a TV for friends and listen to VO to operate the movie, but not subject others to VoiceOver. This is an operating system and hardware 
 issue that authors can't do. (Via Janina Sajka) </li>
         <li>Can we add touch and hold duration to our touch section? I have an aunt   who has lost feeling in her fingers. She mentioned the issue with   touching too long on the buttons on her iPhone it causes a long press   action. Android allows for changing the touch and release duration but I   do not see a similar setting on iphone/iPad.  (Alan  Smith on list)</li>
+        <li>Duration of touch needs to be distinguishable for those who don't know how long they pushed</li>
+        <li>Force for those who cannot push at different strengths or who do not know how hard they pushed</li>
 </ul>
 <hr>
 <p>&nbsp;</p>
@@ -810,5 +821,26 @@ issue that authors can't do. (Via Janina Sajka) </li>
         <dd>Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. <a property="dc:references" href="http://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a>. 11 December 2008. W3C Recommendation. URL: <a property="dc:references" href="http://www.w3.org/TR/WCAG20/">http://www.w3.org/TR/WCAG20/</a></dd>
       </dl>
 </div>
+<hr>
+<h2>Parking Lot: below are sections cut out of the discussion above as we make decisions.</h2>
+<p class="blue"><strong>David: </strong>How about this for a Guideline under which all the other touch events can be placed?</p>
+<div class="guideline"><strong>Guideline 2.5 Touch Accessible:</strong> Make it easier for users to operate touch functionality (Understanding)</div>
+<h3>New Proposed <strong>Success Criteria</strong> under this proposed Guideline    </h3>
+    <div class="newsuccesscriteria"><strong>2.5.1 Touch:</strong> All functionality of the content is operable through touch  gestures. (Level A)</div>
+    <div class="prefix">
+      <blockquote>
+        <details><summary>Expand to view comments</summary><p class="blue"><strong>David: </strong>Is this applicable on all mobile site? See comment above.</p>
+        <p class="blue"><strong>Jonathan:</strong> But   we still need an exception like we have for keyboard access for things   like drawing and signatures, etc.  So we need to take into timing and   paths, etc.  Except when the   touch interactions requires specific timing or path...Perhaps pulling out similar language that is related to the keyboard success criteria about timing and paths. </p></details>
+        <div class="newsuccesscriteria"><strong>2.5.1 Touch: </strong>All <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html#functiondef" target="_blank">functionality</a> of   the content is operable through a <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html#keybrd-interfacedef" target="_blank">touch   interface</a> without requiring specific timings for individual   touch gestures, except where the underlying function requires   input that depends on the path of the user's movement and not just the   endpoints. (Level A)</div>
+        <details><summary>Expand to view comments</summary><p class="blue"> <strong>David:</strong>I think we are overreaching by requiring EVERYTHING to work with touch. I think we want to stick with requiring that anything that DOES operate via touch, can be used by a variety of users, including those with touch based screen readers.
+      I think we can drop this and be more granular as with the other Success Criteria below. </p>       
+        <p class="blue"><strong>Gregg:</strong>         Not posible or practical: an Apple watch – all the physical controls on the side have to also be operable from the screen?    Or do you mean that a web page designer needs to  provide their own keyboard in their content for any keyboard input on their page? I’m not sure this makes sense.   If you are relying on the keyboard interface for input of text – then it is not all via touch – some is via the keyboard interface.         And some mobile devices don’t have an onscreen keyboard (they have a physical one)  – so all by touch means you AGAIN WOULD have to provide all the input with a keyboard built into each web page or you would fail this SC</p></details>
+      </blockquote>
+    </div>
 </body>
+	<script>
+			// Call the details() polyfill to act on all instances of <details>
+			$(function() {$('details').details();});
+			/*!!Your other option is to place the above line at the end of the jquery.details.min.js file, in which case you can dispense with this <script> block */
+		</script>
 </html>
