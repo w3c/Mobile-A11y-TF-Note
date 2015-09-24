@@ -2,10 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>M023 - Set the HTML virtual keyboard to the type of data entry required.</title>
+  <title>M023 - Set the HTML input type to the most specific type of data entry requested.</title>
 </head>
 <body>
-<h1>M023 - Set the HTML virtual keyboard to the type of data entry required. </h1>
+<h1>M023 - Set the HTML input type to the most specific type of data entry requested</h1>
 <h2>Technique Category</h2>
 [[Category:Mobile Techniques]]
 [[Category:Advisory Techniques]]
@@ -24,7 +24,8 @@
 </ul>
 
 <h2>Applicability</h2>
-<p>This technique applies to HTML input fields where the user can enter input such as input fields used for character input such as alphanumeric etry, e.g. phone number, email address, etc. </p>
+<p>This technique applies to HTML input fields where the user can enter input such as input fields used 
+for character input such as alphanumeric etry, e.g. phone number, email address, etc. </p>
 
 <h2>WCAG References</h2>
 <ul>
@@ -35,14 +36,20 @@
 <p>Some user agents may not support specific keyboard layouts and some custom virtual keyboards may not support specific virtual keyboard layouts.  Some users such as users of screen readers may be confused by different keyboard layouts or keyboards that might appear.</p>
 
 <h2>Description</h2>
-<p>The objective of this technique is to assist the user by displaying relevant virtual keyboard or keyboard layout based on input type.    </p>
+<p>The objective of this technique is to assist the user by displaying relevant virtual keyboard or keyboard layout based on input type.   Specifying the most specific input type
+will assist users with virtual keyboards displaying the most relevant keys and enabling or disabling features such as spell check and 
+auto capitalization.</p>
 
 <h2>Solution</h2>
 <p>
-This technique uses the HTML5 type attribute attribute for text input to provide more speicific information. 
+This technique uses the HTML5 <code>type</code> attribute attribute for text input to provide more specific
+virtual keyboard context.  For example, use of type=email may display an alphanumeric keyobard with
+inclusion of common characters such as @ sign and may disable auto capitalizationa and spell check.
+
+Other input types that may change the appearnce of the virtual keyboard.
 type=date: may display a date picker and no virtual keyobard or a date picker and virtula keyboard
 type=datetime: standard alphanumeric keyboard displayed by most user agents
-type=email:Email specific alphanumberic keyobard displayed with inclusion of common characters such as @ sign
+
 type=month:may display a month picker and no virtual keyobard or a month picker and virtula keyboard
 type=number:may display a numeric virtual keyobard or a spinner and virtual keyboard
 type=range: may not display a virtual keyobard.  Displays a slider.
