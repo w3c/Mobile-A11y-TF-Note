@@ -25,7 +25,7 @@
 
 <h2>Applicability</h2>
 <p>This technique applies to HTML input fields where the user can enter input such as input fields used 
-for character input such as alphanumeric etry, e.g. phone number, email address, etc. </p>
+for character input such as alphanumeric entry, e.g. phone number, email address, etc. This technique has added benefit on touch based systems where virtual keyboards are used. </p>
 
 <h2>WCAG References</h2>
 <ul>
@@ -33,50 +33,55 @@ for character input such as alphanumeric etry, e.g. phone number, email address,
 </ul>
 
 <h2>User Agent and Assistive Technology Support Notes</h2>
-<p>Some user agents may not support specific keyboard layouts and some custom virtual keyboards may not support specific virtual keyboard layouts.  Some users such as users of screen readers may be confused by different keyboard layouts or keyboards that might appear.</p>
+<p>Some user agents or platforms may not support specific keyboard layouts and some custom virtual keyboards may not support specific virtual keyboard layouts.  Some users such as users of screen readers may be confused by different keyboard layouts or keyboards that might appear.</p>
 
 <h2>Description</h2>
 <p>The objective of this technique is to assist the user by displaying relevant virtual keyboard or keyboard layout based on input type.   Specifying the most specific input type
 will assist users with virtual keyboards displaying the most relevant keys and enabling or disabling features such as spell check and 
-auto capitalization.</p>
+auto capitalization.  Specific input types may also trigger other types of controls such as date and time pickers rather than displaying text input fields assisting users in choosing a value without having to type characters.  This practice may reduce user mistakes and lead to less error and more effectient data entry..</p>
 
 <h2>Solution</h2>
 <p>
 This technique uses the HTML5 <code>type</code> attribute attribute for text input to provide more specific
 virtual keyboard context.  For example, use of type=email may display an alphanumeric keyobard with
-inclusion of common characters such as @ sign and may disable auto capitalizationa and spell check.
+inclusion of common characters such as @ sign and may disable auto capitalization and spell check.
 
-Other input types that may change the appearnce of the virtual keyboard.
-type=date: may display a date picker and no virtual keyobard or a date picker and virtula keyboard
-type=datetime: standard alphanumeric keyboard displayed by most user agents
-
-type=month:may display a month picker and no virtual keyobard or a month picker and virtula keyboard
-type=number:may display a numeric virtual keyobard or a spinner and virtual keyboard
-type=range: may not display a virtual keyobard.  Displays a slider.
-type=tel:may display a numeric virtual keyobard 
-type=time:may display a time picker and no virtual keyobard or a time picker and virtual keyboard
-type=url:may display a url virtual keyobard 
-type=week: may display a week picker and no virtual keyobard or a week picker and virtual keyboard
+Other input types that may change the appearnce of the virtual keyboard or display different user input controls such as picker controls include:
+<ul>
+<li>type=date: may display a date picker and no virtual keyobard or a date picker and virtual keyboard</li>
+<li>type=datetime: standard alphanumeric keyboard displayed by most user agents</li>
+<li>type=month:may display a month picker and no virtual keyobard or a month picker and virtula keyboard</li>
+<li>type=number:may display a numeric virtual keyobard or a spinner and virtual keyboard</li>
+<li>type=range: may not display a virtual keyobard.  Displays a slider.</li>
+<li>type=tel:may display a numeric virtual keyobard </li>
+<li>type=time:may display a time picker and no virtual keyobard or a time picker and virtual keyboard</li>
+<li>type=url:may display a url virtual keyobard </li>
+<li>type=week: may display a week picker and no virtual keyobard or a week picker and virtual keyboard</li>
 </p>
 
 <h2>Examples </h2>
 <p>
-EXAMPLES AND CODE SAMPLES. 
+  <label for="email">Email:</label><input id="email" type="email" />
 </p>
+
+<p>
+  <label for="date">Requested Date:</label><input id="date" type="date" />
+</p>
+
 <h2>Resources</h2>
 <ul>
 <li>
-  ANY EXTERNAL  REFERENCE (INCLUDES UAAG OR OTHER W3C SPEC REFERENCES)
+  <a href="http://www.w3.org/TR/html5/forms.html#states-of-the-type-attribute">HTML5 staes of the type attribute.</a>
 </li>
 </ul>
 <h3>Related Techniques</h3>
 <ul>
-  <li>LIST OF RELATED TECHNIQUE NUMBERS (e.g. H30)</li>
+  <li>M24, M25</li>
 </ul>
 
 <h2>Tests</h2>
 <p>
-DESCRIPTION OF THE TEST
+Test that for each input the most specific type of input requested is identified by the type attribute.
 </p>
 <h3>Procedure</h3>
 <ol>
@@ -84,22 +89,19 @@ DESCRIPTION OF THE TEST
     Check that there is a text input field on the page.
   </li>
 <li>
-  Focus the field
-</li>
-<li>
-  Check that a virtual keyboard appears that is specific to that type of input.
+  Check that the most specific type of input is specified..
 </li>
 </ol>
 <h3>Expected Results</h3>
 <ul>
   <li>
-    Check that #4 is true.
+    Check that #2 is true.
   </li>
 </ul>
 
 <h2>Test Files</h2>
 <p>
-  ANY TEST FILES GO HERE (NOTE WORKING EXAMPLES INCLUDING SOURCE CODE SHOULD BE REFERENCED IN THE EXAMPLES SECTION). 
+<a href="https://labs.ssbbartgroup.com/index.php/Input_Element_Multiple_Types"> Example test file with different input types specified. </a>
 </p>
 </body>
 </html>
