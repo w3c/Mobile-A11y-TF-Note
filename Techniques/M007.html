@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <title>M007 - Supporting the characteristic properties of the platform (e.g. zoom, larger font, captions)</title>
@@ -13,14 +13,34 @@
 <h2>Status </h2>
 <ul>
 <li>
-NEW TECHNIQUE WRITTEN BY YOUR  NAME
+NEW TECHNIQUE WRITTEN BY YOUR  Alan Smith
 </li>
 <li>
 LINK TO SURVEY WHEN SURVEYED BY GROUP
 </li>
 </ul>
 <h2>Applicability</h2>
-<p>INFORMATION ON WHEN IT IS TECHNICALLY APPROPRIATE TO USE THE TECHNIQUE, E.G. TABLE WITH CELL HEADERS; SMARTPHONE WITH ZOOM FEATURES; FORM FIELDS WITH LARGE BLOCKS OF TEXT. </p>
+<p>This technique is appropriate when developers are considering support for a device’s supported accessibility controls such as:</p>
+<ul>
+  <li>Text resizing/reflowing and fonts for: 1) iOS - Dynamic Type, 2) Android - Scale-independent pixel units (SP), 3) Recommendation: text font sizing should not be hard coded</li>
+  <li>Audio</li> 
+  <li>Captions/subtitles</li> 
+  <li>Zooming</li> 
+  <li>Scrolling</li> 
+  <li>External keyboard or other input device support</li> 
+  <li>Colors and contrasts</li> 
+  <li>Screen reader</li> 
+  <li>Speech to text</li> 
+  <li>Sound or tactile feedback of keyboard entry/link or button activation</li> 
+  <li>Touch, hold and/or tapping controls</li> 
+  <li>Assistive technology modified device gestures</li> 
+  <li>Screen or image motion controls</li> 
+  <li>Flashing/sound/vibration for alerts/notifications</li> 
+  <li>Accessibility shortcuts: Keyboard or gesture</li> 
+  <li>Braille Device support</li> 
+  <li>TTY and Video Relay Service</li> 
+</ul>
+
 
 <h2>WCAG References</h2>
 <p>THE LIST OF SUCCESS CRITERIA, GUIDELINE, OR CONFORMANCE REQUIREMENT RELATED TO THIS TECHNIQUE <STRONG>IN THE FOLLOWING FORMAT</STRONG>: </p>
@@ -34,6 +54,10 @@ LINK TO SURVEY WHEN SURVEYED BY GROUP
 <p>EXAMPLE: </p>
 <ul>
   <li> text-equiv-all: <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#text-equiv-all">SC 1.1.1 Non-text Content</a></li>
+  <li> Resize text: <a rel="nofollow" href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#ensure-compat">1.4.4 Resize text: </a> Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality. (Level AA) </li>
+  <li> Predictable: <a rel="nofollow" href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#ensure-compat">3.2.2 On Input: </a> Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behavior before using the component. (Level A)</li>
+  <li> <a rel="nofollow" href="http://www.w3.org/TR/WCAG20-TECHS/G10.html">G10: </a>Creating components using a technology that supports the accessibility API features of the platforms on which the user agents will be run to expose the names and roles, allow user-settable properties to be directly set, and provide notification of changes</li>
+  <li> <a rel="nofollow" href="http://www.w3.org/WAI/GL/WCAG20-TECHS/general.html#G142">G142: </a> Using a technology that has commonly-available user agents that support zoom</li>
 </ul>
 <h2>User Agent and Assistive Technology Support Notes</h2>
 <p>ANY NOTES REGARDING KNOWN LACK OF SUPPORT FOR THIS TECHNIQUE WITH USER AGENTS OR ASSISTIVE TECHNOLOGY.</p>
@@ -51,9 +75,8 @@ EXAMPLES AND CODE SAMPLES.
 </p>
 <h2>Resources</h2>
 <ul>
-<li>
-  ANY EXTERNAL  REFERENCE (INCLUDES UAAG OR OTHER W3C SPEC REFERENCES)
-</li>
+<li>Google: Layout > Units and measurements>Scaleable pixels (sp): http://www.google.com/design/spec/layout/units-measurements.html#units-measurements-scaleable-pixels-sp-</li>
+<li>Apple: iOS 7 UI Transition Guide>Using Fonts: https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/TransitionGuide/AppearanceCustomization.html</li>
 </ul>
 <h3>Related Techniques</h3>
 <ul>
