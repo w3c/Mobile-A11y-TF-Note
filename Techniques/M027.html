@@ -20,17 +20,15 @@ LINK TO SURVEY WHEN SURVEYED BY GROUP
 </li>
 </ul>
 <h2>Applicability</h2>
-<p>INFORMATION ON WHEN IT IS TECHNICALLY APPROPRIATE TO USE THE TECHNIQUE, E.G. TABLE WITH CELL HEADERS; SMARTPHONE WITH ZOOM FEATURES; FORM FIELDS WITH LARGE BLOCKS OF TEXT. </p>
+<p>This technique applies to touch and pointer operating modes.</p>
+
 
 <h2>WCAG References</h2>
-<p>THE LIST OF SUCCESS CRITERIA, GUIDELINE, OR CONFORMANCE REQUIREMENT RELATED TO THIS TECHNIQUE <STRONG>IN THE FOLLOWING FORMAT</STRONG>: </p>
+<p>The technique relates to:</p>
 <ul>
-  <li> the anchor for that item. Copy the anchor from the success criterion URI address; </li>
-
-  <li> the number of the item; </li>
-
-  <li> the short name for the item; </li>
+<li>Success Criterion 2.5.1 Touch: All functions available by touch are still available by touch after system assistive technology that remaps touch gestures is turned on. (Level A) 
 </ul>
+
 <p>EXAMPLE: </p>
 <ul>
   <li> text-equiv-all: <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#text-equiv-all">SC 1.1.1 Non-text Content</a></li>
@@ -38,17 +36,21 @@ LINK TO SURVEY WHEN SURVEYED BY GROUP
 <h2>User Agent and Assistive Technology Support Notes</h2>
 <p>ANY NOTES REGARDING KNOWN LACK OF SUPPORT FOR THIS TECHNIQUE WITH USER AGENTS OR ASSISTIVE TECHNOLOGY.</p>
 <h2>Description</h2>
-<p>MAIN TEXT OF THE TECHNIQUE. TECHNIQUES BEGIN WITH "The objective of this   technique is to..." , DESCRIBES WHAT THE USER SHOULD ACCOMPLISH, THEN HOW TO ACCOMPLISH IT.  </p>
+<p>Custom controls in web interfaces may not be suitable for touch access when the built-in screen reader of mobile operating systems is enabled.</p>
+<p>Where default touch gestures do not work because of screen reader gestures that take precedence, ensure that there are equivalent alternative ways of activating or changing the state or value of the control.</p>
 
 <h2>Solution</h2>
-<p>
-THE TECHNIQUE AND HOW IT SHOULD WORK GOES HERE. 
-</p>
+<p>Either:</p>
+<ol>
+<li>Extend the touch-focused control. When the default touch gesture for manipulation is not available because the screen reader is turned on, equivalent screenreade-supported gestures are available(e.g. focus by swiping, then  double-tap).</li>
+<li>Offer a redundant control: Offer a separate alternative control for  the same functionality (e.g., changing of value or state, activation) that does not rely on touch gestures that are not available when the screen reader is turned on.</li>
+</ol>
 
 <h2>Examples </h2>
-<p>
-EXAMPLES AND CODE SAMPLES. 
-</p>
+<h3>Example 1</h3>
+<p>In the default operating mode (screen reader not enabled), a slider can be used to change a value by moving the thumb of the slider. When a screen reader is turned on, the direct manipulation does not work. Therefore a different method is provided to set the value of the slider. Discrete marks along the slider representing a scale of values may be selected by first moving the focus to  the mark and then selecting the focued mark by double-tapping.</p>
+
+
 <h2>Resources</h2>
 <ul>
 <li>
