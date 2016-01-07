@@ -25,5 +25,5 @@ When you’re ready for people to comment on your technique send the link to the
 
 ## To propose changes to main document "How WCAG Applies to Mobile" ##
 <ol>
-<li>To edit the Main Note file, fork index.html.  The MobileQuickRef.html is Appendix A. /li>
+<li>To edit the Main Note file, fork index.html.  The MobileQuickRef.html is Appendix A. </li>
 </ol>
