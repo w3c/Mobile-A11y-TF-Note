@@ -9,6 +9,7 @@ To write a technique
 <ol>
 <li>Navigate to the Mobile-A11y-TF Github repository: https://github.com/w3c/Mobile-A11y-TF-Note</li> 
 <li>Click on the techniques folder</li>
+<li>Click on the pencil icon (near top right) to edit </li>
 <li>Click on the file numbered with your technique number</li>
 <li>Replace the text that appears in all caps</li>
 </ol>
