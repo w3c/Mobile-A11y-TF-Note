@@ -29,10 +29,6 @@ LINK TO SURVEY WHEN SURVEYED BY GROUP
 <li>Success Criterion 2.5.1 Touch: All functions available by touch are still available by touch after system assistive technology that remaps touch gestures is turned on. (Level A) 
 </ul>
 
-<p>EXAMPLE: </p>
-<ul>
-  <li> text-equiv-all: <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#text-equiv-all">SC 1.1.1 Non-text Content</a></li>
-</ul>
 <h2>User Agent and Assistive Technology Support Notes</h2>
 <p>ANY NOTES REGARDING KNOWN LACK OF SUPPORT FOR THIS TECHNIQUE WITH USER AGENTS OR ASSISTIVE TECHNOLOGY.</p>
 <h2>Description</h2>
@@ -46,10 +42,9 @@ LINK TO SURVEY WHEN SURVEYED BY GROUP
 <li>Offer a redundant control: Offer a separate alternative control for  the same functionality (e.g., changing of value or state, activation) that does not rely on touch gestures that are not available when the screen reader is turned on.</li>
 </ol>
 
-<h2>Examples </h2>
+<h2>Examples</h2>
 <h3>Example 1</h3>
 <p>In the default operating mode (screen reader not enabled), a slider can be used to change a value by moving the thumb of the slider. When a screen reader is turned on, the direct manipulation does not work. Therefore a different method is provided to set the value of the slider. Discrete marks along the slider representing a scale of values may be selected by first moving the focus to  the mark and then selecting the focued mark by double-tapping.</p>
-
 
 <h2>Resources</h2>
 <ul>
@@ -64,15 +59,15 @@ LINK TO SURVEY WHEN SURVEYED BY GROUP
 
 <h2>Tests</h2>
 <p>
-DESCRIPTION OF THE TEST
+For interactive elements (controls):
 </p>
 <h3>Procedure</h3>
 <ol>
 <li>
-STEP 1
+Check that the control can be used (activated/deactivated, values changed etc.) with the system-internal screen reader turned on
 </li>
 <li>
-STEP 2
+If the control cannot be used with screenreader on, check that there are alternative equivalent means to carry out the action
 </li>
 <li>
 CHECK THAT…
@@ -81,7 +76,7 @@ CHECK THAT…
 <h3>Expected Results</h3>
 <ul>
 <li>
-#3 IS TRUE
+#2 or #3 are TRUE
 </li>
 </ul>
 
