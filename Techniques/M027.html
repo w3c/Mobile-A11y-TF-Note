@@ -32,19 +32,21 @@ LINK TO SURVEY WHEN SURVEYED BY GROUP
 <h2>User Agent and Assistive Technology Support Notes</h2>
 <p>ANY NOTES REGARDING KNOWN LACK OF SUPPORT FOR THIS TECHNIQUE WITH USER AGENTS OR ASSISTIVE TECHNOLOGY.</p>
 <h2>Description</h2>
-<p>Custom controls in web interfaces may not be suitable for touch access when the built-in screen reader of mobile operating systems is enabled.</p>
-<p>Where default touch gestures do not work because of screen reader gestures that take precedence, ensure that there are equivalent alternative ways of activating or changing the state or value of the control.</p>
+<p>Custom controls in web interfaces may not be suitable for touch or pointer access when the built-in screen reader of mobile operating systems is enabled.</p>
+<p>Where default touch or pointer gestures (such as dragging) do not work because of screen reader gestures that take precedence, ensure that there are equivalent alternative ways of activating or changing the state or value of the control.</p>
 
 <h2>Solution</h2>
 <p>Either:</p>
 <ol>
-<li>Extend the touch-focused control. When the default touch gesture for manipulation is not available because the screen reader is turned on, equivalent screenreade-supported gestures are available(e.g. focus by swiping, then  double-tap).</li>
-<li>Offer a redundant control: Offer a separate alternative control for  the same functionality (e.g., changing of value or state, activation) that does not rely on touch gestures that are not available when the screen reader is turned on.</li>
+<li>Extend the touch- or pointer-focused control. When the default touch or pointer gesture for manipulation is not available because the screen reader is turned on, equivalent screenreade-supported gestures are available (e.g. focus by swiping, then  double-tap).</li>
+<li>Offer a redundant control: Offer a separate alternative control for  the same functionality (e.g., specifying a value, changing the state, activation) that does not rely on touch or pointer gestures that are not available when the screen reader is turned on.</li>
 </ol>
 
 <h2>Examples</h2>
 <h3>Example 1</h3>
-<p>In the default operating mode (screen reader not enabled), a slider can be used to change a value by moving the thumb of the slider. When a screen reader is turned on, the direct manipulation does not work. Therefore a different method is provided to set the value of the slider. Discrete marks along the slider representing a scale of values may be selected by first moving the focus to  the mark and then selecting the focued mark by double-tapping.</p>
+<p>A slider can be used to change a value of a five point scale by dragging the thumb of the slider . When the system-internal screen reader is turned on, this direct manipulation does not work. Therefore, a different method is provided to set the value of the slider. Discrete marks along the slider representing the five posible values can be selected by first moving the focus to the appropriate mark and then selecting this mark by double-tapping.</p>
+<h3>Example 2</h3>
+<p>A slider is used to set the numerical value of a donation. The value can be set by dragging the thumb of the slider. When the system-internal screen reader is turned on, this direct manipulation does not work. Therefore, an input field with type number is provided for users to specify the amount they want to donate. Note that the slider is not part of the focus order and hidden with aria-hidden because it is not intended to be used in keyboard and screen reader operation.</p>
 
 <h2>Resources</h2>
 <ul>
