@@ -5,50 +5,40 @@
 <title>Mxxx - TEMPLATE FOR MOBILE TECHNIQUES</title>
 </head>
 <body>
-<h1>Mxxx - SHORT NAME</h1>
+<h1>FM001 - <span id="Failure_of_2.5.3_Modified_Touch_due_to_all_content_and.0A_functionality_not_being_available_by_touch_gesture_when_built-in_assistive.0A_technology_is_active">Content or functionality not available by touch gesture when platform assistive technology is active</span></h1>
 <h2>Technique Category</h2>
 [[Category:Mobile Techniques]]
 <h2>Technique Status Category</h2>
 [[Category:Techniques Proposed]]
 <h2>Status </h2>
 <ul>
+<li>NEW TECHNIQUE WRITTEN BY Jonathan Avila </li>
 <li>
-NEW TECHNIQUE WRITTEN BY YOUR  NAME
-</li>
-<li>
-LINK TO SURVEY WHEN SURVEYED BY GROUP
-</li>
+LINK TO SURVEY WHEN SURVEYED BY GROUP</li>
 </ul>
 <h2>Applicability</h2>
-<p>INFORMATION ON WHEN IT IS TECHNICALLY APPROPRIATE TO USE THE TECHNIQUE, E.G. TABLE WITH CELL HEADERS; SMARTPHONE WITH ZOOM FEATURES; FORM FIELDS WITH LARGE BLOCKS OF TEXT. </p>
+<p>This technique applies to platforms where touch screen access is        provided.  It addresses interactive content where the user can        perform one ore more actions.  The technique is applicable even when        access via a physical keyboard interaction is present and makes sure that        interactions can be performed through a keyboard interface using touch        gestures rather than relying on a physical keyboard accompanying the touch        screen device.</p>
 
 <h2>WCAG References</h2>
-<p>THE LIST OF SUCCESS CRITERIA, GUIDELINE, OR CONFORMANCE REQUIREMENT RELATED TO THIS TECHNIQUE <STRONG>IN THE FOLLOWING FORMAT</STRONG>: </p>
+<p>Failure of 2.5.3 (new mobile SC)</p>
 <ul>
-  <li> the anchor for that item. Copy the anchor from the success criterion URI address; </li>
-
-  <li> the number of the item; </li>
-
-  <li> the short name for the item; </li>
-</ul>
-<p>EXAMPLE: </p>
-<ul>
-  <li> text-equiv-all: <a rel="nofollow" href="http://www.w3.org/TR/WCAG20/#text-equiv-all">SC 1.1.1 Non-text Content</a></li>
+  <li>tap-press-revocable: <a href="#tap-[ress-revocable">2.5.3  Single Taps and Long Presses   Revocable</a></li>
 </ul>
 <h2>User Agent and Assistive Technology Support Notes</h2>
-<p>ANY NOTES REGARDING KNOWN LACK OF SUPPORT FOR THIS TECHNIQUE WITH USER AGENTS OR ASSISTIVE TECHNOLOGY.</p>
+<p>This technique is applicable on platforms that support touch screen        access where use of the touch screen is modified when platform assistive        technology is active and the assistive technology supports access to the        touch screen through a keyboard interface.</p>
 <h2>Description</h2>
-<p>MAIN TEXT OF THE TECHNIQUE. TECHNIQUES BEGIN WITH "The objective of this   technique is to..." , DESCRIBES WHAT THE USER SHOULD ACCOMPLISH, THEN HOW TO ACCOMPLISH IT.  </p>
-
-<h2>Solution</h2>
-<p>
-THE TECHNIQUE AND HOW IT SHOULD WORK GOES HERE. 
-</p>
+<p>The objective of this technique is to assist the users of assistive        technology to make sure that on platforms that support touch screen access        with platform assistive technology such as screen readers can access the        functionality via touch gestures and a keyboard interface without having        to rely on a physical keyboard to gain access to the keyboard        interface.  For example, on mobile platforms it is not practical or        possible for users to carry around a physical keyboard yet touch screen        access to the keyboard interface needs to be present to allow interaction        by users with disabilities such as by people who are blind or visually        impaired.</p>
 
 <h2>Examples </h2>
-<p>
-EXAMPLES AND CODE SAMPLES. 
-</p>
+<h3><span id="Failure_Example_1">Failure Example 1</span></h3>
+<p>Failure example 1 demonstrates how a touch gesture is created that is not        sent to the user agent when platform assistive technology runs that        modifies the touch interface and no alternative touch gesture or touch        accessible control is provided.</p>
+<p>A carousel control is provided to display multiple interactive items in a        horizontal scrolling area.  The user can scroll the carousel by        swiping left or right with one finger.  Swiping right moves the        displayed carousel items right exposing previous items in the carousel and        swiping left moves the displayed carousel items left expose the next items        in the carousel.  When platform assistive technology such as a screen        reader is active, swiping left and right are used by the screen reader to        focus the previous or next items respectively.   Screen specific        commands such as three finger left and right  swipes are not        recognized by the carousel.  There are no other on-screen controls to        control the carousel.   Items in the carousel respond to single taps        to view that item or when platform assistive technology such as a screen        reader are running a double tap of the carousel item allows the user to        view the item as expected.</p>
+<p>A better solution would be to provide previous and next controls that        allow the user to scroll the carousel by tapping (or double tapping when        platform assistive technology such as screen reader) is active in addition        to support the single finger swipe left and right functionality.</p>
+<h3><span id="Failure_Example_2">Failure Example 2</span></h3>
+<p>Failure example 2 demonstrates how touch events can be used to trigger an        action without using an equivalent device independent method without        another alternative method being available to interact with the control.</p>
+<p>A button uses touch start and touch end events to determine that the user        has tapped a button with a single tap gesture.  There is no other way        to activate the button.</p>
+<p>A better solution would be to use a device independent method such as a        click handler (with platform touch support) that allows the user to        interact with the control by platforms that alter touch access when        platform assistive technology is used by touch or through a keyboard        interface.</p>
+<p>&nbsp;</p>
 <h2>Resources</h2>
 <ul>
 <li>
@@ -61,28 +51,17 @@ EXAMPLES AND CODE SAMPLES.
 </ul>
 
 <h2>Tests</h2>
-<p>
-DESCRIPTION OF THE TEST
-</p>
-<h3>Procedure</h3>
+<p> Test that for each interactive element that responds to touch or gesture all content is available when platform assistive technology is enabled that changes the touch interaction mode; or there is equivalent functionality provided.</p>
+<h3><span id="Procedure">Procedure</span></h3>
 <ol>
-<li>
-STEP 1
-</li>
-<li>
-STEP 2
-</li>
-<li>
-CHECK THAT…
-</li>
+  <li> Use touch gestures to locate all interactive touch or gesture based          interactions</li>
+  <li>Turn on platform assistive technology (such as, screenreader)</li>
+  <li> Check that all functions and content exposed by touch or gesture          based interactions are available when platform assistive          technology that alters the touch interface is active or another method          is available to perform the same interaction</li>
 </ol>
-<h3>Expected Results</h3>
+<h3><span id="Expected_Results">Expected Results</span></h3>
 <ul>
-<li>
-#3 IS TRUE
-</li>
+  <li> Check that #2 is true. </li>
 </ul>
-
 <h2>TEST FILES</h2>
 <p>
 ANY TEST FILES GO HERE (NOTE WORKING EXAMPLES INCLUDING SOURCE CODE SHOULD BE REFERENCED IN THE EXAMPLES SECTION). 
