@@ -17,7 +17,7 @@
 LINK TO SURVEY WHEN SURVEYED BY GROUP</li>
 </ul>
 <h2>Applicability</h2>
-<p>This technique applies to platforms where touch screen access is        provided.  It addresses interactive content where the user can        perform one ore more actions.  The technique is applicable even when        access via a physical keyboard interaction is present and makes sure that        interactions can be performed through a keyboard interface using touch        gestures rather than relying on a physical keyboard accompanying the touch        screen device.</p>
+<p>This technique applies to platforms where touch screen access is        provided.  It addresses interactive content where the user can        perform one or more actions.  The technique is applicable even when        access to an action via a physical keyboard interaction is present. </p>
 
 <h2>WCAG References</h2>
 <p>Failure of 2.5.3 (new mobile SC)</p>
@@ -27,44 +27,44 @@ LINK TO SURVEY WHEN SURVEYED BY GROUP</li>
 <h2>User Agent and Assistive Technology Support Notes</h2>
 <p>This technique is applicable on platforms that support touch screen        access where use of the touch screen is modified when platform assistive        technology is active and the assistive technology supports access to the        touch screen through a keyboard interface.</p>
 <h2>Description</h2>
-<p>The objective of this technique is to assist the users of assistive        technology to make sure that on platforms that support touch screen access        with platform assistive technology such as screen readers can access the        functionality via touch gestures and a keyboard interface without having        to rely on a physical keyboard to gain access to the keyboard        interface.  For example, on mobile platforms it is not practical or        possible for users to carry around a physical keyboard yet touch screen        access to the keyboard interface needs to be present to allow interaction        by users with disabilities such as by people who are blind or visually        impaired.</p>
+<p>The objective of this technique is to ensure that        interactions and functionality performed by persons who don't use assistive technology can <em><strong>also be performed using touch        gestures </strong> </em>by those who rely on platform assistive   technology. It allows users of assistive technology to work in a mobile   context without having to connect a physical keyboard.</p>
 
+<p> On mobile   platforms it is usually not practical or possible for users to carry   around a physical keyboard. Users of assistive technology, such as those   who are blind or visually impaired, rely on touch screens in a mobile   context. Screen readers work with touch interfaces, but they can remap   some of the standard OS touch gestures. They do this so the user can   discover and/or select items on the screen without activating them. </p>
+<p>Platform assistive technology is built into the operating system and   is generally updated through OS updates. Examples include VoiceOver on   iOS and TalkBack on Android.</p>
 <h2>Examples </h2>
 <h3><span id="Failure_Example_1">Failure Example 1</span></h3>
 <p>Failure example 1 demonstrates how a touch gesture is created that is not        sent to the user agent when platform assistive technology runs that        modifies the touch interface and no alternative touch gesture or touch        accessible control is provided.</p>
 <p>A carousel control is provided to display multiple interactive items in a        horizontal scrolling area.  The user can scroll the carousel by        swiping left or right with one finger.  Swiping right moves the        displayed carousel items right exposing previous items in the carousel and        swiping left moves the displayed carousel items left expose the next items        in the carousel.  When platform assistive technology such as a screen        reader is active, swiping left and right are used by the screen reader to        focus the previous or next items respectively.   Screen specific        commands such as three finger left and right  swipes are not        recognized by the carousel.  There are no other on-screen controls to        control the carousel.   Items in the carousel respond to single taps        to view that item or when platform assistive technology such as a screen        reader are running a double tap of the carousel item allows the user to        view the item as expected.</p>
-<p>A better solution would be to provide previous and next controls that        allow the user to scroll the carousel by tapping (or double tapping when        platform assistive technology such as screen reader) is active in addition        to support the single finger swipe left and right functionality.</p>
 <h3><span id="Failure_Example_2">Failure Example 2</span></h3>
 <p>Failure example 2 demonstrates how touch events can be used to trigger an        action without using an equivalent device independent method without        another alternative method being available to interact with the control.</p>
 <p>A button uses touch start and touch end events to determine that the user        has tapped a button with a single tap gesture.  There is no other way        to activate the button.</p>
-<p>A better solution would be to use a device independent method such as a        click handler (with platform touch support) that allows the user to        interact with the control by platforms that alter touch access when        platform assistive technology is used by touch or through a keyboard        interface.</p>
+<h3><span id="Failure_Example_3">Failure Example 3</span></h3>
+<p>An web page has an infinite scroll that populates the bottom of   the page as the user swipes up to scroll the new inserted content into   view. When the screen reader is turned on, the up swipe is used by the   reader to select the item above the focus. The screen reader remaps a   three finger swipe to scroll upwards. However, on this web page neither   of those actions will activate the infinite scroll functionality of the   page. There is no other way to scroll the page so that new content   populates the page with touch or gesture when the screen reader is   turned on, so a user who is blind cannot use this page in a mobile   context.</p>
 <p>&nbsp;</p>
 <h2>Resources</h2>
 <ul>
-<li>
-  ANY EXTERNAL  REFERENCE (INCLUDES UAAG OR OTHER W3C SPEC REFERENCES)
-</li>
+<li>[none]</li>
 </ul>
 <h3>Related Techniques</h3>
 <ul>
-  <li>LIST OF RELATED TECHNIQUE NUMBERS (e.g. H30)</li>
+<li>TBD</li>
 </ul>
 
 <h2>Tests</h2>
-<p> Test that for each interactive element that responds to touch or gesture all content is available when platform assistive technology is enabled that changes the touch interaction mode; or there is equivalent functionality provided.</p>
+<p>Test that for each interactive element that responds to touch or gesture   all content is available when platform assistive technology is enabled   that changes the touch interaction mode; or there is equivalent   functionality provided</p>
 <h3><span id="Procedure">Procedure</span></h3>
 <ol>
-  <li> Use touch gestures to locate all interactive touch or gesture based          interactions</li>
-  <li>Turn on platform assistive technology (such as, screenreader)</li>
-  <li> Check that all functions and content exposed by touch or gesture          based interactions are available when platform assistive          technology that alters the touch interface is active or another method          is available to perform the same interaction</li>
-</ol>
+  <li> Use touch gestures to locate and confirm all interactive touch or gesture based          interactions work with assistive technology turned off.</li>
+          <li>Turn on a platform assistive technology that remaps touch gestures (such as the screen reader).</li>
+          <li> Check if any of the functions and content exposed by touch or gesture          based interactions are <em>not</em> available when platform assistive          technology is active.</li>
+          <li>Check if there is no other touch method available to perform the same interaction with platform assisitve technology turned on</li>
+  </ol>
 <h3><span id="Expected_Results">Expected Results</span></h3>
 <ul>
-  <li> Check that #2 is true. </li>
+  <li> If check #3 AND #4 are true then the touch functionality is   not available when assistive technology is enabled and the failure   condition applies. </li>
 </ul>
 <h2>TEST FILES</h2>
-<p>
-ANY TEST FILES GO HERE (NOTE WORKING EXAMPLES INCLUDING SOURCE CODE SHOULD BE REFERENCED IN THE EXAMPLES SECTION). 
+<p> [none]
 </p>
 </body>
 </html>
