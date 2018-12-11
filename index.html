@@ -3,13 +3,13 @@
   <head>
     <title>Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile</title>
     <meta charset='utf-8'>
-    <script src='http://www.w3.org/Tools/respec/respec-w3c-common'
+    <script src='https://www.w3.org/Tools/respec/respec-w3c-common'
             async class='remove'></script>
     <script class='remove'>
       var respecConfig = {
           specStatus:           "ED",
           shortName:            "mobile-accessibility-mapping",
-          edDraftURI:           "http://w3c.github.io/Mobile-A11y-TF-Note/",
+          edDraftURI:           "https://w3c.github.io/Mobile-A11y-TF-Note/",
 		  noRecTrack:		true,
           editors:  [
               {
@@ -19,20 +19,20 @@
               },
 			  {
                   name:       "Jeanne Spellman"
-              ,   url:        "http://orcid.org/0000-0002-9912-0189"
+              ,   url:        "https://orcid.org/0000-0002-9912-0189"
               ,   company:    "W3C"
-              ,   companyURL: "http://www.w3.org/"
+              ,   companyURL: "https://www.w3.org/"
               },
 			  {
                   name:       "Kathy Wahlbin"
               ,   company:    "Interactive Accessibility"
-              ,   companyURL: "http://www.interactiveaccessibility.com"
+              ,   companyURL: "https://www.interactiveaccessibility.com"
               }
           ],
           wg:           "Mobile Accessibility Task Force",
-          wgURI:        "http://www.w3.org/WAI/GL/mobile-a11y-tf/",
+          wgURI:        "https://www.w3.org/WAI/GL/mobile-a11y-tf/",
           wgPublicList: "public-mobile-a11y-tf",
-          wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/35422/status",
+          wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/35422/status",
 		  tocIntroductory:	true,
       };
 	  
@@ -51,12 +51,12 @@ color: black;
     <section id='abstract'>
       <p>
         This document, “Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile” describes how the Web Content Accessibility Guidelines (WCAG) 2.0 [[WCAG20]] and its principles, guidelines, and success criteria can be applied to mobile web content, mobile web apps, native apps, and hybrid apps using web components inside native apps. It provides informative guidance, but does not set requirements. It also highlights the relevance of the User Agent Accessibility Guidelines 2.0 [[UAAG20]] in the mobile context.</p>
-      <p>This document is intended to become a Working Group Note and is part of a series of technical and educational documents published by the <a href="http://www.w3.org/WAI/">W3C Web Accessibility Initiative (WAI)</a>. </p>
+      <p>This document is intended to become a Working Group Note and is part of a series of technical and educational documents published by the <a href="https://www.w3.org/WAI/">W3C Web Accessibility Initiative (WAI)</a>. </p>
     </section>
     
     <section id='sotd'>
       <p>
-        This document is an Editor's Draft being developed by the Mobile Accessibility Task Force (Mobile A11Y TF) operating under the terms of its <a href="http://www.w3.org/WAI/GL/mobile-a11y-tf/work-statement">Work Statement</a> under the joint coordination and review of the<a href="http://www.w3.org/WAI/GL/"> Web Content Accessibility Guidelines Working Group</a> (WCAG WG) and the <a href="http://www.w3.org/WAI/UA/">User Agent Accessibility Guidelines Working Group</a> (UAWG), which is part of the <a href="http://www.w3.org/WAI/">Web Accessibility Initiative</a> (WAI) of the <a href="http://www.w3.org/">World Wide Web Consortium</a> (W3C). </p>
+        This document is an Editor's Draft being developed by the Mobile Accessibility Task Force (Mobile A11Y TF) operating under the terms of its <a href="https://www.w3.org/WAI/GL/mobile-a11y-tf/work-statement">Work Statement</a> under the joint coordination and review of the<a href="https://www.w3.org/WAI/GL/"> Web Content Accessibility Guidelines Working Group</a> (WCAG WG) and the <a href="https://www.w3.org/WAI/UA/">User Agent Accessibility Guidelines Working Group</a> (UAWG), which is part of the <a href="https://www.w3.org/WAI/">Web Accessibility Initiative</a> (WAI) of the <a href="https://www.w3.org/">World Wide Web Consortium</a> (W3C). </p>
 <p>
 WCAG 2.0 is a stable web standard. Comments on this document will not affect WCAG 2.0 wording.
 </p>
@@ -67,8 +67,8 @@ Publication as an Editors' Draft does not imply endorsement by the W3C Membershi
     <section class="introductory">
       <h2 id="intro">Introduction</h2>
       <p>This document provides informative guidance (but does not set   requirements) with regard to interpreting and applying Web Content   Accessibility Guidelines (WCAG) 2.0 [WCAG20] to web and non-web mobile   content and applications. </p>
-      <p>While the World Wide Web Consortium (W3C)'s W3C Web Accessibility   Initiative (WAI) is primarily concerned with web technologies, its guidance is also relevant to non-web technologies. The W3C-WAI has published the Note <a href="http://www.w3.org/TR/wcag2ict/">Guidance on Applying WCAG 2.0 to Non-Web Information and Communications Technologies (WCAG2ICT)</a> to provide authoritative guidance on how to apply WCAG to non-web   technologies such as mobile native applications. The current document is   a mobile-specific extension of this effort. </p>
-      <p>W3C <a href="http://www.w3.org/Mobile/">Mobile Web Initiative</a> Recommendations and Notes pertaining to mobile technologies also include the <a href="http://www.w3.org/TR/mobile-bp">Mobile Web Best Practices</a> and the <a href="http://www.w3.org/TR/mwabp">Mobile Web Application Best Practices</a>.   These offer general guidance to developers on how to create content and   applications that work well on mobile devices. The current document is   focused on the accessibility of mobile web and applications to people   with disabilities and is not intended to supplant any other W3C work. </p>
+      <p>While the World Wide Web Consortium (W3C)'s W3C Web Accessibility   Initiative (WAI) is primarily concerned with web technologies, its guidance is also relevant to non-web technologies. The W3C-WAI has published the Note <a href="https://www.w3.org/TR/wcag2ict/">Guidance on Applying WCAG 2.0 to Non-Web Information and Communications Technologies (WCAG2ICT)</a> to provide authoritative guidance on how to apply WCAG to non-web   technologies such as mobile native applications. The current document is   a mobile-specific extension of this effort. </p>
+      <p>W3C <a href="https://www.w3.org/Mobile/">Mobile Web Initiative</a> Recommendations and Notes pertaining to mobile technologies also include the <a href="https://www.w3.org/TR/mobile-bp">Mobile Web Best Practices</a> and the <a href="https://www.w3.org/TR/mwabp">Mobile Web Application Best Practices</a>.   These offer general guidance to developers on how to create content and   applications that work well on mobile devices. The current document is   focused on the accessibility of mobile web and applications to people   with disabilities and is not intended to supplant any other W3C work. </p>
 
 <section class="introductory">
       <h3>WCAG 2.0 and Mobile Content/Applications</h3>
@@ -89,17 +89,17 @@ Publication as an Editors' Draft does not imply endorsement by the W3C Membershi
       <h2>Other W3C-WAI Guidelines Related to Mobile</h2>
 <section class="introductory">
       <h3>UAAG 2.0 and Accessible Mobile Browsers</h3>
-      <p>The User Agent Accessibility Guidelines (UAAG) 2.0 [<a href="http://www.w3.org/TR/UAAG20/">UAAG2</a>]   is meant for the developers of user agents (e.g. web browsers and media   players), whether for desktop/laptop or mobile operating systems. A user agent that follows UAAG 2.0 will improve accessibility through its
+      <p>The User Agent Accessibility Guidelines (UAAG) 2.0 [<a href="https://www.w3.org/TR/UAAG20/">UAAG2</a>]   is meant for the developers of user agents (e.g. web browsers and media   players), whether for desktop/laptop or mobile operating systems. A user agent that follows UAAG 2.0 will improve accessibility through its
 own user interface, through options it provides for rendering and
 interacting with
 ​content, and through its ability to communicate with other technologies,
 including assistive technologies.</p>
-      <p>To assist developers of mobile browsers, the <a href="http://www.w3.org/TR/UAAG20-Reference/">UAAG 2.0 Reference</a> support document contains numerous mobile examples. These examples are also available in a separate list of <a href="http://www.w3.org/TR/IMPLEMENTING-UAAG20/mobile">mobile-related examples</a>, maintained by the <a href="http://www.w3.org/WAI/UA/">User Agent Accessibility Guidelines Working Group (UAWG)</a>. </p>
+      <p>To assist developers of mobile browsers, the <a href="https://www.w3.org/TR/UAAG20-Reference/">UAAG 2.0 Reference</a> support document contains numerous mobile examples. These examples are also available in a separate list of <a href="https://www.w3.org/TR/IMPLEMENTING-UAAG20/mobile">mobile-related examples</a>, maintained by the <a href="https://www.w3.org/WAI/UA/">User Agent Accessibility Guidelines Working Group (UAWG)</a>. </p>
 </section>
 <section class="introductory">
       <h3>ATAG 2.0 and Accessible Mobile Authoring Tools</h3>
-      <p>The Authoring Tool Accessibility Guidelines (ATAG) 2.0 [<a href="http://www.w3.org/TR/ATAG20/">ATAG2</a>]   provides guidelines for the developers of authoring tools, whether for   desktop/laptop or mobile operating systems. An authoring tool that   follows ATAG 2.0 will be both more accessible to authors with   disabilities (Part A) and designed to enable, support, and promote the   production of more accessible web content by all authors (Part B). </p>
-      <p>To assist developers of mobile authoring tools, the <a href="http://www.w3.org/TR/IMPLEMENTING-ATAG20/">Implementing ATAG 2.0</a> support document contains numerous mobile authoring tool examples. </p>
+      <p>The Authoring Tool Accessibility Guidelines (ATAG) 2.0 [<a href="https://www.w3.org/TR/ATAG20/">ATAG2</a>]   provides guidelines for the developers of authoring tools, whether for   desktop/laptop or mobile operating systems. An authoring tool that   follows ATAG 2.0 will be both more accessible to authors with   disabilities (Part A) and designed to enable, support, and promote the   production of more accessible web content by all authors (Part B). </p>
+      <p>To assist developers of mobile authoring tools, the <a href="https://www.w3.org/TR/IMPLEMENTING-ATAG20/">Implementing ATAG 2.0</a> support document contains numerous mobile authoring tool examples. </p>
     </section>
   </section>
 </section>
@@ -298,7 +298,7 @@ including assistive technologies.</p>
     <li> <strong>2.4.9 Link Purpose (Link Only)</strong> (Level AA) </li>
   </ul>
   </div>
-  <p>For more information on grouping operable elements, see <a href="http://www.w3.org/WAI/GL/WCAG20-TECHS/H2.html">H2: Combining adjacent image and text links for the same resource</a> technique. </p>
+  <p>For more information on grouping operable elements, see <a href="https://www.w3.org/WAI/GL/WCAG20-TECHS/H2.html">H2: Combining adjacent image and text links for the same resource</a> technique. </p>
   </section>
   <section>
   <h4>Provide clear indication that elements are actionable</h4>
@@ -353,11 +353,11 @@ including assistive technologies.</p>
 
 <section class='appendix'>
   <h2>WCAG Techniques that apply to mobile</h2>
-  <p><a href="http://www.w3.org/WAI/GL/mobile-a11y-tf/MobileTechniques/">WCAG 2.0 Techniques that Apply to Mobile</a></p>
+  <p><a href="https://www.w3.org/WAI/GL/mobile-a11y-tf/MobileTechniques/">WCAG 2.0 Techniques that Apply to Mobile</a></p>
 </section>
 <section>
 <h2>UAAG 2.0 Success Criteria that apply to mobile</h2>
-<p><a href="http://www.w3.org/TR/IMPLEMENTING-UAAG20/mobile.html">UAAG Mobile Accessibility Examples</a></p>
+<p><a href="https://www.w3.org/TR/IMPLEMENTING-UAAG20/mobile.html">UAAG Mobile Accessibility Examples</a></p>
 </section>
 <section>
   <h2>Acknowledgments</h2>
